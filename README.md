@@ -66,11 +66,3 @@ docker run -d \
 ```
 
 ---
-
-## 📚 Documentation & System Design
-
-* [PRODUCTION_AUDIT.md](PRODUCTION_AUDIT.md) — Comprehensive production readiness audit.
-* [PRODUCTION.md](PRODUCTION.md) — WSGI server, Docker containerization, and operations guide.
-* [RAG_PIPELINE.md](RAG_PIPELINE.md) — RAG architecture, Hybrid RRF, and retrieval benchmark comparison.
-* [ARCHITECTURE.md](ARCHITECTURE.md) — Modular system design and layer breakdown.
-* [SETUP.md](SETUP.md) — Development configuration and REST API curl guide.
