@@ -1,0 +1,162 @@
+[
+  {
+    "id": "Q01",
+    "query": "What are the symptoms of caffeine overdose?",
+    "category": "symptoms",
+    "expected_article": "Caffeine",
+    "expected_section": "Side effects",
+    "expected_keywords": ["restlessness", "irritability", "nervousness", "agitation"]
+  },
+  {
+    "id": "Q02",
+    "query": "What are calcium channel blockers used for?",
+    "category": "medication",
+    "expected_article": "Calcium channel blockers",
+    "expected_section": "Definition",
+    "expected_keywords": ["high blood pressure", "heart", "blood vessels"]
+  },
+  {
+    "id": "Q03",
+    "query": "What is campylobacteriosis?",
+    "category": "definition",
+    "expected_article": "Campylobacteriosis",
+    "expected_section": "Description",
+    "expected_keywords": ["diarrhea", "food-borne", "organisms"]
+  },
+  {
+    "id": "Q04",
+    "query": "How is cardiopulmonary resuscitation performed?",
+    "category": "treatment",
+    "expected_article": "Cardiopulmonary resuscitation (CPR)",
+    "expected_section": "Description",
+    "expected_keywords": ["rescue breathing", "chest compressions", "oxygen"]
+  },
+  {
+    "id": "Q05",
+    "query": "What are the risks of cervical cancer?",
+    "category": "symptoms",
+    "expected_article": "Cervical cancer",
+    "expected_section": "Description",
+    "expected_keywords": ["cervix", "carcinoma", "women"]
+  },
+  {
+    "id": "Q06",
+    "query": "What are the indications for circumcision?",
+    "category": "treatment",
+    "expected_article": "Circumcision",
+    "expected_section": "Description",
+    "expected_keywords": ["foreskin", "surgical", "penis"]
+  },
+  {
+    "id": "Q07",
+    "query": "How is deep vein thrombosis diagnosed?",
+    "category": "diagnosis",
+    "expected_article": "Deep vein thrombosis",
+    "expected_section": "Diagnosis",
+    "expected_keywords": ["blood clot", "ultrasound", "vein"]
+  },
+  {
+    "id": "Q08",
+    "query": "What causes dysfunctional uterine bleeding?",
+    "category": "causes",
+    "expected_article": "Dysfunctional uterine bleeding",
+    "expected_section": "Causes and symptoms",
+    "expected_keywords": ["hormones", "menstruation", "bleeding"]
+  },
+  {
+    "id": "Q09",
+    "query": "What is enzyme therapy?",
+    "category": "treatment",
+    "expected_article": "Enzyme therapy",
+    "expected_section": "Definition",
+    "expected_keywords": ["enzymes", "digestion", "supplements"]
+  },
+  {
+    "id": "Q10",
+    "query": "What are the precautions when taking bone disorder drugs?",
+    "category": "precautions",
+    "expected_article": "Bone disorder drugs",
+    "expected_section": "Precautions",
+    "expected_keywords": ["bone", "calcium", "osteoporosis"]
+  },
+  {
+    "id": "Q11",
+    "query": "What are antacids used to treat?",
+    "category": "medication",
+    "expected_article": "Antacids",
+    "expected_section": "Definition",
+    "expected_keywords": ["heartburn", "indigestion", "stomach acid"]
+  },
+  {
+    "id": "Q12",
+    "query": "What is decompression sickness?",
+    "category": "definition",
+    "expected_article": "Decompression sickness",
+    "expected_section": "Definition",
+    "expected_keywords": ["nitrogen", "bubbles", "divers"]
+  },
+  {
+    "id": "Q13",
+    "query": "What causes heel spurs?",
+    "category": "causes",
+    "expected_article": "Heel spurs",
+    "expected_section": "Causes and symptoms",
+    "expected_keywords": ["calcaneal", "foot", "pain"]
+  },
+  {
+    "id": "Q14",
+    "query": "What are the symptoms of food poisoning?",
+    "category": "symptoms",
+    "expected_article": "Food poisoning",
+    "expected_section": "Causes and symptoms",
+    "expected_keywords": ["nausea", "vomiting", "diarrhea", "bacteria"]
+  },
+  {
+    "id": "Q15",
+    "query": "How is fever managed or treated?",
+    "category": "treatment",
+    "expected_article": "Fever",
+    "expected_section": "Treatment",
+    "expected_keywords": ["temperature", "acetaminophen", "fluids"]
+  },
+  {
+    "id": "Q16",
+    "query": "What are the side effects of calcium channel blockers?",
+    "category": "side_effects",
+    "expected_article": "Calcium channel blockers",
+    "expected_section": "Side effects",
+    "expected_keywords": ["dizziness", "flushing", "headache"]
+  },
+  {
+    "id": "Q17",
+    "query": "What causes cardiac arrest?",
+    "category": "causes",
+    "expected_article": "Cardiopulmonary resuscitation (CPR)",
+    "expected_section": "Purpose",
+    "expected_keywords": ["heart", "breathing", "respiratory"]
+  },
+  {
+    "id": "Q18",
+    "query": "What is congenital adrenal hyperplasia?",
+    "category": "definition",
+    "expected_article": "Congenital adrenal hyperplasia",
+    "expected_section": "Definition",
+    "expected_keywords": ["adrenal", "gland", "hormones"]
+  },
+  {
+    "id": "Q19",
+    "query": "What is the 2026 quantum neural medical treatment for Mars radiation?",
+    "category": "out_of_domain",
+    "expected_article": null,
+    "expected_section": null,
+    "expected_keywords": []
+  },
+  {
+    "id": "Q20",
+    "query": "How to compile C++ code on a GPU cluster?",
+    "category": "out_of_domain",
+    "expected_article": null,
+    "expected_section": null,
+    "expected_keywords": []
+  }
+]

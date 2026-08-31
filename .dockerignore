@@ -1,0 +1,22 @@
+# Docker ignore list
+.venv
+.git
+.gitignore
+.env
+.env.example
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.coverage
+htmlcov
+.cursor
+scratch
+*.log
+*.tmp
+tests/
+scripts/
+END_TO_END_QA.md
+PRODUCTION_AUDIT.md
+RETRIEVAL_BENCHMARK.md

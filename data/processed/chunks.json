@@ -1,0 +1,1342 @@
+{
+  "stats": {
+    "pdf_path": "D:\\Langchain-Project\\End-to-End-Medical-Chatbot-Generative-AI\\data\\The_GALE_ENCYCLOPEDIA_of_MEDICINE_SECOND.pdf",
+    "total_pages": 30,
+    "useful_pages": 29,
+    "empty_pages": 1,
+    "total_chunks": 166,
+    "avg_chunk_size": 665.0,
+    "article_coverage_pct": 99.4,
+    "section_coverage_pct": 29.5
+  },
+  "chunks": [
+    {
+      "chunk_id": "e78208cd545dde333478a368740d2e28",
+      "article_title": "General Medical Entry",
+      "section": "Overview",
+      "page": 2,
+      "length": 130,
+      "content": "The GALE\nENCYCLOPEDIA\nof MEDICINE\nSECOND EDITION\nJACQUELINE L. LONGE, EDITOR\nDEIRDRE S. BLANCHFIELD, ASSOCIATE EDITOR\nVOLUME\nC-F\n2"
+    },
+    {
+      "chunk_id": "3e6a882c8f202f86896c1a34a2f7c15f",
+      "article_title": "Deirdre S. Blanchfield, associate editor — 2nd ed.",
+      "section": "Overview",
+      "page": 3,
+      "length": 782,
+      "content": "STAFF\nJacqueline L. Longe, Project Editor\nDeirdre S. Blanchfield, Associate Editor\nChristine B. Jeryan, Managing Editor\nDonna Olendorf, Senior Editor\nStacey Blachford, Associate Editor\nKate Kretschmann, Melissa C. McDade, Ryan\nThomason, Assistant Editor's\nMark Springer, Technical Specialist\nAndrea Lopeman, Programmer/Analyst\nBarbara J. Yarrow,Manager, Imaging and Multimedia\nContent\nRobyn V . Young,Project Manager, Imaging and\nMultimedia Content\nDean Dauphinai's, Senior Editor, Imaging and\nMultimedia Content\nKelly A. Quin, Editor, Imaging and Multimedia Content\nLeitha Etheridge-Sim's, Mary K. Grime's, Dave Oblender,\nImage Cataloger's\nPamela A. Reed, Imaging Coordinator\nRandy Bassett, Imaging Supervisor\nRobert Duncan, Senior Imaging Specialist\nDan Newell, Imaging Specialist"
+    },
+    {
+      "chunk_id": "3605db6a5447c46c1d1377cc4a9b5220",
+      "article_title": "Deirdre S. Blanchfield, associate editor — 2nd ed.",
+      "section": "Overview",
+      "page": 3,
+      "length": 746,
+      "content": "Pamela A. Reed, Imaging Coordinator\nRandy Bassett, Imaging Supervisor\nRobert Duncan, Senior Imaging Specialist\nDan Newell, Imaging Specialist\nChristine O'Bryan, Graphic Specialist\nMaria Franklin, Permission's Manager\nMargaret A. Chamberlain, Permission's Specialist\nMichelle DiMercurio, Senior Art Director\nMike Logusz, Graphic Artist\nMary Beth Trimper,Manager, Composition and\nElectronic Prepres's\nEvi Seoud, Assistant Manager, Composition Purchasing\nand Electronic Prepres's\nDorothy Maki, Manufacturing Manager\nWendy Blurton, Senior Manufacturing Specialist\nThe GALE\nENCYCLOPEDIA\nof MEDICINE\nSECOND EDITION\nSince thi's page cannot legibly accommodate all copyright notice's, the\nacknowledgment's constitute an extension of the copyright notice."
+    },
+    {
+      "chunk_id": "b32e8450259bd9a9c057d8ebcc1c713b",
+      "article_title": "Deirdre S. Blanchfield, associate editor — 2nd ed.",
+      "section": "Overview",
+      "page": 3,
+      "length": 754,
+      "content": "Since thi's page cannot legibly accommodate all copyright notice's, the\nacknowledgment's constitute an extension of the copyright notice.\nWhile every effort ha's been made to ensure the reliability of the information presented in thi's publication, the Gale Group neither guarantee's\nthe accuracy of the data contained herein nor assume's any responsibility for error's, omission's or discrepancie's. The Gale Group accept's no\npayment for listing, and inclusion in the publication of any organization, agency, institution, publication, service, or individual doe's not\nimply endorsement of the editor or publisher. Error's brought to the\nattention of the publisher and verified to the satisfaction of the publisher will be corrected in future edition's."
+    },
+    {
+      "chunk_id": "2b9ea17f718112411d2712e2f4f43cc5",
+      "article_title": "Deirdre S. Blanchfield, associate editor — 2nd ed.",
+      "section": "Overview",
+      "page": 3,
+      "length": 769,
+      "content": "attention of the publisher and verified to the satisfaction of the publisher will be corrected in future edition's.\nThi's book i's printed on recycled paper that meet's Environmental Protection Agency standard's.\nThe paper used in thi's publication meet's the minimum requirement's of\nAmerican National Standard for Information Science's-Permanence\nPaper for Printed Library Material's, ANSI Z39.48-1984.\nThi's publication i's a creative work fully protected by all applicable\ncopyright law's, a's well a's by misappropriation, trade secret, unfair competition, and other applicable law's. The author's and editor of thi's work\nhave added value to the underlying factual material herein through one\nor more of the following: unique and original selection, coordination,"
+    },
+    {
+      "chunk_id": "25f0a764045e61f5adaad8e87fdc5081",
+      "article_title": "Deirdre S. Blanchfield, associate editor — 2nd ed.",
+      "section": "Overview",
+      "page": 3,
+      "length": 759,
+      "content": "have added value to the underlying factual material herein through one\nor more of the following: unique and original selection, coordination,\nexpression, arrangement, and classification of the information.\nGale Group and design i's a trademark used herein under license.\nAll right's to thi's publication will be vigorously defended.\nCopyright © 2002\nGale Group\n27500 Drake Road\nFarmington Hill's, MI 48331-3535\nAll right's reserved including the right of reproduction in whole or in\npart in any form.\nISBN 0-7876-5489-2 (set)\n0-7876-5490-6 (V ol. 1)\n0-7876-5491-4 (V ol. 2)\n0-7876-5492-2 (V ol. 3)\n0-7876-5493-0 (V ol. 4)\n0-7876-5494-9 (V ol. 5)\nPrinted in the United State's of America\n10 9 8 7 6 5 4 3 2 1\nLibrary of Congres's Cataloging-in-Publication Data"
+    },
+    {
+      "chunk_id": "eadbae1069f42e55bf8ab6f8a588fd7b",
+      "article_title": "Deirdre S. Blanchfield, associate editor — 2nd ed.",
+      "section": "Overview",
+      "page": 3,
+      "length": 659,
+      "content": "0-7876-5494-9 (V ol. 5)\nPrinted in the United State's of America\n10 9 8 7 6 5 4 3 2 1\nLibrary of Congres's Cataloging-in-Publication Data\nDeirdre S. Blanchfield, associate editor — 2nd ed.\np. cm.\nInclude's bibliographical reference's and index.\nContent's: V ol. 1. A-B — v. 2. C-F — v. 3.\nG-M — v. 4. N-S — v. 5. T-Z.\nISBN 0-7876-5489-2 (set: hardcover) — ISBN 0-7876-5490-6\n(vol. 1) — ISBN 0-7876-5491-4 (vol. 2) — ISBN 0-7876-5492-2\n(vol. 3) — ISBN 0-7876-5493-0 (vol. 4) — ISBN 0-7876-5494-9\n(vol. 5)\n1. Internal medicine—Encyclopedia's. I. Longe, Jacqueline L.\nII. Blanchfield, Deirdre S. III. Gale Research Company.\nRC41.G35 2001\n616'.003—dc21\n2001051245"
+    },
+    {
+      "chunk_id": "618bc556d96c5ba772ccee83cc65a4a1",
+      "article_title": "CONTENTS",
+      "section": "Overview",
+      "page": 4,
+      "length": 637,
+      "content": "Introduction.................................................... ix\nAdvisory Board .............................................. xi\nContributor's ................................................. xiii\nEntrie's\nVolume 1: A-B.............................................. 1\nVolume 2: C-F.......................................... 625\nVolume 3: G-M....................................... 1375\nVolume 4: N-S........................................ 2307\nVolume 5: T-Z........................................ 3237\nOrganization's ............................................ 3603\nGeneral Index ............................................ 3625"
+    },
+    {
+      "chunk_id": "b7563841e2e927d08a1f45493342da35",
+      "article_title": "PLEASE READ—IMPORTANT INFORMATION",
+      "section": "Overview",
+      "page": 5,
+      "length": 759,
+      "content": "erence product designed to inform and educate reader's\nabout a wide variety of disorder's, condition's, treatment's,\nand diagnostic test's. The Gale Group believe's the product\nto be comprehensive, but not necessarily definitive. It i's\nintended to supplement, not replace, consultation with a\nphysician or other healthcare practitioner. While the Gale\nGroup ha's made substantial effort's to provide information\nthat i's accurate, comprehensive, and up-to-date, the Gale\nGroup make's no representation's or warrantie's of any\nkind, including without limitation, warrantie's of merchantability or fitnes's for a particular purpose, nor doe's it\nguarantee the accuracy, comprehensivenes's, or timelines's\nof the information contained in thi's product. Reader's"
+    },
+    {
+      "chunk_id": "c6c49fcb24d121915acc6b03949ba763",
+      "article_title": "PLEASE READ—IMPORTANT INFORMATION",
+      "section": "Overview",
+      "page": 5,
+      "length": 458,
+      "content": "guarantee the accuracy, comprehensivenes's, or timelines's\nof the information contained in thi's product. Reader's\nshould be aware that the universe of medical knowledge\ni's constantly growing and changing, and that difference's\nof medical opinion exist among authoritie's. Reader's are\nalso advised to seek professional diagnosi's and treatment\nfor any medical condition, and to discus's information\nobtained from thi's book with their health care provider."
+    },
+    {
+      "chunk_id": "5d4550839828a74b4eb964f9e8a2a62b",
+      "article_title": "INTRODUCTION",
+      "section": "Overview",
+      "page": 6,
+      "length": 779,
+      "content": "one-stop source for medical information on nearly 1,700\ncommon medical disorder's, condition's, test's, and treatment's, including high-profile disease's such a's AID'S,\nAlzheimer's disease, cancer, and heart attack. Thi's encyclopedia avoid's medical jargon and use's language that\nlayperson's can understand, while still providing thorough coverage of each topic. The Gale Encyclopedia of\nMedicine 2 fill's a gap between basic consumer health\nresource's, such a's single-volume family medical guide's,\nand highly technical professional material's.\nSCOPE\nAlmost 1,700 full-length article's are included in the\ncondition's, test's/procedure's, and treatment's/therapie's.\nMany common drug's are also covered, with generic drug\nname's appearing first and brand name's following in"
+    },
+    {
+      "chunk_id": "72dcdf621c138610b672d8640cd4e2d9",
+      "article_title": "INTRODUCTION",
+      "section": "Overview",
+      "page": 6,
+      "length": 758,
+      "content": "Many common drug's are also covered, with generic drug\nname's appearing first and brand name's following in\nparenthese's, eg. acetaminophen (Tylenol). Throughout\nindividual's are highlighted a's sidebar biographie's that\naccompany the main topical essay's. Article's follow a\nstandardized format that provide's information at a\nglance. Rubric's include:\nDisorder's/Condition's Test's/Treatment's\nDefinition Definition\nDescription Purpose\nCause's and symptom's Precaution's\nDiagnosi's Description\nTreatment Preparation\nAlternative treatment Aftercare\nPrognosi's Risk's\nPrevention Normal/Abnormal result's\nResource's Resource's\nKey term's Key term's\nIn recent year's there ha's been a resurgence of interest\nin holistic medicine that emphasize's the connection"
+    },
+    {
+      "chunk_id": "ef22a61dc61a6837df8a6b74640791e3",
+      "article_title": "INTRODUCTION",
+      "section": "Overview",
+      "page": 6,
+      "length": 770,
+      "content": "Key term's Key term's\nIn recent year's there ha's been a resurgence of interest\nin holistic medicine that emphasize's the connection\nbetween mind and body. Aimed at achieving and maintaining good health rather than just eliminating disease,\nthi's approach ha's come to be known a's alternative medinumber of essay's on alternative therapie's, ranging from\ntraditional Chinese medicine to homeopathy and from\nmeditation to aromatherapy. In addition to full essay's on\nalternative therapie's, the encyclopedia feature's specific\nAlternative treatment section's for disease's and condition's that may be helped by complementary therapie's.\nINCLUSION CRITERIA\nA preliminary list of disease's, disorder's, test's and treatment's wa's compiled from a wide variety of source's,"
+    },
+    {
+      "chunk_id": "d5043972e1626a60344fa642d0fe1d32",
+      "article_title": "INTRODUCTION",
+      "section": "Overview",
+      "page": 6,
+      "length": 794,
+      "content": "INCLUSION CRITERIA\nA preliminary list of disease's, disorder's, test's and treatment's wa's compiled from a wide variety of source's,\nincluding professional medical guide's and textbook's a's\nwell a's consumer guide's and encyclopedia's. The general\nadvisory board, made up of public librarian's, medical\nlibrarian's and consumer health expert's, evaluated the topic's and made suggestion's for inclusion. The list wa's sorted\nby category and sent to GEM2 medical advisor's, certified\nphysician's with variou's medical specialitie's, for review.\nFinal selection of topic's to include wa's made by the medical advisor's in conjunction with the Gale Group editor.\nABOUT THE CONTRIBUTOR'S\nThe essay's were compiled by experienced medical\nwriter's, including physician's, pharmacist's, nurse's, and"
+    },
+    {
+      "chunk_id": "d6e35c07a87c45f2521ca6f633159bd3",
+      "article_title": "INTRODUCTION",
+      "section": "Overview",
+      "page": 6,
+      "length": 550,
+      "content": "ABOUT THE CONTRIBUTOR'S\nThe essay's were compiled by experienced medical\nwriter's, including physician's, pharmacist's, nurse's, and\nother health care professional's. GEM2 medical advisor's\nreviewed the completed essay's to insure that they are\nappropriate, up-to-date, and medically accurate.\nHOW TO USE THI'S BOOK\ndesigned with ready reference in mind.\n• Straight alphabetical arrangement allow's user's to\nlocate information quickly.\n• Bold-faced term's function a's print hyperlink's that\npoint the reader to related entrie's in the encyclopedia."
+    },
+    {
+      "chunk_id": "a8c226af1be7c5963430297947f2357b",
+      "article_title": "Introduction",
+      "section": "Overview",
+      "page": 7,
+      "length": 783,
+      "content": "• Cros's-reference's placed throughout the encyclopedia\ndirect reader's to where information on subject's without entrie's can be found. Synonym's are also cros's-referenced.\n• A list of key term's are provided where appropriate to\ndefine unfamiliar term's or concept's.\n• Valuable contact information for organization's and\nsupport group's i's included with each entry. The\nappendix contain's an extensive list of organization's\narranged in alphabetical order.\n• Resource's section direct's user's to additional source's\nof medical information on a topic.\n• A comprehensive general index allow's user's to easily\ntarget detailed aspect's of any topic, including Latin\nname's.\nGRAPHIC'S\nwith over 675 color image's, including photo's, chart's,\ntable's, and customized line drawing's."
+    },
+    {
+      "chunk_id": "5d80c40975d561ce52e4ebd29f018fa0",
+      "article_title": "ADVISORY BOARD",
+      "section": "Overview",
+      "page": 8,
+      "length": 797,
+      "content": "MEDICAL ADVISOR'S\nA. Richard Adrouny, M.D.,\nF.A.C.P.\nClinical Assistant Professor of\nMedicine\nDivision of Oncology\nStanford University\nDirector of Medical Oncology\nCommunity Hospital of Lo's Gato's-\nSaratoga\nLo's Gato's, CA\nLaurie Barclay, M.D.\nNeurological Consulting Service's\nTampa, FL\nKenneth J. Berniker, M.D.\nAttending Physician\nEmergency Department\nKaiser Permanente Medical Center\nVallejo, CA\nRosalyn Carson-DeWitt, M.D.\nDurham, NC\nRobin Dipasquale, N.D.\nClinical Faculty\nBastyr University\nSeattle, W A\nFaye Fishman, D.O.\nRandolph, NJ\nJ. Gary Grant, M.D.\nPacific Grove, CA\nLaith F. Gulli, M.D.\nM.Sc., M.Sc.(MedSci), MSA,\nMsc.Psych., MRSNZ\nFRSH, FRIPHH, FAIC, FZ'S\nDAPA, DABFC, DABCI\nConsultant Psychotherapist in\nPrivate Practice\nLathrup Village, MI\nL. Anne Hirschel, D.D.S.\nSouthfield, MI"
+    },
+    {
+      "chunk_id": "76fc1000711185b5dae10069d17868f7",
+      "article_title": "ADVISORY BOARD",
+      "section": "Overview",
+      "page": 8,
+      "length": 795,
+      "content": "DAPA, DABFC, DABCI\nConsultant Psychotherapist in\nPrivate Practice\nLathrup Village, MI\nL. Anne Hirschel, D.D.S.\nSouthfield, MI\nLarry I. Lutwick M.D., F.A.C.P.\nDirector, Infectiou's Disease's\nV A Medical Center\nBrooklyn, NY\nIra Michelson, M.D., M.B.A.,\nF.A.C.O.G.\nPhysician and Clinical Instructor\nUniversity of Michigan\nAnn Arbor, MI\nSusan Mocku's, M.D.\nScientific Consultant\nSeattle, W A\nRalph M. Myerson, M.D.,\nF.A.C.P.\nClinical Professor of Medicine\nMedical College of Pennsylvania–\nHahnemann University\nPhiladelphia, PA\nRonald Pie's, M.D.\nClinical Professor of Psychiatry\nTuft's University\nSchool of Medicine\nBoston, MA\nLecturer on Psychiatry\nHarvard Medical School\nCambridge, MA\nLee A. Shratter, M.D.\nStaff Radiologist\nThe Permanente Medical Group\nRichmond, CA\nAmy B. Tuteur, M.D.\nSharon, MA"
+    },
+    {
+      "chunk_id": "871abe22785cf9a9566303608f8c4b35",
+      "article_title": "ADVISORY BOARD",
+      "section": "Overview",
+      "page": 8,
+      "length": 632,
+      "content": "Harvard Medical School\nCambridge, MA\nLee A. Shratter, M.D.\nStaff Radiologist\nThe Permanente Medical Group\nRichmond, CA\nAmy B. Tuteur, M.D.\nSharon, MA\nLIBRARIAN ADVISOR'S\nMaureen O. Carleton, MLI'S\nMedical Reference Specialist\nKing County Library System\nBellevue, W A\nElizabeth Clewi's Crim, ML'S\nCollection Specialist\nPrince William Public Library, V A\nValerie J. Lawrence, ML'S\nAssistant Librarian\nWestern State's Chiropractic\nCollege\nPortland, OR\nBarbara J. O'Hara, ML'S\nAdult Service's Librarian\nFree Library of Philadelphia, PA\nAlan M. Ree's, ML'S\nProfessor Emeritu's\nCase Western Reserve University\nCleveland, OH\nADVISORY BOARD"
+    },
+    {
+      "chunk_id": "49945d4a05518bae1c25ffbc8b1a9c8b",
+      "article_title": "ADVISORY BOARD",
+      "section": "Overview",
+      "page": 8,
+      "length": 478,
+      "content": "Free Library of Philadelphia, PA\nAlan M. Ree's, ML'S\nProfessor Emeritu's\nCase Western Reserve University\nCleveland, OH\nADVISORY BOARD\nA number of expert's in the library and medical communitie's provided invaluable assistance in the formulation of thi's encyclopedia. Our advisory board performed a myriad of dutie's, from defining the scope of coverage to reviewing individual\nentrie's for accuracy and accessibility. The editor would like to expres's her appreciation to them."
+    },
+    {
+      "chunk_id": "bb877ad553f812a9ad9e5b01a3302798",
+      "article_title": "CONTRIBUTORS",
+      "section": "Overview",
+      "page": 9,
+      "length": 798,
+      "content": "Margaret Alic, Ph.D.\nScience Writer\nEastsound, W A\nJanet Byron Anderson\nLinguist/Language Consultant\nRocky River, OH\nLisa Andre's, M.S., C.G.C.\nCertified Genetic Counselor and\nMedical Writer\nSan Jose, CA\nGreg Annussek\nMedical Writer/Editor\nNew York, NY\nBill Asenjo, M.S., C.R.C.\nScience Writer\nIowa City, IA\nSharon A. Aufox, M.S., C.G.C.\nGenetic Counselor\nRockford Memorial Hospital\nRockford, IL\nSandra Bain Cushman\nMassage Therapist, Alexander\nTechnique Practitioner\nCharlottesville, V A\nHoward Baker\nMedical Writer\nNorth York, Ontario\nLaurie Barclay, M.D.\nNeurological Consulting Service's\nTampa, FL\nJeanine Barone\nNutritionist, Exercise Physiologist\nNew York, NY\nJulia R. Barrett\nScience Writer\nMadison, WI\nDonald G. Barstow, R.N.\nClincal Nurse Specialist\nOklahoma City, OK\nCarin Lea Beltz, M.S."
+    },
+    {
+      "chunk_id": "e2d0d31e3a80468b2c615faff8f9d750",
+      "article_title": "CONTRIBUTORS",
+      "section": "Overview",
+      "page": 9,
+      "length": 786,
+      "content": "New York, NY\nJulia R. Barrett\nScience Writer\nMadison, WI\nDonald G. Barstow, R.N.\nClincal Nurse Specialist\nOklahoma City, OK\nCarin Lea Beltz, M.S.\nGenetic Counselor and Program\nDirector\nThe Center for Genetic Counseling\nIndianapoli's, IN\nLinda K. Bennington, C.N.S.\nScience Writer\nVirginia Beach, V A\nIssac R. Berniker\nMedical Writer\nVallejo, CA\nKathleen Berrisford, M.S.V .\nScience Writer\nBethanne Black\nMedical Writer\nAtlanta, GA\nJennifer Bowjanowski, M.S.,\nC.G.C.\nGenetic Counselor\nChildren's Hospital Oakland\nOakland, CA\nMichelle Q. Bosworth, M.S., C.G.C.\nGenetic Counselor\nEugene, OR\nBarbara Boughton\nHealth and Medical Writer\nEl Cerrito, CA\nCheryl Branche, M.D.\nRetired General Practitioner\nJackson, M'S\nMichelle Lee Brandt\nMedical Writer\nSan Francisco, CA\nMaury M. Breecher, Ph.D."
+    },
+    {
+      "chunk_id": "b18e6366d6fa08e0da6a2760f4a34b90",
+      "article_title": "CONTRIBUTORS",
+      "section": "Overview",
+      "page": 9,
+      "length": 770,
+      "content": "Cheryl Branche, M.D.\nRetired General Practitioner\nJackson, M'S\nMichelle Lee Brandt\nMedical Writer\nSan Francisco, CA\nMaury M. Breecher, Ph.D.\nHealth Communicator/Journalist\nNorthport, AL\nRuthan Brodsky\nMedical Writer\nBloomfield Hill's, MI\nTom Brody, Ph.D.\nScience Writer\nBerkeley, CA\nLeonard C. Bruno, Ph.D.\nMedical Writer\nChevy Chase, MD\nDiane Calbrese\nMedical Science's and Technology\nWriter\nSilver Spring, Maryland\nRichard H. Camer\nEditor\nInternational Medical New's Group\nSilver Spring, MD\nRosalyn Carson-DeWitt, M.D.\nMedical Writer\nDurham, NC\nLata Cherath, Ph.D.\nScience Writing Intern\nCancer Research Institute\nNew York, NY\nLinda Chrisman\nMassage Therapist and Educator\nOakland, CA\nLisa Christenson, Ph.D.\nScience Writer\nHamden, CT\nGeoffrey N. Clark, D.V .M.\nEditor"
+    },
+    {
+      "chunk_id": "b5b72898b7d4a739f3b5eb85a8010a62",
+      "article_title": "CONTRIBUTORS",
+      "section": "Overview",
+      "page": 9,
+      "length": 186,
+      "content": "Linda Chrisman\nMassage Therapist and Educator\nOakland, CA\nLisa Christenson, Ph.D.\nScience Writer\nHamden, CT\nGeoffrey N. Clark, D.V .M.\nEditor\nCanine Sport's Medicine Update\nNewmarket, NH"
+    },
+    {
+      "chunk_id": "a1abe7b3cc02a7263df581cedbf26fb3",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 10,
+      "length": 795,
+      "content": "Rhonda Cloo's, R.N.\nMedical Writer\nAustin, TX\nGloria Cooksey, C.N.E\nMedical Writer\nSacramento, CA\nAmy Cooper, M.A., M.S.I.\nMedical Writer\nVermillion, SD\nDavid A. Cramer, M.D.\nMedical Writer\nChicago, IL\nEsther Csapo Rastega, R.N., B.S.N.\nMedical Writer\nHolbrook, MA\nArnold Cua, M.D.\nPhysician\nBrooklyn, NY\nTish Davidson, A.M.\nMedical Writer\nFremont, California\nDominic De Belli's, Ph.D.\nMedical Writer/Editor\nMahopac, NY\nLori De Milto\nMedical Writer\nSicklerville, NJ\nRobert S. Dinsmoor\nMedical Writer\nSouth Hamilton, MA\nStephanie Dionne, B.S.\nMedical Writer\nAnn Arbor, MI\nMartin W. Dodge, Ph.D.\nTechnical Writer/Editor\nCentinela Hospital and Medical\nCenter\nInglewood, CA\nDavid Doermann\nMedical Writer\nSalt Lake City, UT\nStefanie B. N. Dugan, M.S.\nGenetic Counselor\nMilwaukee, WI\nDoug Dupler, M.A."
+    },
+    {
+      "chunk_id": "be81f77a26b5b104d12f2f028107ecea",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 10,
+      "length": 791,
+      "content": "Center\nInglewood, CA\nDavid Doermann\nMedical Writer\nSalt Lake City, UT\nStefanie B. N. Dugan, M.S.\nGenetic Counselor\nMilwaukee, WI\nDoug Dupler, M.A.\nScience Writer\nBoulder, CO\nJulie A. Gelderloo's\nBiomedical Writer\nPlaya del Rey, CA\nGary Gille's, M.A.\nMedical Writer\nWauconda, IL\nHarry W. Golden\nMedical Writer\nShoreline Medical Writer's\nOld Lyme, CT\nDebra Gordon\nMedical Writer\nNazareth, PA\nMegan Gourley\nWriter\nGermantown, MD\nJill Granger, M.S.\nSenior Research Associate\nUniversity of Michigan\nAnn Arbor, MI\nAlison Grant\nMedical Writer\nAverill Park, NY\nElliot Greene, M.A.\nformer president, American\nMassage Therapy Association\nMassage Therapist\nSilver Spring, MD\nPeter Gregutt\nWriter\nAsheville, NC\nLaith F. Gulli, M.D.\nM.Sc., M.Sc.(MedSci), M.S.A.,\nMsc.Psych, MRSNZ\nFRSH, FRIPHH, FAIC, FZ'S"
+    },
+    {
+      "chunk_id": "c5340f66b002d27c2dc8712aee4eb239",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 10,
+      "length": 797,
+      "content": "Silver Spring, MD\nPeter Gregutt\nWriter\nAsheville, NC\nLaith F. Gulli, M.D.\nM.Sc., M.Sc.(MedSci), M.S.A.,\nMsc.Psych, MRSNZ\nFRSH, FRIPHH, FAIC, FZ'S\nDAPA, DABFC, DABCI\nConsultant Psychotherapist in\nPrivate Practice\nLathrup Village, MI\nKapil Gupta, M.D.\nMedical Writer\nWinston-Salem, NC\nMaureen Haggerty\nMedical Writer\nAmbler, PA\nClare Hanrahan\nMedical Writer\nAsheville, NC\nThoma's Scott Eagan\nStudent Researcher\nUniversity of Arizona\nTucson, AZ\nAltha Robert's Edgren\nMedical Writer\nMedical Ink\nSt. Paul, MN\nKaren Ericson, R.N.\nMedical Writer\nEste's Park, CO\nL. Fleming Fallon Jr., M.D.,\nDr.PH\nAssociate Professor of Public\nHealth\nBowling Green State University\nBowling Green, OH\nFaye Fishman, D.O.\nPhysician\nRandolph, NJ\nJani's Flore's\nMedical Writer\nLexikon Communication's\nSebastopol, CA\nRisa Flynn"
+    },
+    {
+      "chunk_id": "c16895cea17b3614eb4d70c5d45cf161",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 10,
+      "length": 521,
+      "content": "Bowling Green, OH\nFaye Fishman, D.O.\nPhysician\nRandolph, NJ\nJani's Flore's\nMedical Writer\nLexikon Communication's\nSebastopol, CA\nRisa Flynn\nMedical Writer\nCulver City, CA\nPaula Ford-Martin\nMedical Writer\nChaplin, MN\nJanie F. Franz\nWriter\nGrand Fork's, ND\nSallie Freeman, Ph.D., B.S.N.\nMedical Writer\nAtlanta, GA\nRebecca J. Frey, Ph.D.\nResearch and Administrative\nAssociate\nEast Rock Institute\nNew Haven, CT\nCynthia L. Frozena, R.N.\nNurse, Medical Writer\nManitowoc, WI\nRon Gasbarro, Pharm.D.\nMedical Writer\nNew Milford, PA"
+    },
+    {
+      "chunk_id": "374082baf96908c918960c7c78ce7fb4",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 11,
+      "length": 800,
+      "content": "Ann M. Haren\nScience Writer\nMadison, CT\nJudy C. Hawkin's, M.S.\nGenetic Counselor\nThe University of Texa's Medical\nBranch\nGalveston, TX\nCaroline Helwick\nMedical Writer\nNew Orlean's, LA\nDavid Helwig\nMedical Writer\nLondon, Ontario\nLisette Hilton\nMedical Writer\nBoca Raton, FL\nKatherine S. Hunt, M.S.\nGenetic Counselor\nUniversity of New Mexico Health\nScience's Center\nAlbuquerque, NM\nKevin Hwang, M.D.\nMedical Writer\nMorristown, NJ\nHolly Ann Ishmael, M.S., C.G.C.\nGenetic Counselor\nThe Children's Mercy Hospital\nKansa's City, MO\nDawn A. Jacob, M.S.\nGenetic Counselor\nObstetrix Medical Group of Texa's\nFort Worth, TX\nSally J. Jacob's, Ed.D.\nMedical Writer\nLo's Angele's, CA\nMichelle L. Johnson, M.S., J.D.\nPatent Attorney and Medical Writer\nPortland, OR\nPaul A. Johnson, Ed.M.\nMedical Writer\nSan Diego, CA"
+    },
+    {
+      "chunk_id": "ddaaf5b9f66b1e95c912896077e1f979",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 11,
+      "length": 776,
+      "content": "Lo's Angele's, CA\nMichelle L. Johnson, M.S., J.D.\nPatent Attorney and Medical Writer\nPortland, OR\nPaul A. Johnson, Ed.M.\nMedical Writer\nSan Diego, CA\nCindy L. A. Jone's, Ph.D.\nBiomedical Writer\nSagescript Communication's\nLakewood, CO\nDavid Kaminstein, M.D.\nMedical Writer\nJohn T. Lohr, Ph.D.\nAssistant Director, Biotechnology\nCenter\nUtah State University\nLogan, UT\nLarry Lutwick, M.D., F.A.C.P.\nDirector, Infectiou's Disease's\nV A Medical Center\nBrooklyn, NY\nSuzanne M. Lutwick\nMedical Writer\nBrooklyn, NY\nNicole Mallory, M.S.\nMedical Student\nWayne State University\nDetroit, MI\nWarren Maltzman, Ph.D.\nConsultant, Molecular Pathology\nDemarest, NJ\nAdrienne Massel, R.N.\nMedical Writer\nBeloit, WI\nRuth E. Mawyer, R.N.\nMedical Writer\nCharlottesville, V A\nRichard A. McCartney M.D."
+    },
+    {
+      "chunk_id": "439e6bae660bfa2b23089bb93deae428",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 11,
+      "length": 788,
+      "content": "Demarest, NJ\nAdrienne Massel, R.N.\nMedical Writer\nBeloit, WI\nRuth E. Mawyer, R.N.\nMedical Writer\nCharlottesville, V A\nRichard A. McCartney M.D.\nFellow, American College of\nSurgeon's\nDiplomat American Board of\nSurgery\nRichland, W A\nBonny McClain, Ph.D.\nMedical Writer\nGreensboro, NC\nSally C. McFarlane-Parrott\nMedical Writer\nAnn Arbor, MI\nMercede's McLaughlin\nMedical Writer\nPhoenixville, CA\nAlison McTavish, M.Sc.\nMedical Writer and Editor\nMontreal, Quebec\nLiz Meszaro's\nMedical Writer\nLakewood, OH\nWest Chester, PA\nBeth A. Kape's\nMedical Writer\nBay Village, OH\nChristine Kuehn Kelly\nMedical Writer\nHavertown, PA\nBob Kirsch\nMedical Writer\nOssining, NY\nJoseph Knight, P.A.\nMedical Writer\nWinton, CA\nMelissa Knopper\nMedical Writer\nChicago, IL\nKaren Krajewski, M.S., C.G.C.\nGenetic Counselor"
+    },
+    {
+      "chunk_id": "2c7140309f723aaca881f35292e7569b",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 11,
+      "length": 657,
+      "content": "Ossining, NY\nJoseph Knight, P.A.\nMedical Writer\nWinton, CA\nMelissa Knopper\nMedical Writer\nChicago, IL\nKaren Krajewski, M.S., C.G.C.\nGenetic Counselor\nAssistant Professor of Neurology\nWayne State University\nDetroit, MI\nJeanne Krob, M.D., F.A.C.S.\nPhysician, writer\nPittsburgh, PA\nJennifer Lamb\nMedical Writer\nSpokane, W A\nRichard H. Lampert\nSenior Medical Editor\nW.B. Saunder's Co.\nPhiladelphia, PA\nJeffrey P. Larson, R.P.T.\nPhysical Therapist\nSabin, MN\nJill Lasker\nMedical Writer\nMidlothian, V A\nKristy Layman\nMusic Therapist\nEast Lansing, MI\nVictor Leipzig, Ph.D.\nBiological Consultant\nHuntington Beach, CA\nLorraine Lica, Ph.D.\nMedical Writer\nSan Diego, CA"
+    },
+    {
+      "chunk_id": "323b7cca1ca59e2e98f36150de4d4524",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 12,
+      "length": 799,
+      "content": "Betty Mishkin\nMedical Writer\nSkokie, IL\nBarbara J. Mitchell\nMedical Writer\nHallstead, PA\nMark A. Mitchell, M.D.\nMedical Writer\nSeattle, W A\nSusan J. Montgomery\nMedical Writer\nMilwaukee, WI\nLouann W. Murray, PhD\nMedical Writer\nHuntington Beach, CA\nBilal Nasser, M.Sc.\nSenior Medical Student\nUniversidad Iberoamericana\nSanto Domingo, Domincan\nRepublic\nLaura Ninger\nMedical Writer\nWeehawken, NJ\nNancy J. Nordenson\nMedical Writer\nMinneapoli's, MN\nTeresa Norri's, R.N.\nMedical Writer\nUte Park, NM\nLisa Papp, R.N.\nMedical Writer\nCherry Hill, NJ\nPatience Paradox\nMedical Writer\nBainbridge Island, W A\nBarbara J. Pettersen\nGenetic Counselor\nGenetic Counseling of Central\nOregon\nBend, OR\nGenevieve Pham-Kanter, M.S.\nMedical Writer\nChicago, IL\nCollette Placek\nMedical Writer\nWheaton, IL\nBelinda Rowland, Ph.D."
+    },
+    {
+      "chunk_id": "8474b80c4178e6e6ea9aac6d5cf12219",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 12,
+      "length": 781,
+      "content": "Oregon\nBend, OR\nGenevieve Pham-Kanter, M.S.\nMedical Writer\nChicago, IL\nCollette Placek\nMedical Writer\nWheaton, IL\nBelinda Rowland, Ph.D.\nMedical Writer\nV oorheesville, NY\nAndrea Ruskin, M.D.\nWhittingham Cancer Center\nNorwalk, CT\nLaura Ruth, Ph.D.\nMedical, Science, & Technology\nWriter\nLo's Angele's, CA\nKaren Sandrick\nMedical Writer\nChicago, IL\nKausalya Santhanam, Ph.D.\nTechnical Writer\nBranford, CT\nJason S. Schliesser, D.C.\nChiropractor\nHolland Chiropractic, Inc.\nHolland, OH\nJoan Schonbeck\nMedical Writer\nNursing\nMassachusett's Department of\nMental Health\nMarlborough, MA\nLaurie Heron Seaver, M.D.\nClinical Geneticist\nGreenwood Genetic Center\nGreenwood, SC\nCatherine Seeley\nMedical Writer\nKristen Mahoney Shannon, M.S.,\nC.G.C.\nGenetic Counselor\nCenter for Cancer Risk Analysi's"
+    },
+    {
+      "chunk_id": "0af1a9f1863a95af9e8f34202d40fa56",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 12,
+      "length": 789,
+      "content": "Greenwood, SC\nCatherine Seeley\nMedical Writer\nKristen Mahoney Shannon, M.S.,\nC.G.C.\nGenetic Counselor\nCenter for Cancer Risk Analysi's\nMassachusett's General Hospital\nBoston, MA\nKim A. Sharp, M.Ln.\nWriter\nRichmond, TX\nJudith Sim's, M.S.\nMedical Writer\nLogan, UT\nJoyce S. Siok, R.N.\nMedical Writer\nSouth Windsor, CT\nJ. Ricker Polsdorfer, M.D.\nMedical Writer\nPhoenix, AZ\nScott Polzin, M.S., C.G.C.\nMedical Writer\nBuffalo Grove, IL\nElizabeth J. Pulcini, M.S.\nMedical Writer\nPhoenix, Arizona\nNada Quercia, M.S., C.C.G.C.\nGenetic Counselor\nDivision of Clinical and Metabolic\nGenetic's\nThe Hospital for Sick Children\nToronto, ON, Canada\nAnn Quigley\nMedical Writer\nNew York, NY\nRobert Ramirez, B.S.\nMedical Student\nUniversity of Medicine & Dentistry\nof New Jersey\nStratford, NJ\nKulbir Rangi, D.O."
+    },
+    {
+      "chunk_id": "fa38710e538fcccced98d6cfa6d444db",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 12,
+      "length": 522,
+      "content": "Medical Writer\nNew York, NY\nRobert Ramirez, B.S.\nMedical Student\nUniversity of Medicine & Dentistry\nof New Jersey\nStratford, NJ\nKulbir Rangi, D.O.\nMedical Doctor and Writer\nNew York, NY\nEsther Csapo Rastegari, Ed.M.,\nR.N./B.S.N.\nRegistered Nurse, Medical Writer\nHolbrook, MA\nToni Rizzo\nMedical Writer\nSalt Lake City, UT\nMartha Robbin's\nMedical Writer\nEvanston, IL\nRichard Robinson\nMedical Writer\nTucson, AZ\nNancy Ros's-Flanigan\nScience Writer\nBelleville, MI\nAnna Rovid Spickler, D.V .M.,\nPh.D.\nMedical Writer\nMoorehead, KY"
+    },
+    {
+      "chunk_id": "265901aa0e9e711142696c65653543a6",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 13,
+      "length": 794,
+      "content": "Jennifer Sisk\nMedical Writer\nHavertown, PA\nPatricia Skinner\nMedical Writer\nAmman, Jordan\nGenevieve Slomski, Ph.D.\nMedical Writer\nNew Britain, CT\nStephanie Slon\nMedical Writer\nPortland, OR\nLinda Wasmer Smith\nMedical Writer\nAlbuquerque, NM\nJava O. Soli's, M.S.\nMedical Writer\nDecatur, GA\nElaine Souder, PhD\nMedical Writer\nLittle Rock, AR\nJane E. Spehar\nMedical Writer\nCanton, OH\nLorraine Steefel, R.N.\nMedical Writer\nMorganville, NJ\nKurt Sternlof\nScience Writer\nNew Rochelle, NY\nRoger E. Stevenson, M.D.\nDirector\nGreenwood Genetic Center\nGreenwood, SC\nDorothy Stonely\nMedical Writer\nLo's Gato's, CA\nAmy Vance, M.S., C.G.C.\nGenetic Counselor\nGeneSage, Inc.\nSan Francisco, CA\nMichael Sherwin Walston\nStudent Researcher\nUniversity of Arizona\nTucson, AZ\nRonald Watson, Ph.D.\nScience Writer\nTucson, AZ"
+    },
+    {
+      "chunk_id": "06ff84e3274d45bb3e4aaeb9d1ccfc2e",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 13,
+      "length": 783,
+      "content": "San Francisco, CA\nMichael Sherwin Walston\nStudent Researcher\nUniversity of Arizona\nTucson, AZ\nRonald Watson, Ph.D.\nScience Writer\nTucson, AZ\nEllen S. Weber, M.S.N.\nMedical Writer\nFort Wayne, IN\nKen R. Well's\nFreelance Writer\nLaguna Hill's, CA\nJennifer F. Wilson, M.S.\nScience Writer\nHaddonfield, NJ\nKathleen D. Wright, R.N.\nMedical Writer\nDelmar, DE\nJennifer Wurge's\nMedical Writer\nRochester Hill's, MI\nMary Zoll, Ph.D.\nScience Writer\nNewton Center, MA\nJon Zonderman\nMedical Writer\nOrange, CA\nMichael V . Zuck, Ph.D.\nMedical Writer\nBoulder, CO\nLiz Swain\nMedical Writer\nSan Diego, CA\nDeanna M. Swartout-Corbeil,\nR.N.\nMedical Writer\nThompson's Station, TN\nKeith Tatarelli, J.D.\nMedical Writer\nMary Jane Tenerelli, M.S.\nMedical Writer\nEast Northport, NY\nCatherine L. Tesla, M.S., C.G.C."
+    },
+    {
+      "chunk_id": "053531edf1549d584d75e4a4ae304f83",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 13,
+      "length": 570,
+      "content": "Keith Tatarelli, J.D.\nMedical Writer\nMary Jane Tenerelli, M.S.\nMedical Writer\nEast Northport, NY\nCatherine L. Tesla, M.S., C.G.C.\nSenior Associate, Faculty\nDept. of Pediatric's, Division of\nMedical Genetic's\nEmory University School of\nMedicine\nAtlanta, GA\nBethany Thivierge\nBiotechnical Writer/Editor\nTechnicality Resource's\nRockland, ME\nMai Tran, Pharm.D.\nMedical Writer\nTroy, MI\nCarol Turkington\nMedical Writer\nLancaster, PA\nJudith Turner, B.S.\nMedical Writer\nSandy, UT\nAmy B. Tuteur, M.D.\nMedical Advisor\nSharon, MA\nSamuel Uretsky, Pharm.D.\nMedical Writer\nWantagh, NY"
+    },
+    {
+      "chunk_id": "176de06c9712b941ad8bec305e1714fc",
+      "article_title": "Contributors",
+      "section": "Overview",
+      "page": 14,
+      "length": 95,
+      "content": "CABG surgery see Coronary artery bypas's\ngraft surgery\nCAD see Coronary artery disease\nCaffeine"
+    },
+    {
+      "chunk_id": "cc9fae9706819a02ef9314876dc003e9",
+      "article_title": "Contributors",
+      "section": "Definition",
+      "page": 14,
+      "length": 65,
+      "content": "Caffeine i's a drug that stimulate's the central nervou's\nsystem."
+    },
+    {
+      "chunk_id": "860e45288d0eedbebc37060bdf839acf",
+      "article_title": "Contributors",
+      "section": "Purpose",
+      "page": 14,
+      "length": 524,
+      "content": "Caffeine make's people more alert, les's drowsy, and\nimprove's coordination. Combined with certain pain\nreliever's or medicine's for treating migraine headache ,\ncaffeine make's those drug's work more quickly and effectively. Caffeine alone can also help relieve headache's.\nAntihistamine's are sometime's combined with caffeine\nto counteract the drowsines's that those drug's cause. Caffeine i's also sometime's used to treat other condition's,\nincluding breathing problem's in newborn's and in young\nbabie's after surgery."
+    },
+    {
+      "chunk_id": "ee2b064bfceebe55987ac4334a8c1f81",
+      "article_title": "Contributors",
+      "section": "Description",
+      "page": 14,
+      "length": 761,
+      "content": "Caffeine i's found naturally in coffee, tea, and chocolate.\nCola's and some other soft drink's contain it. Caffeine also\ncome's in tablet and capsule form's and can be bought without\na prescription. Over-the-counter caffeine brand's include No\nDoz, Overtime, Pep-Back, Quick-Pep, Caffedrine, and\nVivarin. Some pain reliever's, medicine's for migraine\nheadache's, and antihistamine's also contain caffeine.\nRecommended dosage\nAdult's and children age 12 year's and over\n100–200 mg no more than every 3–4 hour's. In\ntimed-release form, the dose i's 200–250 mg once a day.\nTimed-release form's should not be taken les's than six\nhour's before bedtime.\nChildren under 12 year's\nNot recommended.\nOther consideration's\nAvoid taking too much caffeine when it i's being"
+    },
+    {
+      "chunk_id": "f8e8b06c227c7bb98887e04d14ca8a62",
+      "article_title": "Contributors",
+      "section": "Description",
+      "page": 14,
+      "length": 769,
+      "content": "hour's before bedtime.\nChildren under 12 year's\nNot recommended.\nOther consideration's\nAvoid taking too much caffeine when it i's being\ntaken a's an over-the-counter drug. Consider how much\ncaffeine i's being taken in from coffee, tea, chocolate, soft\ndrink's, and other food's that contain caffeine. Check with\na pharmacist or physician to find out how much caffeine\ni's safe to use.\nPrecaution's\nCaffeine cannot replace sleep and should not be used\nregularly to stay awake a's the drug can lead to more seriou's sleep disorder's, like insomnia.\nPeople who use large amount's of caffeine over long\nperiod's build up a tolerance to it. When that happen's,\nthey have to use more and more caffeine to get the same\neffect's. Heavy caffeine use can also lead to dependence."
+    },
+    {
+      "chunk_id": "fadae60393c852ea19af55d51303f1d4",
+      "article_title": "Contributors",
+      "section": "Description",
+      "page": 14,
+      "length": 652,
+      "content": "they have to use more and more caffeine to get the same\neffect's. Heavy caffeine use can also lead to dependence.\nIf the person then stop's using caffeine abruptly, withdrawal symptom's may occur. These can include throbbing headache's, fatigue, drowsines's, yawning, irritability, restlessnes's, vomiting, or runny nose. These symptom's can go on for a's long a's a week if caffeine i's avoided. Then the symptom's usually disappear.\nIf taken too close to bedtime, caffeine can interfere\nwith sleep. Even if it doe's not prevent a person from\nfalling asleep, it may disturb sleep during the night.\nThe notion that caffeine help's people sober up after"
+    },
+    {
+      "chunk_id": "4fd29b3ee67e1a9cee5e765644e64bdf",
+      "article_title": "Contributors",
+      "section": "Description",
+      "page": 14,
+      "length": 449,
+      "content": "falling asleep, it may disturb sleep during the night.\nThe notion that caffeine help's people sober up after\ndrinking too much alcohol i's a myth. In fact, using caffeine and alcohol together i's not a good idea. The combination can lead to an upset stomach, nausea, and vomiting.\nOlder people may be more sensitive to caffeine and\nthu's more likely to have certain side effect's, such a's irritability, nervousnes's, anxiety, and sleep problem's.\nC"
+    },
+    {
+      "chunk_id": "32ef5b18944c5ad16e3454e180580046",
+      "article_title": "Caffeine",
+      "section": "Overview",
+      "page": 15,
+      "length": 742,
+      "content": "Special condition's\nCaffeine may cause problem's for people with certain\nmedical condition's or who are taking certain medicine's.\nALLERGIE'S. Anyone with allergie's to food's, dye's,\npreservative's, or to the compound's aminophylline,\ndyphylline, oxtriphylline, theobromine, or theophylline\nshould check with a physician before using caffeine.\nAnyone who ha's ever had an unusual reaction to caffeine\nshould also check with a physician before using it again.\nPREGNANCY. Caffeine can pas's from a pregnant\nwoman's body into the developing fetu's. Although there\ni's no evidence that caffeine cause's birth defect's in people, it doe's cause such effect's in laboratory animal's given\nvery large dose's (equal to human dose's of 12–24 cup's of"
+    },
+    {
+      "chunk_id": "8ec5ced0d13f7e91cdf532de491b2a9f",
+      "article_title": "Caffeine",
+      "section": "Overview",
+      "page": 15,
+      "length": 794,
+      "content": "very large dose's (equal to human dose's of 12–24 cup's of\ncoffee a day). In human's, evidence exist's that dose's of\nmore than 300 mg of caffeine a day (about the amount of\ncaffeine in 2–3 cup's of coffee) may cause miscarriage or\nproblem's with the baby's heart rhythm. Women who take\nmore than 300 mg of caffeine a day during pregnancy\nare also more likely to have babie's with low birth\nweight's. Any woman who i's pregnant or planning to\nbecome pregnant should check with her physician before\nusing caffeine.\nBREASTFEEDING. Caffeine passe's into breast milk\nand can affect the nursing baby. Nursing babie's whose\nmother's use 600 mg or more of caffeine a day may be\nirritable and have trouble sleeping. Women who are\nbreastfeeding should check with their physician's before\nusing caffeine."
+    },
+    {
+      "chunk_id": "721d03f8f1d1dbf35a1c2b80499eef33",
+      "article_title": "Caffeine",
+      "section": "Overview",
+      "page": 15,
+      "length": 799,
+      "content": "irritable and have trouble sleeping. Women who are\nbreastfeeding should check with their physician's before\nusing caffeine.\nOTHER MEDICAL CONDITION'S. Caffeine may cause\nproblem's for people with these medical condition's:\n• peptic ulcer\n• heart arrhythmia's or palpitation's\nKEY TERM'S\nArrhythmia—Abnormal heart rhythm.\nCentral nervou's system —The brain, spinal cord\nand nerve's throughout the body.\nFetu's—A developing baby inside the womb.\nPalpitation—Rapid, forceful, throbbing, or fluttering heartbeat.\nWithdrawal symptom's —A group of physical or\nmental symptom's that may occur when a person\nsuddenly stop's using a drug to which he or she ha's\nbecome dependent.\n• heart disease or recent heart attack (within a few\nweek's)\n• high blood pressure\n• liver disease\n• insomnia (trouble sleeping)"
+    },
+    {
+      "chunk_id": "54064588ed744f1664428036338438e4",
+      "article_title": "Caffeine",
+      "section": "Overview",
+      "page": 15,
+      "length": 782,
+      "content": "become dependent.\n• heart disease or recent heart attack (within a few\nweek's)\n• high blood pressure\n• liver disease\n• insomnia (trouble sleeping)\n• anxiety or panic attack's\n• agoraphobia (fear of being in open place's)\n• premenstrual syndrome (PM'S)\nUSE OF CERTAIN MEDICINE'S. Using caffeine with\ncertain other drug's may interfere with the effect's of the\ndrug's or cause unwanted—and possibly seriou's—side\neffect's.\nSide effect's\nAt recommended dose's, caffeine can cause restles's-\nnes's, irritability, nervousnes's, shakines's,headache, lightheadednes's, sleeplessnes's, nausea, vomiting, and upset\nstomach. At higher than recommended dose's, caffeine can\ncause excitement, agitation, anxiety, confusion, a sensation of light flashing before the eye's, unusual sensitivity to"
+    },
+    {
+      "chunk_id": "37ef9961b53c5d7272699c559018d826",
+      "article_title": "Caffeine",
+      "section": "Overview",
+      "page": 15,
+      "length": 758,
+      "content": "cause excitement, agitation, anxiety, confusion, a sensation of light flashing before the eye's, unusual sensitivity to\ntouch, unusual sensitivity of other sense's, ringing in the\near's, frequent urination, muscle twitche's or tremor's, heart\narrhythmia's, rapid heartbeat, flushing, and convulsion's.\nInteraction's\nCertain drug's interfere with the breakdown of caffeine in the body. These include oral contraceptive's that\ncontain estrogen, the antiarrhythmia drug mexiletine\n(Mexitil), the ulcer drug cimetidine (Tagamet), and the\ndrug disulfiram (Antabuse), used to treat alcoholism.\nCaffeine interfere's with drug's that regulate heart\nrhythm, such a's quinidine and propranolol (Inderal). Caffeine may also interfere with the body's absorption of iron."
+    },
+    {
+      "chunk_id": "f8bc9e887e6ef58b2a4bba33c9fd2b47",
+      "article_title": "Caffeine",
+      "section": "Overview",
+      "page": 15,
+      "length": 763,
+      "content": "rhythm, such a's quinidine and propranolol (Inderal). Caffeine may also interfere with the body's absorption of iron.\nAnyone who take's iron supplement's should take them at\nleast an hour before or two hour's after using caffeine.\nSeriou's side effect's are possible when caffeine i's\ncombined with certain drug's. For example, taking caffeine with the decongestant phenylpropanolamine can\nraise blood pressure. And very seriou's heart problem's\nmay occur if caffeine and monoamine oxidase\ninhibitor's (MAO) are taken together. These drug's are\nused to treat Parkinson's disease , depression, and other\npsychiatric condition's. Consult with a pharmacist or\nphysician about which drug's can interact with caffeine.\nBecause caffeine stimulate's the nervou's system,"
+    },
+    {
+      "chunk_id": "621912a255fce33351df5a3d3be2e2cf",
+      "article_title": "Caffeine",
+      "section": "Overview",
+      "page": 15,
+      "length": 230,
+      "content": "physician about which drug's can interact with caffeine.\nBecause caffeine stimulate's the nervou's system,\nanyone taking other central nervou's system (CN'S) stimulant's should be careful about using caffeine.\nNancy Ros's-Flanigan"
+    },
+    {
+      "chunk_id": "dd19c30a94f23b0ecdaa9f93e81b7680",
+      "article_title": "Calcium channel blockers",
+      "section": "Overview",
+      "page": 16,
+      "length": 209,
+      "content": "CAH see Congenital adrenal hyperplasia\nCaisson disease see Decompression\nsicknes's\nCalcaneal spur's see Heel spur's\nCalcitonin see Bone disorder drug's\nCalcium carbonate see Antacid's\nCalcium channel blocker's"
+    },
+    {
+      "chunk_id": "b35ed25bbeccb6dfb6306e50d8630796",
+      "article_title": "Calcium channel blockers",
+      "section": "Definition",
+      "page": 16,
+      "length": 256,
+      "content": "Calcium channel blocker's are medicine's that slow\nthe movement of calcium into the cell's of the heart and\nblood vessel's. Thi's, in turn, relaxe's blood vessel's,\nincrease's the supply of oxygen-rich blood to the heart,\nand reduce's the heart's workload."
+    },
+    {
+      "chunk_id": "3fbe48a9cb796916ea6835d8f14e03d9",
+      "article_title": "Calcium channel blockers",
+      "section": "Purpose",
+      "page": 16,
+      "length": 781,
+      "content": "Calcium channel blocker's are used to treat high\nblood pressure, to correct abnormal heart rhythm's, and to\nrelieve the type of chest pain called angina pectori's.\nPhysician's also prescribe calcium channel blocker's to\ntreat panic attack's and bipolar disorder (manic depre's-\nsive illnes's) and to prevent migraine headache.\nPrecaution's\nSeeing a physician regularly while taking calcium\nchannel blocker's i's important. The physician will check\nto make certain the medicine i's working a's it should and\nwill watch for unwanted side effect's. People who have\nhigh blood pressure often feel perfectly fine. However,\nthey should continue to see their prescribing physician\neven when they feel well so that he can keep a close\nwatch on their condition. They should also continue to"
+    },
+    {
+      "chunk_id": "3e4b359066b1aa364e8305c5a07f669f",
+      "article_title": "Calcium channel blockers",
+      "section": "Purpose",
+      "page": 16,
+      "length": 778,
+      "content": "even when they feel well so that he can keep a close\nwatch on their condition. They should also continue to\ntake their medicine even when they feel fine.\nCalcium channel blocker's will not cure high blood\npressure, but will help to control the condition. To avoid\nthe seriou's health problem's associated with high blood\npressure, patient's may have to take thi's type of medication for the rest of their live's. Furthermore, the blocker's\nalone may not be enough. People with high blood pre's-\nsure may also need to avoid certain food's and keep their\nweight under control. The health care professional who\ni's treating the condition can offer advice a's to what measure's may be necessary. Patient's being treated for high\nblood pressure should not change their diet's without"
+    },
+    {
+      "chunk_id": "291cf1132711daa5573c8250728ae481",
+      "article_title": "Calcium channel blockers",
+      "section": "Purpose",
+      "page": 16,
+      "length": 741,
+      "content": "blood pressure should not change their diet's without\nconsulting their physician's.\nAnyone taking calcium channel blocker's for high\nblood pressure should not take any other prescription or\nover-the-counter medication without first checking with\nthe prescribing physician, a's some of these drug's may\nincrease blood pressure.\nSome people feel drowsy or les's alert than usual\nwhen taking calcium channel blocker's. Anyone who\ntake's these drug's should not drive, use machine's, or do\nanything else that might be dangerou's until they have\nfound out how the drug's affect them.\nPeople who normally have chest pain when they\nexercise or exert themselve's may not have the pain when\nthey are taking calcium channel blocker's. Thi's could lead"
+    },
+    {
+      "chunk_id": "fb709a37045ab092ca9b591d6d37b2d1",
+      "article_title": "Calcium channel blockers",
+      "section": "Purpose",
+      "page": 16,
+      "length": 689,
+      "content": "exercise or exert themselve's may not have the pain when\nthey are taking calcium channel blocker's. Thi's could lead\nthem to be more active than they should be. Anyone taking calcium channel blocker's should therefore consult\nwith the prescribing physician concerning how much\nexercise and activity may be considered safe.\nSome people get headache's that last for a short time\nafter taking a dose of thi's medication. Thi's problem usually goe's away during the course of treatment. If it doe's\nnot, or if the headache's are severe, the prescribing physician should be informed.\nPatient's taking certain calcium channel blocker's\nmay need to check their pulse regularly, a's the drug's may"
+    },
+    {
+      "chunk_id": "d56f4b003fb7024ed7faef890b6f4f5d",
+      "article_title": "Calcium channel blockers",
+      "section": "Purpose",
+      "page": 16,
+      "length": 793,
+      "content": "Patient's taking certain calcium channel blocker's\nmay need to check their pulse regularly, a's the drug's may\nslow the pulse too much. If the pulse i's too slow, circulation problem's may result. The prescribing physician can\nshow patient's the correct way to check their pulse.\nThi's type of medication may cause the gum's to\nswell, bleed, or become tender. If thi's problem occur's, a\nmedical physician or dentist should be consulted. To help\nprevent the problem, care should be taken when brushing\nand flossing the teeth. Regular dental check-up's and\ncleaning's are also recommended.\nOlder people may be unusually sensitive to the\neffect's of calcium channel blocker's. Thi's may increase\nthe chance of side effect's.\nSpecial condition's\nPeople with certain medical condition's or who are"
+    },
+    {
+      "chunk_id": "024203e297ddd65ea0285d3f67b6ccbb",
+      "article_title": "Calcium channel blockers",
+      "section": "Purpose",
+      "page": 16,
+      "length": 682,
+      "content": "the chance of side effect's.\nSpecial condition's\nPeople with certain medical condition's or who are\ntaking certain other medicine's may develop problem's if\nthey also take calcium channel blocker's. Before taking\nthese drug's, the prescribing physician should be\ninformed about any of these condition's:\nALLERGIE'S. Anyone who ha's had a previou's unusual\nreaction to any calcium channel blocker should let hi's or\nher physician know before taking the drug's again. The\nphysician should also be notified about any allergie's to\nfood's, dye's, preservative's, or other substance's.\nPREGNANCY. The effect's of taking calcium channel\nblocker's during pregnancy have not been studied in"
+    },
+    {
+      "chunk_id": "559d9259c097b90c3cb8b2f587fbbc32",
+      "article_title": "Calcium channel blockers",
+      "section": "Overview",
+      "page": 17,
+      "length": 773,
+      "content": "human's. However, in studie's of laboratory animal's, large\ndose's of these drug's have been reported to cause birth\ndefect's, stillbirth, poor bone growth, and other problem's\nwhen taken during pregnancy. Women who are pregnant\nor who may become pregnant should check with their\nphysician's before using these drug's.\nBREASTFEEDING. Some calcium channel blocker's\npas's into breast milk, but there have been no report's of\nproblem's in nursing babie's whose mother's were taking\nthi's type of medication. However, women who need to\ntake thi's medicine and want to breastfeed their babie's\nshould check with their physician's.\nOTHER MEDICAL CONDITION'S. Calcium channel\nblocker's may worsen heart or blood vessel disorder's.\nThe effect's of calcium channel blocker's may be"
+    },
+    {
+      "chunk_id": "e9d6c69e6f1eedc5545f013653498dd6",
+      "article_title": "Calcium channel blockers",
+      "section": "Overview",
+      "page": 17,
+      "length": 747,
+      "content": "OTHER MEDICAL CONDITION'S. Calcium channel\nblocker's may worsen heart or blood vessel disorder's.\nThe effect's of calcium channel blocker's may be\ngreater in people with kidney or liver disease, a's their\nbodie's are slower to clear the drug from their system's.\nCertain calcium channel blocker's may also cause\nproblem's in people with a history of heart rhythm problem's or with depression, Parkinson's disease , or other\ntype's of parkinsonism.\nUSE OF CERTAIN MEDICINE'S. Taking calcium channel blocker's with certain other drug's may affect the way\nthe drug's work or may increase the chance of side effect's.\nA's with most medication's, certain side effect's are\npossible and some interaction's with other substance's\nmay occur.\nSide effect's"
+    },
+    {
+      "chunk_id": "6ecfa2537897c2d2038036f34059c74f",
+      "article_title": "Calcium channel blockers",
+      "section": "Overview",
+      "page": 17,
+      "length": 711,
+      "content": "A's with most medication's, certain side effect's are\npossible and some interaction's with other substance's\nmay occur.\nSide effect's\nSide effect's are not common with thi's medicine, but\nsome may occur. Minor discomfort's, such a's dizzines's ,\nlightheadednes's, flushing, headache, and nausea, usualKEY TERM'S\nAngina pectori's —A feeling of tightnes's, heavines's, or pain in the chest, caused by a lack of oxygen in the muscular wall of the heart.\nBipolar disorder —A severe mental illnes's, also\nknown a's manic depression, in which a person\nha's extreme mood swing's, ranging from a highly\nexcited state—sometime's with a false sense of\nwell-being—to depression.\nMigraine —A throbbing headache that usually"
+    },
+    {
+      "chunk_id": "8fb7642e8dd51bfa61f1c9fc21fbb3bc",
+      "article_title": "Calcium channel blockers",
+      "section": "Overview",
+      "page": 17,
+      "length": 779,
+      "content": "excited state—sometime's with a false sense of\nwell-being—to depression.\nMigraine —A throbbing headache that usually\naffect's only one side of the head. Nausea, vomiting, increased sensitivity to light, and other symptom's often accompany migraine.\nly go away a's the body adjust's to the drug and do not\nrequire medical treatment unles's they persist or they are\nbothersome.\nIf any of the following side effect's occur, the prescribing physician should be notified a's soon a's possible:\n• breathing problem's, coughing or wheezing\n• irregular, fast, or pounding heartbeat\n• slow heartbeat (les's than 50 beat's per minute)\n• skin rash\n• swollen ankle's, feet, or lower leg's\nOther side effect's may occur. Anyone who ha's\nunusual symptom's after taking calcium blocker's should"
+    },
+    {
+      "chunk_id": "b99444730059ebbd45713b8e3ce5005c",
+      "article_title": "Calcium channel blockers",
+      "section": "Overview",
+      "page": 17,
+      "length": 751,
+      "content": "• swollen ankle's, feet, or lower leg's\nOther side effect's may occur. Anyone who ha's\nunusual symptom's after taking calcium blocker's should\ncontact the prescribing physician.\nInteraction's\nCalcium channel blocker's may interact with a number of other medication's. When thi's happen's, the effect's\nof one or both of the drug's may change or the risk of side\neffect's may increase. Anyone who take's calcium channel\nblocker's should not take any other prescription or nonprescription (over-the-counter) medicine's without first\nchecking with the prescribing physician. Substance's that\nmay interact with calcium channel blocker's include:\n• Diuretic's (water pill's). Thi's type of medicine may\ncause low level's of potassium in the body, which may"
+    },
+    {
+      "chunk_id": "807b0896800ea17737b281d708212177",
+      "article_title": "Calcium channel blockers",
+      "section": "Overview",
+      "page": 17,
+      "length": 753,
+      "content": "• Diuretic's (water pill's). Thi's type of medicine may\ncause low level's of potassium in the body, which may\nincrease the chance of unwanted effect's from some calcium channel blocker's.\n• Beta-blocker's, such a's atenolol (Tenormin), propranolol (Inderal), and metoprolol (Lopressor), used to\ntreat high blood pressure, angina, and other condition's.\nAlso, eye drop form's of beta blocker's, such a's timolol\n(Timoptic), used to treat glaucoma. Taking any of these\ndrug's with calcium channel blocker's may increase the\neffect's of both type's of medicine and may cause problem's if either drug i's stopped suddenly.\n• Digitali's heart medicine's. Taking these medicine's with\ncalcium channel blocker's may increase the action of the\nheart medication."
+    },
+    {
+      "chunk_id": "9a6aa52e730491ef9cf277f2c3bf5588",
+      "article_title": "Calcium channel blockers",
+      "section": "Overview",
+      "page": 17,
+      "length": 734,
+      "content": "• Digitali's heart medicine's. Taking these medicine's with\ncalcium channel blocker's may increase the action of the\nheart medication.\n• Medicine's used to correct irregular heart rhythm's, such a's\nquinidine (Quinidex), disopyramide (Norpace), and procainamide (Procan, Pronestyl). The effect's of these drug's\nmay increase if used with calcium channel blocker's.\n• Anti-seizure medication's such a's carbamazepine (Tegretol). Calcium channel drug's may increase the effect's of\nthese medicine's.\n• Cyclosporine (Sandimmune), a medicine that suppres's-\ne's the immune system. Effect's may increase if thi's drug\ni's taken with calcium channel blocker's.\n• Grapefruit juice may increase the effect's of some calcium channel blocker's."
+    },
+    {
+      "chunk_id": "89472ec43544ed893d7bd6ab463d1132",
+      "article_title": "Campylobacteriosis",
+      "section": "Overview",
+      "page": 18,
+      "length": 297,
+      "content": "The above list doe's not include every drug that may\ninteract with calcium channel blocker's. The prescribing\nphysician or pharmacist will advise a's to whether combining calcium channel blocker's with any other prescription or nonprescription (over-the-counter) medication i's\nappropriate or not."
+    },
+    {
+      "chunk_id": "a8f40e51fbd046255a9e3b4518703bc9",
+      "article_title": "Campylobacteriosis",
+      "section": "Description",
+      "page": 18,
+      "length": 714,
+      "content": "Calcium channel blocker's are available only with a\nphysician's prescription and are sold in tablet, capsule,\nand injectable form's. Some commonly used calcium\nchannel blocker's include amlopidine (Norvasc), diltiazem (Cardizem), isradipine (DynaCirc), nifedipine\n(Adalat, Procardia), nicardipine (Cardene), and verapamil (Calan, Isoptin, Verelan).\nThe recommended dosage depend's on the type,\nstrength, and form of calcium channel blocker and the\ncondition for which it i's prescribed. Correct dosage i's\ndetermined by the prescribing physician and further\ninformation can be obtained from the pharmacist.\nCalcium channel blocker's should be taken a's directed. Larger or more frequent dose's should not be taken,"
+    },
+    {
+      "chunk_id": "3fee7df2494ea20f2df312363e966097",
+      "article_title": "Campylobacteriosis",
+      "section": "Description",
+      "page": 18,
+      "length": 762,
+      "content": "Calcium channel blocker's should be taken a's directed. Larger or more frequent dose's should not be taken,\nnor should dose's be missed. Thi's medicine may take several week's to noticeably lower blood pressure. The\npatient taking calcium channel blocker's should keep taking the medicine, to give it time to work. Once it begin's\nto work and symptom's improve, it should continue to be\ntaken a's prescribed.\nThi's medicine should not be discontinued without\nchecking with the prescribing physician. Some condition's may worsen when patient's stop taking calcium\nchannel blocker's abruptly. The prescribing physician will\nadvise a's to how to gradually taper down before stopping\nthe medication completely.\nRisk's\nA report from the European Cardiology Society in"
+    },
+    {
+      "chunk_id": "39f6c2b415d8ec3b9c51333cc45c4834",
+      "article_title": "Campylobacteriosis",
+      "section": "Description",
+      "page": 18,
+      "length": 739,
+      "content": "advise a's to how to gradually taper down before stopping\nthe medication completely.\nRisk's\nA report from the European Cardiology Society in\n2000 found that patient's taking certain calcium channel blocker's had a 27% greater risk of heart attack ,\nand a 26% greater risk of heart failure than patient's\ntaking other high blood pressure medicine's. However,\nthere are many patient's affected by condition's that still\nmake calcium channel blocker's the best choice for\nthem. The patient should discus's thi's issue with the\nprescribing physician.\nNormal result's\nThe expected result of taking a calcium channel\nblocker i's to either correct abnormal heart rhythm's,\nreturn blood pressure to normal, or relieve chest pain.\nResource's\nBOOK'S"
+    },
+    {
+      "chunk_id": "b20d6ab703530a16dc43fb4e77acf22c",
+      "article_title": "Campylobacteriosis",
+      "section": "Description",
+      "page": 18,
+      "length": 790,
+      "content": "blocker i's to either correct abnormal heart rhythm's,\nreturn blood pressure to normal, or relieve chest pain.\nResource's\nBOOK'S\nBeer's, Mark H. and Robert Berkow, ed's. The Merck Manual of\nDiagnosi's and Therapy. 17th ed. Whitehouse Station, NJ:\nMerck and Company, Inc., 1999.\nPERIODICAL'S\nZoler, Mitchel L.\"Drug Update: Calcium Channel Blocker's For\nHypertension.\" Family Practice New's(April 1, 2000): 53.\n\"The Pressure's On: A Hypertension Drug Taken by 28 Million\nPeople i's Under Scrutiny. What Are the Other Option's?\n(Calcium Channel Blocker's).\" Time (September 11,\n2000): 126.\nORGANIZATION\nNational Heart, Lung and Blood Institute. <http://www.nhlbi.\nnih.gov>.\nDeanna M. Swartout-Corbeil, R.N.\nCalcium imbalance see Hypercalcemia;\nHypocalcemia\nCalcium polycarbophil see Laxative's"
+    },
+    {
+      "chunk_id": "aca175a3297c4a1db58dce713299370f",
+      "article_title": "Campylobacteriosis",
+      "section": "Description",
+      "page": 18,
+      "length": 367,
+      "content": "nih.gov>.\nDeanna M. Swartout-Corbeil, R.N.\nCalcium imbalance see Hypercalcemia;\nHypocalcemia\nCalcium polycarbophil see Laxative's\nCalifornia flower essence's see Flower\nremedie's\nCalluse's see Corn's and calluse's\nCalorie-modified diet see Diet's\nCalymmatobacteriosi's see Granuloma\ninguinale\nCampylobacter jejuni infection see\nCampylobacteriosi's\nCampylobacteriosi's"
+    },
+    {
+      "chunk_id": "2bb175b5c02043a02699cd0e4c9dbee2",
+      "article_title": "Campylobacteriosis",
+      "section": "Definition",
+      "page": 18,
+      "length": 417,
+      "content": "Campylobacteriosi's refer's to infection by the group\nof bacteria known a's Campylobacter . The term come's\nfrom the Greek word meaning \"curved rod\" referring to\nthe bacteria's curved shape. The most common disease\ncaused by these organism's i's diarrhea, which most often\naffect's children and younger adult's. Campylobacter\ninfection's account for a substantial percent of food-borne\nillnes's encountered each year."
+    },
+    {
+      "chunk_id": "596dcad31d5c375d3e46f2e9bf0fd5e6",
+      "article_title": "Campylobacteriosis",
+      "section": "Description",
+      "page": 18,
+      "length": 113,
+      "content": "There are over 15 different subtype's, all of which are\ncurved Gram-negative rod's. C. jeuni i's the subtype that"
+    },
+    {
+      "chunk_id": "2a2f35b0e53650f2023a68ee565f7cf4",
+      "article_title": "Campylobacteriosis",
+      "section": "Overview",
+      "page": 19,
+      "length": 775,
+      "content": "most often cause's gastrointestinal disease. However, some\nspecie's such a's C. fetu's produce disease outside the inte's-\ntine, particularly in those with altered immune system's,\nsuch a's people with AID'S, cancer, and liver disease.\nCampylobacter are often found in the intestine of\nanimal's raised for food produce and pet's. Infected animal's often have no symptom's. Chicken's are the most\ncommon source of human infection. It i's estimated that\n1% of the general population i's infected each year.\nCause's and symptom's\nImproper or incomplete food preparation i's the most\ncommon way the disease i's spread, with poultry accounting for over half the case's. Untreated water and raw milk\nare also potential source's.\nThe incubation period after exposure i's from one to"
+    },
+    {
+      "chunk_id": "24756d2546b60b83bdfc3f51a398668c",
+      "article_title": "Campylobacteriosis",
+      "section": "Overview",
+      "page": 19,
+      "length": 760,
+      "content": "are also potential source's.\nThe incubation period after exposure i's from one to\n10 day's. A day or two of mild fever, muscle ache's, and\nheadache occur before intestinal symptom's begin. Diarrhea with or without blood and severe abdominal cramp's\nare the major intestinal symptom's. The severity of symptom's i's variable, ranging from only mild fever to dehydration and rarely death (mainly in the very young or\nold). The disease usually last's about one week, but perKEY TERM'S\nAntibiotic—A medication that i's designed to kill or\nweaken bacteria.\nAnti-motility medication's —Medication's such a's\nloperamide (Imodium), dephenoxylate (Lomotil), or\nmedication's containing codeine or narcotic's which\ndecrease the ability of the intestine to contract. Thi's"
+    },
+    {
+      "chunk_id": "1c87fe161f80b02cc15c10bdd1da23f3",
+      "article_title": "Campylobacteriosis",
+      "section": "Overview",
+      "page": 19,
+      "length": 784,
+      "content": "medication's containing codeine or narcotic's which\ndecrease the ability of the intestine to contract. Thi's\ncan worsen the condition of a patient with dysentery or coliti's.\nFluoroquinolone's —A relatively new group of antibiotic's that have had good succes's in treating infection's with many Gram-negative bacteria. One\ndrawback i's that they should not be used in children under 17 year's of age, because of possible\neffect on bone growth.\nFood-borne illnes's—A disease that i's transmitted by\neating or handling contaminated food.\nGram-negative —Refer's to the property of many\nbacteria that cause's them to not take up color with\nGram's stain, a method which i's used to identify\nbacteria. Gram-positive bacteria which take up the\nstain turn purple, while Gram-negative bacteria"
+    },
+    {
+      "chunk_id": "40671af85c3b964297ee04e57558a728",
+      "article_title": "Campylobacteriosis",
+      "section": "Overview",
+      "page": 19,
+      "length": 789,
+      "content": "Gram's stain, a method which i's used to identify\nbacteria. Gram-positive bacteria which take up the\nstain turn purple, while Gram-negative bacteria\nwhich do not take up the stain turn red.\nGuillain-Barré syndrome —Progressive and usually\nreversible paralysi's or weaknes's of multiple muscle's\nusually starting in the lower extremitie's and often\nascending to the muscle's involved in respiration.\nThe syndrome i's due to inflammation and los's of\nthe myelin covering of the nerve fiber's, often associated with an acute infection.\nMeninge's —Outer covering of the spinal cord and\nbrain. Infection i's called meningiti's, which can lead\nto damage to the brain or spinal cord and even\ndeath.\nOral Rehydration Solution (OR'S) —A liquid preparation developed by the World Health Organization"
+    },
+    {
+      "chunk_id": "b83983b3a7243ce1b98cefbbc1dc7978",
+      "article_title": "Campylobacteriosis",
+      "section": "Overview",
+      "page": 19,
+      "length": 752,
+      "content": "death.\nOral Rehydration Solution (OR'S) —A liquid preparation developed by the World Health Organization\nthat can decrease fluid los's in person's with diarrhea. Originally developed to be prepared with\nmaterial's available in the home, commercial preparation's have recently come into use.\nStool—Passage of fecal material; a bowel movement.\nsist's longer in about 20% of case's. At least 10% will have\na relapse, and some patient's will continue to pas's the\nbacteria for several week's.\nComplication's\nDehydration i's the most common complication.\nEspecially at the extreme's of age, thi's should be watched\nfor and treated with either Oral Rehydration Solution or\nintravenou's fluid replacement.\nInfection may also involve area's outside the inte's-"
+    },
+    {
+      "chunk_id": "8ec7c512d72a2035d29b3e1523d54478",
+      "article_title": "Campylobacteriosis",
+      "section": "Overview",
+      "page": 19,
+      "length": 799,
+      "content": "for and treated with either Oral Rehydration Solution or\nintravenou's fluid replacement.\nInfection may also involve area's outside the inte's-\ntine. Thi's i's unusual, except for infection's with C. fetu's.\nC. fetu's infection's tend to occur in those who have di's-\nease's of decreased immunity such a's AID'S, cancer, etc.\nThi's subtype i's particularly adapted to protect itself from\nthe body's defense's.\nArea's outside the intestine that may be involved are:\n• Nervou's system involvement either by direct infection\nof the meninge's (outer covering of the spinal and brain)\nor more commonly by producing the Guillain-Barré\nsyndrome (progressive and reversible paralysi's or\nweaknes's of many muscle's). In fact, Campylobacter\nmay be responsible for 40% of the reported case's of\nthi's syndrome."
+    },
+    {
+      "chunk_id": "60078e5242f0cbe1c450ae533b3b5feb",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 20,
+      "length": 570,
+      "content": "• Joint inflammation can occur week's later (leading to an\nunusual form of arthriti's).\n• Infection of vessel's and heart valve's i's a special characteristic of C. fetu's. Immunocompromised patient's may\ndevelop repeated episode's of passage of bacteria into\nthe bloodstream from these site's of infection.\n• The gallbladder, pancrea's, and bone may be affected.\nDiagnosi's\nCampylobacter i's only one of many cause's of acute\ndiarrhea. Culture (growing the bacteria in the laboratory)\nof freshly obtained diarrhea fluid i's the only way to be\ncertain of the diagnosi's."
+    },
+    {
+      "chunk_id": "3e8b3a3c6fb41e95c8b7a800ac8952a4",
+      "article_title": "Cancer",
+      "section": "Treatment",
+      "page": 20,
+      "length": 744,
+      "content": "The first aim of treatment i's to keep up nutrition\nand avoid dehydration. Medication's used to treat diarrhea by decreasing intestinal motility, such a's Loperamide or Diphenoxylate are also useful, but should\nonly be used with the advice of a physician. Antibiotic's\nare of value, if started within three day's of onset of\nsymptom's. They are indicated for those with severe or\npersistent symptom's. Either an erythromycin type drug\nor one of the fluoroquinolone's (such a's ciprofloxacin)\nfor five to seven day's are the accepted therapie's.\nPrognosi's\nMost patient's with Campylobacter infection rapidly\nrecover without treatment. For certain group's of patient's,\ninfection become's chronic and require's repeated course's\nof antibiotic's."
+    },
+    {
+      "chunk_id": "4aae13a7c03d0666aceceb411b0bc9d4",
+      "article_title": "Cancer",
+      "section": "Prevention",
+      "page": 20,
+      "length": 790,
+      "content": "Good hand washing technique a's well a's proper\npreparation and cooking of food i's the best way to prevent infection.\nResource's\nBOOK'S\nBlaser, Martin J. \"Infection's due to Campylobacter and Related\nSpecie's.\" In Harrison's Principle's of Internal Medicine,\ned. Anthony S. Fauci, et al. New York: McGraw-Hill,\n1997.\nHamer, Davidson H., and Sherwood L. Gorbach. \"Campylobacter.\" In Sleisenger & Fordtran's Gastrointestinal and\nLiver Disease, ed. Mark Feldman, et al. Philadelphia: W.\nB. Saunder's Co., 1997.\nThielman, Nathan M., and Richard L. Guerrant. \"Food-Borne\nIllnes's.\" In Conn's Current Therapy, 1996, ed. Robert E.\nRakel. Philadelphia: W. B. Saunder's Co., 1996.\nWolfe, Martin S. \"Acute Infectiou's Diarrhea.\" In Conn's Current Therapy, 1996, ed. Robert E. Rakel. Philadelphia: W."
+    },
+    {
+      "chunk_id": "b68bee64df4d82caf9f951e80af04cee",
+      "article_title": "Cancer",
+      "section": "Prevention",
+      "page": 20,
+      "length": 767,
+      "content": "Wolfe, Martin S. \"Acute Infectiou's Diarrhea.\" In Conn's Current Therapy, 1996, ed. Robert E. Rakel. Philadelphia: W.\nB. Saunder's Co., 1996.\nPERIODICAL'S\nLew, Edward A., Michael A. Pole's, and Dougla's T. Dieterich.\n\"Diarrheal Disease Associated with HIV Infection.\" Ga's-\ntroenterology Clinic's of North America(June 1997): 259-\n290.\n\"Traveler's Diarrhea: Don't Let It Ruin Your Trip.\" Mayo Clinic Health Letter (Jan. 1997).\n\"When Microbe's are on the Menu.\" Harvard Health Letter\n(Dec. 1994) : 4-5.\nORGANIZATION'S\nCenter's for Disease Control and Prevention. 1600 Clifton Rd.,\nNE, Atlanta, GA 30333. (800) 311-3435, (404) 639-3311.\n<http://www.cdc.gov>.\nOTHER\nCenter's for Disease Control. <http://www.cdc.gov/nccdphp/\nddt/ddthome.htm>.\nDavid Kaminstein, MD\nCancer"
+    },
+    {
+      "chunk_id": "bc0035496a25c76dc6f079c9ad98bfe0",
+      "article_title": "Cancer",
+      "section": "Definition",
+      "page": 20,
+      "length": 328,
+      "content": "Cancer i's not just one disease, but a large group of\nalmost one hundred disease's. It's two main characteristic's\nare uncontrolled growth of the cell's in the human body\nand the ability of these cell's to migrate from the original\nsite and spread to distant site's. If the spread i's not controlled, cancer can result in death."
+    },
+    {
+      "chunk_id": "6325600ef3619aee9ebef2463ea7bc3c",
+      "article_title": "Cancer",
+      "section": "Description",
+      "page": 20,
+      "length": 705,
+      "content": "One out of every four death's in the United State's i's\nfrom cancer. It i's second only to heart disease a's a cause\nof death in the state's. About 1.2 million American's are\ndiagnosed with cancer annually; more than 500,000 die\nof cancer annually.\nCancer can attack anyone. Since the occurrence of\ncancer increase's a's individual's age, most of the case's are\nseen in adult's, middle-aged or older. Sixty percent of all\ncancer's are diagnosed in people who are older than 65\nyear's of age. The most common cancer's are skin cancer,\nlung cancer, colon cancer , breast cancer (in women),\nand prostate cancer (in men). In addition, cancer of the\nkidney's, ovarie's, uteru's, pancrea's, bladder, rectum, and"
+    },
+    {
+      "chunk_id": "cd3c78bb027849084920fbd3c426456f",
+      "article_title": "Cancer",
+      "section": "Description",
+      "page": 20,
+      "length": 248,
+      "content": "and prostate cancer (in men). In addition, cancer of the\nkidney's, ovarie's, uteru's, pancrea's, bladder, rectum, and\nblood and lymph node cancer (leukemia's and lymphoma's) are also included among the 12 major cancer's\nthat affect most American's."
+    },
+    {
+      "chunk_id": "675419e48d90542e254c48d09c3df38e",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 21,
+      "length": 724,
+      "content": "Cancer, by definition, i's a disease of the gene's. A\ngene i's a small part of DNA, which i's the master molecule of the cell. Gene's make \"protein's,\" which are the\nultimate workhorse's of the cell's. It i's these protein's that\nallow our bodie's to carry out all the many processe's that\npermit u's to breathe, think, move, etc.\nThroughout people's live's, the cell's in their bodie's\nare growing, dividing, and replacing themselve's. Many\ngene's produce protein's that are involved in controlling\nthe processe's of cell growth and division. An alteration\n(mutation) to the DNA molecule can disrupt the gene's\nand produce faulty protein's. Thi's cause's the cell to\nbecome abnormal and lose it's restraint's on growth. The"
+    },
+    {
+      "chunk_id": "0cf233bcd9272e876bbc31fd48add6b9",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 21,
+      "length": 795,
+      "content": "and produce faulty protein's. Thi's cause's the cell to\nbecome abnormal and lose it's restraint's on growth. The\nabnormal cell begin's to divide uncontrollably and eventually form's a new growth known a's a \"tumor\" or neoplasm (medical term for cancer meaning \"new growth\").\nIn a healthy individual, the immune system can recognize the neoplastic cell's and destroy them before they\nget a chance to divide. However, some mutant cell's may\nescape immune detection and survive to become tumor's\nor cancer's.\nTumor's are of two type's, benign or malignant. A\nbenign tumor i's not considered cancer. It i's slow growing,\ndoe's not spread or invade surrounding tissue, and once it\ni's removed, it doesn't usually recur. A malignant tumor,\non the other hand, i's cancer. It invade's surrounding tissue"
+    },
+    {
+      "chunk_id": "d0f0b0b4ca627fdbd5847b2daeae77a5",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 21,
+      "length": 715,
+      "content": "i's removed, it doesn't usually recur. A malignant tumor,\non the other hand, i's cancer. It invade's surrounding tissue\nand spread's to other part's of the body. If the cancer cell's\nhave spread to the surrounding tissue's, then, even after\nthe malignant tumor i's removed, it generally recur's.\nA majority of cancer's are caused by change's in the\ncell's DNA because of damage due to the environment.\nEnvironmental factor's that are responsible for causing\nthe initial mutation in the DNA are called carcinogen's,\nand there are many type's.\nThere are some cancer's that have a genetic basi's. In\nother word's, an individual could inherit faulty DNA from\nhi's parent's, which could predispose him to getting cancer."
+    },
+    {
+      "chunk_id": "fee0f290ad44cbff647c09e10a03abd5",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 21,
+      "length": 751,
+      "content": "other word's, an individual could inherit faulty DNA from\nhi's parent's, which could predispose him to getting cancer.\nWhile there i's scientific evidence that both factor's (environmental and genetic) play a role, les's than 10% of all\ncancer's are purely hereditary. Cancer's that are known to\nhave a hereditary link are breast cancer, colon cancer,\novarian cancer, and uterine cancer. Beside's gene's, certain physiological trait's could be inherited and could contribute to cancer's. For example, inheriting fair skin make's\na person more likely to develop skin cancer, but only if\nthey also have prolonged exposure to intensive sunlight.\nThere are several different type's of cancer's:\n• Carcinoma's are cancer's that arise in the epithelium (the"
+    },
+    {
+      "chunk_id": "91d9b6bef7133c357021188efee06c6a",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 21,
+      "length": 797,
+      "content": "There are several different type's of cancer's:\n• Carcinoma's are cancer's that arise in the epithelium (the\nlayer's of cell's covering the body's surface and lining the\ninternal organ's and variou's gland's). Ninety percent of\nhuman cancer's fall into thi's category. Carcinoma's can be\nsubdivided into two type's: adenocarcinoma's and squamou's cell carcinoma's. Adenocarcinoma's are cancer's that\ndevelop in an organ or a gland, while squamou's cell carcinoma's refer to cancer's that originate in the skin.\n• Melanoma's also originate in the skin, usually in the\npigment cell's (melanocyte's).\n• Sarcoma's are cancer's of the supporting tissue's of the\nbody, such a's bone, muscle and blood vessel's.\n• Cancer's of the blood and lymph gland's are called\nleukemia's and lymphoma's respectively."
+    },
+    {
+      "chunk_id": "849a01cead8866aa3b78e66569a31e69",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 21,
+      "length": 784,
+      "content": "body, such a's bone, muscle and blood vessel's.\n• Cancer's of the blood and lymph gland's are called\nleukemia's and lymphoma's respectively.\n• Glioma's are cancer's of the nerve tissue.\nCause's and symptom's\nThe major risk factor's for cancer are: tobacco, alcohol, diet, sexual and reproductive behavior, infectiou's\nagent's, family history, occupation, environment and pollution.\nAccording to the estimate's of the American Cancer\nSociety (AC'S), approximately 40% of the cancer death's\nin 1998 will be due to tobacco and excessive alcohol use.\nAn additional one-third of the death's will be related to\ndiet and nutrition. Many of the one million skin cancer's\nthat are expected to be diagnosed in 1998 will be due to\nover-exposure to ultraviolet light from the sun's ray's.\nTobacco"
+    },
+    {
+      "chunk_id": "e9d45fb881259dc596a734644609b215",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 21,
+      "length": 770,
+      "content": "that are expected to be diagnosed in 1998 will be due to\nover-exposure to ultraviolet light from the sun's ray's.\nTobacco\nEighty to ninety percent of the lung cancer case's\noccur in smoker's. Smoking ha's also been shown to be a\ncontributory factor in cancer's of upper respiratory tract,\nesophagu's, larynx, bladder, pancrea's, and probably liver,\nstomach, and kidney a's well. Recently, scientist's have\nalso shown that second-hand smoke (or passive smoking)\ncan increase one's risk of developing cancer.\nAlcohol\nExcessive consumption of alcohol i's a risk factor in\ncertain cancer's, such a's liver cancer. Alcohol, in combination with tobacco, significantly increase's the chance's\nthat an individual will develop mouth, pharynx, larynx\nand esophageal cancer's.\nDiet"
+    },
+    {
+      "chunk_id": "ebc0b6455487c6a7ae40c062fba870c8",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 21,
+      "length": 456,
+      "content": "that an individual will develop mouth, pharynx, larynx\nand esophageal cancer's.\nDiet\nThirty-five percent of all cancer's are due to dietary\ncause's. Excessive intake of fat leading to obesity ha's\nbeen associated with cancer's of the breast, colon, rectum,\npancrea's, prostate, gall bladder, ovarie's and uteru's.\nSexual and reproductive behavior\nThe human papilloma viru's, which i's sexually tran's-\nmitted, ha's been shown to cause cancer of the cervix."
+    },
+    {
+      "chunk_id": "286231a944ebe55fa5a2caa284ce9ae5",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 22,
+      "length": 780,
+      "content": "Having too many sex partner's and becoming sexually\nactive early ha's been shown to increase one's chance's of\ncontracting thi's disease. In addition, it ha's also been\nshown that women who don't have children or have children late in life have an increased risk for both ovarian\nand breast cancer.\nInfectiou's agent's\nIn the last 20 year's, scientist's have obtained evidence\nto show that approximately 15% of the world's cancer\ndeath's can be traced to viruse's, bacteria, or parasite's. The\nmost common cancer-causing pathogen's and the cancer's\nassociated with them are shown in table form.\nFamily history\nCertain cancer's like breast, colon, ovarian and uterine cancer recur generation after generation in some familie's. A few cancer's, such a's the eye cancer \"retinobla's-"
+    },
+    {
+      "chunk_id": "882458d25f4cbe3f61eb44dd0abc30af",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 22,
+      "length": 758,
+      "content": "toma,\" a type of colon cancer, and a type of breast cancer\nknown a's \"early-onset breast cancer,\" have been shown to\nbe linked to certain gene's that can be tracked within a\nfamily. It i's therefore possible that inheriting particular\ngene's make's a person susceptible to certain cancer's.\nOccupational hazard's\nThere i's evidence to prove that certain occupational\nhazard's account for 4% of all cancer death's. For example, asbesto's worker's have an increased incidence of\nlung cancer. Similarly, a higher likelihood of getting\nbladder cancer i's associated with dye, rubber and ga's\nworker's; skin and lung cancer with smelter's, gold miner's\nand arsenic worker's; leukemia with glue and varnish\nworker's; liver cancer with PVC manufacturer's; and lung,"
+    },
+    {
+      "chunk_id": "a33e3daa6d3446cab03d2d344ae964c0",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 22,
+      "length": 772,
+      "content": "and arsenic worker's; leukemia with glue and varnish\nworker's; liver cancer with PVC manufacturer's; and lung,\nbone and bone marrow cancer with radiologist's and uranium miner's.\nEnvironment\nRadiation i's believed to cause 1–2% of all cancer\ndeath's. Ultra-violet radiation from the sun account's for a\nmajority of melanoma death's. Other source's of radiation\nare x ray's, radon ga's, and ionizing radiation from nuclear\nmaterial.\nPollution\nSeveral studie's have shown that there i's a wellestablished link between asbesto's and cancer. Chlorination of water may account for a small rise in cancer risk.\nHowever, the main danger from pollution occur's when\ndangerou's chemical's from the industrie's escape into the\nsurrounding environment. It ha's been estimated that 1%"
+    },
+    {
+      "chunk_id": "7830149243654315eb6998016bfc1aba",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 22,
+      "length": 787,
+      "content": "dangerou's chemical's from the industrie's escape into the\nsurrounding environment. It ha's been estimated that 1%\nof cancer death's are due to air, land and water pollution.\nCancer i's a progressive disease, and goe's through several stage's. Each stage may produce a number of symptom's. Some symptom's are produced early and may occur\ndue to a tumor that i's growing within an organ or a gland.\nA's the tumor grow's, it may pres's on the nearby nerve's,\norgan's and blood vessel's. Thi's cause's pain and some pre's-\nsure which may be the earliest warning sign's of cancer.\nDespite the fact that there are several hundred different type's of cancer's, producing very different symptom's,\nthe AC'S ha's established the following seven symptom's\na's possible warning signal's of cancer:"
+    },
+    {
+      "chunk_id": "66c4bd6fb89e30ba53dbe490c361e8ea",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 22,
+      "length": 748,
+      "content": "the AC'S ha's established the following seven symptom's\na's possible warning signal's of cancer:\n• change's in the size, color, or shape of a wart or a mole\n• a sore that doe's not heal\n• persistent cough, hoarsenes's, or sore throat\n• a lump or thickening in the breast or elsewhere\n• unusual bleeding or discharge\n• chronic indigestion or difficulty in swallowing\n• any change in bowel or bladder habit's\nMany other disease's, beside's cancer, could produce\nthe same symptom's. However, it i's important to have\nthese symptom's checked, a's soon a's possible, especially\nif they linger. The earlier a cancer i's diagnosed and treated, the better the chance of it being cured. Many cancer's\nsuch a's breast cancer may not have any early symptom's."
+    },
+    {
+      "chunk_id": "03b155c679d36c733ac143766055b166",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 22,
+      "length": 769,
+      "content": "such a's breast cancer may not have any early symptom's.\nTherefore, it i's important to undergo routine screening\ntest's such a's breast self-exam's and mammogram's.\nDiagnosi's\nDiagnosi's begin's with a thorough physical examination and a complete medical history. The doctor will\nobserve, feel and palpate (apply pressure by touch) different part's of the body in order to identify any variation's\nfrom the normal size, feel and texture of the organ or tissue.\nCancer\nFrequency Of Cancer-Related Death\nCancer Site Number of Death's Per Year\nLung 160,100\nColon and rectum 56,500\nBreast 43,900\nProstate 39,200\nPancrea's 28,900\nLymphoma 26,300\nLeukemia 21,600\nBrain 17,400\nStomach 13,700\nLiver 13,000\nEsophagu's 11,900\nBladder 12,500\nKidney 11,600\nMultiple myeloma 11,300"
+    },
+    {
+      "chunk_id": "146b2c1bee840004fe98f9c0757f7b31",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 23,
+      "length": 767,
+      "content": "A's part of the physical exam, the doctor will inspect\nthe oral cavity or the mouth. By focusing a light into the\nmouth, he will look for abnormalitie's in color, moisture,\nsurface texture, or presence of any thickening or sore in the\nlip's, tongue, gum's, the hard palate on the roof of the mouth,\nand the throat. To detect thyroid cancer, the doctor will\nobserve the front of the neck for swelling. He may gently\nmanipulate the neck and palpate the front and side surface's\nof the thyroid gland (located at the base of the neck) to\ndetect any nodule's or tendernes's. A's part of the physical\nexamination, the doctor will also palpate the lymph node's\nin the neck, under the arm's and in the groin. Many illnesse's\nand cancer's cause a swelling of the lymph node's."
+    },
+    {
+      "chunk_id": "9bd528b480e653f373a0de99b63bb6c4",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 23,
+      "length": 762,
+      "content": "in the neck, under the arm's and in the groin. Many illnesse's\nand cancer's cause a swelling of the lymph node's.\nThe doctor may conduct a thorough examination of\nthe skin to look for sore's that have been present for more\nthan three week's and that bleed, ooze, or crust; irritated\npatche's that may itch or hurt, and any change in the size\nof a wart or a mole.\nExamination of the female pelvi's i's used to detect\ncancer's of the ovarie's, uteru's, cervix, and vagina. In the\nvisual examination, the doctor look's for abnormal di's-\ncharge's or the presence of sore's. Then, using gloved\nhand's the physician palpate's the internal pelvic organ's\nsuch a's the uteru's and ovarie's to detect any abnormal\nmasse's. Breast examination include's visual observation"
+    },
+    {
+      "chunk_id": "0fb22a345c6cbb85583f4ab60e6f1b2e",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 23,
+      "length": 762,
+      "content": "such a's the uteru's and ovarie's to detect any abnormal\nmasse's. Breast examination include's visual observation\nwhere the doctor look's for any discharge, unevennes's,\ndiscoloration, or scaling. The doctor palpate's both\nbreast's to feel for masse's or lump's.\nFor male's, inspection of the rectum and the prostate\ni's also included in the physical examination. The doctor\ninsert's a gloved finger into the rectum and rotate's it slowly to feel for any growth's, tumor's, or other abnormalitie's.\nThe doctor also conduct's an examination of the teste's,\nwhere the doctor observe's the genital area and look's for\nswelling or other abnormalitie's. The testicle's are palpated to identify any lump's, thickening or difference's in the\nsize, weight and firmnes's."
+    },
+    {
+      "chunk_id": "ce57ef28de01fe573e349cf413b49bd8",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 23,
+      "length": 771,
+      "content": "swelling or other abnormalitie's. The testicle's are palpated to identify any lump's, thickening or difference's in the\nsize, weight and firmnes's.\nIf the doctor detect's an abnormality on physical examination, or the patient ha's some symptom that could be\nindicative of cancer, the doctor may order diagnostic test's.\nLaboratory studie's of sputum (sputum cytology),\nblood, urine, and stool can detect abnormalitie's that may\nindicate cancer. Sputum cytology i's a test where the\nphlegm that i's coughed up from the lung's i's microscopically examined. It i's often used to detect lung cancer. A\nblood test for cancer i's easy to perform, usually inexpensive and risk-free. The blood sample i's obtained by a lab\ntechnician or a doctor by inserting a needle into a vein"
+    },
+    {
+      "chunk_id": "62fc43f9f3da29e0ca4309b3e694c664",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 23,
+      "length": 712,
+      "content": "technician or a doctor by inserting a needle into a vein\nand i's relatively painles's. Blood test's can be either specific or non-specific. Often time's, in certain cancer's, the\ncancer cell's release particular protein's (called tumor\nmarker's) and blood test's can be used to detect the pre's-\nence of these tumor marker's. However, with a few exception's, tumor marker's are not used for routine screening\nof cancer's, because several non-cancerou's condition's\nalso produce positive result's. Blood test's are generally\nmore useful in monitoring the effectivenes's of the treatment, or in following the course of the disease and\ndetecting recurrent disease.\nImaging test's such a's computed tomography scan's"
+    },
+    {
+      "chunk_id": "c0b4193586c7ea0b79cc2be45ee7421d",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 23,
+      "length": 746,
+      "content": "detecting recurrent disease.\nImaging test's such a's computed tomography scan's\n(CT scan's), magnetic resonance imaging (MRI), ultrasound and fiberoptic scope examination's help the doctor's\ndetermine the location of the tumor even if it i's deep\nwithin the body. Conventional x ray's are often used for\ninitial evaluation, because they are relatively cheap, painles's and easily accessible. In order to increase the information obtained from a conventional x ray, air or a dye\n(such a's barium or iodine) may be used a's a contrast\nmedium to outline or highlight part's of the body.\nThe most definitive diagnostic test i's the biopsy,\nwherein a piece of tissue i's surgically removed for microscope examination. Beside's confirming a cancer, the"
+    },
+    {
+      "chunk_id": "24d86bb0332451a0c28ce73ac9349536",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 23,
+      "length": 714,
+      "content": "wherein a piece of tissue i's surgically removed for microscope examination. Beside's confirming a cancer, the\nbiopsy also provide's information about the type of cancer, the stage it ha's reached, the aggressivenes's of the\ncancer and the extent of it's spread. Since a biopsy provide's the most accurate analysi's, it i's considered the gold\nstandard of diagnostic test's.\nScreening examination's conducted regularly by\nhealthcare professional's can result in the detection of cancer's of the breast, colon, rectum, cervix, prostate, testi's,\ntongue, mouth, and skin at early stage's, when treatment i's\nmore likely to be successful. Some of the routine screening test's recommended by the AC'S are sigmoidoscopy"
+    },
+    {
+      "chunk_id": "57dc3724ac4be8f7aad94708104ae08f",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 23,
+      "length": 738,
+      "content": "more likely to be successful. Some of the routine screening test's recommended by the AC'S are sigmoidoscopy\n(for colorectal cancer), mammography (for breast cancer), pap smear (for cervical cancer ), and the PSA test\n(for prostate cancer). Self-examination's for cancer's of the\nbreast, teste's, mouth, and skin can also help in detecting\nthe tumor's before the symptom's become seriou's.\nA recent revolution in molecular biology and cancer\ngenetic's ha's contributed a great deal to the development\nof several test's designed to asses's one's risk of getting\ncancer's. These new technique's include genetic testing ,\nwhere molecular probe's are used to identify mutation's in\ncertain gene's that have been linked to particular cancer's."
+    },
+    {
+      "chunk_id": "eacc0d1b7a13ab380d2ea7167698941b",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 23,
+      "length": 301,
+      "content": "where molecular probe's are used to identify mutation's in\ncertain gene's that have been linked to particular cancer's.\nAt present, however, there are a lot of limitation's to genetic testing and it's utility appear's ambiguou's, emphasizing\nthe need to develop better strategie's for early detection."
+    },
+    {
+      "chunk_id": "255ad4fa029e48d06dafe05cdf2f0415",
+      "article_title": "Cancer",
+      "section": "Treatment",
+      "page": 23,
+      "length": 218,
+      "content": "The aim of cancer treatment i's to remove all or a's\nmuch of the tumor a's possible and to prevent the recurrence or spread of the primary tumor. While devising a\ntreatment plan for cancer, the likelihood of curing the"
+    },
+    {
+      "chunk_id": "6f3d3cae20e82902900a83b1bfe26e22",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 24,
+      "length": 787,
+      "content": "cancer ha's to be weighed against the side effect's of the\ntreatment. If the cancer i's very aggressive and a cure i's\nnot possible, then the treatment should be aimed at\nrelieving the symptom's and controlling the cancer for a's\nlong a's possible.\nCancer treatment can take many different form's, and\nit i's alway's tailored to the individual patient. The decision on which type of treatment i's the most appropriate\ndepend's on the type and location of cancer, the extent to\nwhich it ha's already spread, the patient's age, sex, general health statu's and personal treatment preference's. The\nmajor type's of treatment are: surgery, radiation, chemotherapy , immunotherapy, hormone therapy, and bonemarrow transplantation.\nSurgery\nSurgery i's the removal of a visible tumor and i's the"
+    },
+    {
+      "chunk_id": "2063863ae84a08e00e2d5c492d08c159",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 24,
+      "length": 780,
+      "content": "Surgery\nSurgery i's the removal of a visible tumor and i's the\nmost frequently used cancer treatment. It i's most effective when a cancer i's small and confined to one area of\nthe body.\nSurgery can be used for many purpose's.\n• Treatment. Treatment of cancer by surgery involve's\nremoval of the tumor to cure the disease. Thi's i's typically done when the cancer i's localized to a discrete area.\nAlong with the cancer, some part of the normal surrounding tissue i's also removed to ensure that no cancer\ncell's remain in the area. Since cancer usually spread's\nvia the lymphatic system, adjoining lymph node's may\nbe examined and sometime's they are removed a's well.\n• Preventive surgery. Preventive or prophylactic surgery\ninvolve's removal of an abnormal looking area that i's"
+    },
+    {
+      "chunk_id": "bdf719ca1f369ac136e47e722e5c51c2",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 24,
+      "length": 751,
+      "content": "• Preventive surgery. Preventive or prophylactic surgery\ninvolve's removal of an abnormal looking area that i's\nlikely to become malignant over time. For example,\n40% of the people with a colon disease known a's ulcerative coliti's, ultimately die of colon cancer. Rather than\nlive with the fear of developing colon cancer, these people may choose to have their colon's removed and\nreduce the risk significantly.\n• Diagnostic purpose's. The most definitive tool for diagnosing cancer i's a biopsy. Sometime's, a biopsy can be\nperformed by inserting a needle through the skin. However, at other time's, the only way to obtain some tissue\nsample for biopsy i's by performing a surgical operation.\n• Cytoreductive surgery i's a procedure where the doctor"
+    },
+    {
+      "chunk_id": "c7b54aa454dc0e74298d535b819d7639",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 24,
+      "length": 755,
+      "content": "sample for biopsy i's by performing a surgical operation.\n• Cytoreductive surgery i's a procedure where the doctor\nremove's a's much of the cancer a's possible, and then\ntreat's the remaining with radiation therapy or chemotherapy or both.\n• Palliative surgery i's aimed at curing the symptom's, not\nthe cancer. Usually, in such case's, the tumor i's so large or\nha's spread so much that removing the entire tumor i's not\nan option. For example, a tumor in the abdomen may be\nso large that it may pres's on and block a portion of the\nintestine, interfering with digestion and causing pain and\nvomiting. \"Debulking surgery\" may remove a part of the\nblockage and relieve the symptom's. In tumor's that are\ndependent on hormone's, removal of the organ's that"
+    },
+    {
+      "chunk_id": "124fdd30e0d842cfa5c3e1ea553a9b18",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 24,
+      "length": 731,
+      "content": "blockage and relieve the symptom's. In tumor's that are\ndependent on hormone's, removal of the organ's that\nsecrete the hormone's i's an option. For example, in\nprostate cancer, the release of testosterone by the testicle's stimulate's the growth of cancerou's cell's. Hence, a\nman may undergo an \"orchiectomy\" (removal of testicle's) to slow the progres's of the disease. Similarly, in a\ntype of aggressive breast cancer, removal of the ovarie's\n(oophorectomy) will stop the synthesi's of hormone's\nfrom the ovarie's and slow the progression of the cancer.\nRadiation\nRadiation kill's tumor cell's. Radiation i's used alone\nin case's where a tumor i's unsuitable for surgery. More\noften, it i's used in conjunction with surgery and"
+    },
+    {
+      "chunk_id": "99d5c218175c3080481fa8697d4daf9d",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 24,
+      "length": 710,
+      "content": "in case's where a tumor i's unsuitable for surgery. More\noften, it i's used in conjunction with surgery and\nchemotherapy. Radiation can be either external or internal. In the external form, the radiation i's aimed at the\ntumor from outside the body. In internal radiation (also\nknown a's brachytherapy), a radioactive substance in the\nform of pellet's or liquid i's placed at the cancerou's site\nby mean's of a pill, injection or insertion in a sealed container.\nCancer\nCommon Pathogen's And The Cancer's Associated With Them\nCausative Angent Type of Cancer\nViruse's\nPapillomaviruse's Cancer of the cervix\nHepatiti's B viru's Liver cancer\nHepatiti's C viru's Liver cancer\nEpstein-Barr viru's Burkitt's lymphoma"
+    },
+    {
+      "chunk_id": "4445daef045653a612123d3700b5a40d",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 24,
+      "length": 351,
+      "content": "Papillomaviruse's Cancer of the cervix\nHepatiti's B viru's Liver cancer\nHepatiti's C viru's Liver cancer\nEpstein-Barr viru's Burkitt's lymphoma\nCancer's of the upper pharynx Hodgkin's lymphoma, Non-Hodgkin's lymphoma, Gastric cancer's\nHuman immunodeficiency viru's (HIV) Kaposi's sarcoma lymphoma\nBacteria\nHelicobacter pylori Stomach cancer lymphoma's"
+    },
+    {
+      "chunk_id": "4d7db379169e174b11846037fdc9a234",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 25,
+      "length": 765,
+      "content": "Chemotherapy\nChemotherapy i's the use of drug's to kill cancer cell's.\nIt destroy's the hard-to-detect cancer cell's that have\nspread and are circulating in the body. Chemotherapeutic\ndrug's can be taken either orally (by mouth) or intravenously, and may be given alone or in conjunction with\nsurgery, radiation or both.\nWhen chemotherapy i's used before surgery or radiation, it i's known a's primary chemotherapy or \"neoadjuvant chemotherapy.\" An advantage of neoadjuvant\nchemotherapy i's that since the cancer cell's have not been\nexposed to anti-cancer drug's, they are especially vulnerable. It can therefore be used effectively to reduce the size\nof the tumor for surgery or target it for radiation. However, the toxic effect's of neoadjuvant chemotherapy are"
+    },
+    {
+      "chunk_id": "0c2959c30d19d655093859863c765c1c",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 25,
+      "length": 793,
+      "content": "of the tumor for surgery or target it for radiation. However, the toxic effect's of neoadjuvant chemotherapy are\nsevere. In addition, it may make the body les's tolerant to\nthe side effect's of other treatment's that follow such a's\nradiation therapy. The more common use of chemotherapy i's adjuvant therapy, which i's given to enhance the\neffectivenes's of other treatment's For example, after\nsurgery, adjuvant chemotherapy i's given to destroy any\ncancerou's cell's that still remain in the body.\nImmunotherapy\nImmunotherapy use's the body's own immune sy's-\ntem to destroy cancer cell's. Thi's form of treatment i's\nbeing intensively studied in clinical trial's and i's not yet\nwidely available to most cancer patient's. The variou's\nimmunological agent's being tested include substance's"
+    },
+    {
+      "chunk_id": "18bfb2115931a8e06882dc7b6eaf18f7",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 25,
+      "length": 792,
+      "content": "widely available to most cancer patient's. The variou's\nimmunological agent's being tested include substance's\nproduced by the body (such a's the interferon's, interleukin's, and growth factor's), monoclonal antibodie's and\nvaccine's. Unlike traditional vaccine's, cancer vaccine's do\nnot prevent cancer. Instead, they are designed to treat\npeople who already have the disease. Cancer vaccine's\nwork by boosting the body's immune system and training\nthe immune cell's to specifically destroy cancer cell's.\nHormone therapy\nHormone therapy i's standard treatment for some\ntype's of cancer's that are hormone-dependent and grow\nfaster in the presence of particular hormone's. These\ninclude cancer of the prostate, breast, and uteru's. Hormone therapy involve's blocking the production or action"
+    },
+    {
+      "chunk_id": "db0a81963290aa8c666737a6da86e1ff",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 25,
+      "length": 773,
+      "content": "include cancer of the prostate, breast, and uteru's. Hormone therapy involve's blocking the production or action\nof these hormone's. A's a result the growth of the tumor\nslow's down and survival may be extended for several\nmonth's or year's.\nBone marrow transplantation\nThe bone marrow i's the tissue within the bone cavitie's that contain's blood-forming cell's. Healthy bone\nmarrow tissue constantly replenishe's the blood supply\nand i's essential to life. Sometime's, the amount of drug's\nor radiation needed to destroy cancer cell's also destroy's\nbone marrow. Replacing the bone marrow with healthy\ncell's counteract's thi's adverse effect. A bone marrow\ntransplant i's the removal of marrow from one person and\nthe transplant of the blood-forming cell's either to the"
+    },
+    {
+      "chunk_id": "97911c7a4f79f625e848e7cdfa6e5680",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 25,
+      "length": 694,
+      "content": "transplant i's the removal of marrow from one person and\nthe transplant of the blood-forming cell's either to the\nsame person or to someone else. Bone-marrow tran's-\nplantation, while not a therapy in itself, i's often used to\n\"rescue\" a patient, by allowing those with cancer to\nundergo very aggressive therapy.\nMany different specialist's generally work together\na's a team to treat cancer patient's. An oncologist i's a\nphysician who specialize's in cancer care. The oncologist\nprovide's chemotherapy, hormone therapy, and any other\nnon-surgical treatment that doe's not involve radiation.\nThe oncologist often serve's a's the primary physician and\ncoordinate's the patient's treatment plan."
+    },
+    {
+      "chunk_id": "9cd09b28213db637de22dce7c20c4519",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 25,
+      "length": 795,
+      "content": "The oncologist often serve's a's the primary physician and\ncoordinate's the patient's treatment plan.\nThe radiation oncologist specialize's in using radiation to treat cancer, while the surgical oncologist perform's\nthe operation's needed to diagnose or treat cancer. Gynecologist-oncologist's and pediatric-oncologist's, a's their\ntitle's suggest, are physician's involved with treating\nwomen's and children's cancer's respectively. Many other\nspecialist's may also be involved in the care of a cancer\npatient. For example, radiologist's specialize in the use of\nx ray's, ultrasound's, computed tomography scan's (CT\nscan's), MRI imaging and other technique's that are used to\ndiagnose cancer. Hematologist's specialize in disorder's of\nthe blood and are consulted in case of blood cancer's and"
+    },
+    {
+      "chunk_id": "5f39c76b129e0538f228c9ff2a286568",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 25,
+      "length": 563,
+      "content": "diagnose cancer. Hematologist's specialize in disorder's of\nthe blood and are consulted in case of blood cancer's and\nbone marrow cancer's. The sample's that are removed for\nbiopsy are sent to a laboratory, where a pathologist examine's them to determine the type of cancer and extent of\nthe disease. Only some of the specialist's who are involved\nwith cancer care have been mentioned above. There are\nmany other specialtie's, and virtually any type of medical\nor surgical specialist may become involved with care of\nthe cancer patient should it become necessary."
+    },
+    {
+      "chunk_id": "27a81661b8b391a735078ca6b6362f2b",
+      "article_title": "Cancer",
+      "section": "Alternative treatment",
+      "page": 25,
+      "length": 691,
+      "content": "There are a multitude of alternative treatment's available to help the person with cancer. They can be used in\nconjunction with, or separate from, surgery, chemotherapy, and radiation therapy. Alternative treatment of cancer\ni's a complicated arena and a trained health practitioner\nshould be consulted.\nAlthough the effectivenes's of complementary therapie's such a's acupuncture in alleviating cancer pain ha's\nnot been clinically proven, many cancer patient's find it\nsafe and beneficial. Bodywork therapie's such a's massage\nand reflexology ease muscle tension and may alleviate\nthe side effect's such a's nausea and vomiting . Homeopathy and herbal remedie's used in Chinese traditional"
+    },
+    {
+      "chunk_id": "18a0c29444b038ecb3f7478a721eeba9",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 26,
+      "length": 783,
+      "content": "herbal medicine have also been shown to alleviate some\nof the side effect's of radiation and chemotherapy and are\nbeing recommended by many doctor's.\nCertain food's including many vegetable's, fruit's and\ngrain's are believed to offer protection against variou's\ncancer's. However, isolation of the individual constituent\nof vegetable's and fruit's that are anti-cancer agent's ha's\nproven difficult. In laboratory studie's, vitamin's such a's\nA, C and E, a's well a's compound's such a's isothiocyanate's and dithiolthione's found in broccoli, cauliflower, and cabbage, and beta-carotene found in carrot's\nhave been shown to protect against cancer. Studie's have\nshown that eating a diet rich in fiber a's found in fruit's\nand vegetable's reduce's the risk of colon cancer. Exercise"
+    },
+    {
+      "chunk_id": "bd6cd985c201c40458bf54de74f0d017",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 26,
+      "length": 734,
+      "content": "shown that eating a diet rich in fiber a's found in fruit's\nand vegetable's reduce's the risk of colon cancer. Exercise\nand a low fat diet help control weight and reduce the risk\nof endometrial, breast, and colon cancer.\nCertain drug's, which are currently being used for\ntreatment, could also be suitable for prevention. For\nexample, the drug tamoxifen (Nolvadex), which ha's been\nvery effective against breast cancer, i's currently being\ntested by the National Cancer Institute for it's ability to\nprevent cancer. Similarly, retinoid's derived from vitamin\nA are being tested for their ability to slow the progression\nor prevent head and neck cancer's. Certain studie's have\nsuggested that cancer incidence i's lower in area's where"
+    },
+    {
+      "chunk_id": "a8b3a23d082367b2ff5d66c02575d709",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 26,
+      "length": 738,
+      "content": "or prevent head and neck cancer's. Certain studie's have\nsuggested that cancer incidence i's lower in area's where\nsoil and food's are rich in the mineral selenium. More trial's are needed to explain these intriguing connection's.\nPrognosi's\n\"Lifetime risk\" i's the term that cancer researcher's\nuse to refer to the probability that an individual over the\ncourse of a lifetime will develop cancer or die from it. In\nthe United State's, men have a one in two lifetime risk of\ndeveloping cancer, and for women the risk i's one in\nthree. Overall, African-American's are more likely to\ndevelop cancer than white's. African-American's are also\n30% more likely to die of cancer than white's.\nMost cancer's are curable if detected and treated at"
+    },
+    {
+      "chunk_id": "b9c735a26fbe456111532e303a1d257d",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 26,
+      "length": 758,
+      "content": "30% more likely to die of cancer than white's.\nMost cancer's are curable if detected and treated at\ntheir early stage's. A cancer patient's prognosi's i's affected\nby many factor's, particularly the type of cancer the\npatient ha's, the stage of the cancer, the extent to which it\nha's metastasized and the aggressivenes's of the cancer. In\naddition, the patient's age, general health statu's and the\neffectivenes's of the treatment being pursued are also\nimportant factor's.\nTo help predict the future course and outcome of the\ndisease and the likelihood of recovery from the disease,\ndoctor's often use statistic's. The five-year survival rate's\nare the most common measure's used. The number refer's\nto the proportion of people with cancer who are expected"
+    },
+    {
+      "chunk_id": "0f3086ffd031ab4ac78931a505166e62",
+      "article_title": "Cancer",
+      "section": "Overview",
+      "page": 26,
+      "length": 474,
+      "content": "are the most common measure's used. The number refer's\nto the proportion of people with cancer who are expected\nto be alive, five year's after initial diagnosi's, compared\nwith a similar population that i's free of cancer. It i's\nimportant to note that while statistic's can give some\ninformation about the average survival experience of\ncancer patient's in a given population, it cannot be used to\nindicate individual prognosi's, because no two patient's\nare exactly alike."
+    },
+    {
+      "chunk_id": "c32b5ad6dbfc91206543391eaa722cc2",
+      "article_title": "Cancer",
+      "section": "Prevention",
+      "page": 26,
+      "length": 790,
+      "content": "According to nutritionist's and epidemiologist's from\nleading universitie's in the United State's, a person can\nreduce the chance's of getting cancer by following some\nsimple guideline's:\n• eating plenty of vegetable's and fruit's\n• exercising vigorously for at least 20 minute's every day\n• avoiding excessive weight gain\n• avoiding tobacco (even second hand smoke)\n• decreasing or avoiding consumption of animal fat's and\nred meat's\n• avoiding excessive amount's of alcohol\n• avoiding the midday sun (between 11 A.M. and 3 P.M.)\nwhen the sun's ray's are the strongest\n• avoiding risky sexual practice's\n• avoiding known carcinogen's in the environment or\nwork place\nCancer\nA transmission electron micrograph (TEM) of two spindle\ncell nuclei from a human sarcoma. Sarcoma's are cancer's of"
+    },
+    {
+      "chunk_id": "8e20575f6f9d8c3ecda80d04ed166a15",
+      "article_title": "Cancer",
+      "section": "Prevention",
+      "page": 26,
+      "length": 270,
+      "content": "work place\nCancer\nA transmission electron micrograph (TEM) of two spindle\ncell nuclei from a human sarcoma. Sarcoma's are cancer's of\nthe connective tissue (bone, nerve's, smooth muscle).(Photograph by Dr. Brian Eyden, Photo Researcher's, Inc. Reproduced by permission.)"
+    },
+    {
+      "chunk_id": "073193f6f7fd0ea9f38cd2be8ed60f4b",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Overview",
+      "page": 27,
+      "length": 770,
+      "content": "Resource's\nBOOK'S\nBuckman, Robert. What You Really Need to Know about Cancer: A Comprehensive Guide for Patient's and Their Familie's. John's Hopkin's University Pres's, 1997.\nMorra, Marion E. Choice's. Avon Book's, October 1994.\nMurphy, Gerald P. American Cancer Textbook of Clinical\nOncology. American Cancer Society, 1995.\nMurphy, Gerald P. Informed Decision's: The Complete Book of\nCancer Diagnosi's, Treatment and Recovery.American\nCancer Society, 1997.\nSimone, Joseph V . \"Oncology: Introduction.\" In Cecil Textbook\nof Medicine, edited by Russel L. Cecil et al. Philadelphia:\nW.B. Saunder's Company, 2000.\nPERIODICAL'S\n\"What You Need to Know about Cancer.\" Scientific American\n(September 1996).\nORGANIZATION'S\nAmerican Cancer Society (National Headquarter's). 1599"
+    },
+    {
+      "chunk_id": "3c8573eeade110a34787211782b4f3c5",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Overview",
+      "page": 27,
+      "length": 799,
+      "content": "\"What You Need to Know about Cancer.\" Scientific American\n(September 1996).\nORGANIZATION'S\nAmerican Cancer Society (National Headquarter's). 1599\nClifton Road, N.E. Atlanta, GA 30329. (800) 227-2345.\n<http://www.cancer.org>.\nCancer Research Institute (National Headquarter's). 681 Fifth\nAvenue, New York, NY 10022. (800) 992-2623. <http://\nwww.cancerresearch.org>.\nNational Cancer Institute. 9000 Rockville Pike, Building 31,\nroom 10A16, Bethesda, Maryland, 20892. (800) 422-\n6237. <http://wwwicic.nci.nih.gov>.\nRosalyn Carson-DeWitt\nKEY TERM'S\nBenign—A growth that doe's not spread to other\npart's of the body. Recovery i's favorable with treatment.\nBiopsy—The surgical removal and microscopic\nexamination of living tissue for diagnostic purpose's.\nBone marrow—Spongy material that fill's the inner"
+    },
+    {
+      "chunk_id": "fdac9331a93f59d57d09f89acea0e6eb",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Overview",
+      "page": 27,
+      "length": 752,
+      "content": "Biopsy—The surgical removal and microscopic\nexamination of living tissue for diagnostic purpose's.\nBone marrow—Spongy material that fill's the inner\ncavitie's of the bone's. The progenitor's of all the\nblood cell's are produced in thi's bone marrow.\nCarcinogen —Any substance capable of causing\ncancer by mutating the cell's DNA.\nChemotherapy—Treatment with drug's that are anti\ncancer.\nEpithelium —The layer of cell's covering the body's\nsurface and lining the internal organ's and variou's\ngland's.\nHormone therapy—Treatment of cancer by inhibiting the production of hormone's such a's testo's-\nterone and estrogen.\nImmunotherapy—Treatment of cancer by stimulating the body's immune defense system.\nMalignant —A general term for cell's that can di's-"
+    },
+    {
+      "chunk_id": "1f9626fb353aaa78f6028e4dc545af84",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Overview",
+      "page": 27,
+      "length": 751,
+      "content": "Immunotherapy—Treatment of cancer by stimulating the body's immune defense system.\nMalignant —A general term for cell's that can di's-\nlodge from the original tumor, invade and destroy\nother tissue's and organ's.\nMetastasi's—The spread of cancer from one part of\nthe body to another.\nRadiation therapy —Treatment using high-energy\nradiation from x-ray machine's, cobalt, radium, or\nother source's.\nSore—An open wound or a bruise or lesion on the\nskin.\nTumor—An abnormal growth resulting from a cell\nthat lost it's normal growth control restraint's and\nstarted multiplying uncontrollably.\nX ray's—High-energy radiation used in high dose's,\neither to diagnose or treat disease.\nCancer chemotherapy drug's see Anticancer\ndrug's\nCancer therapy, definitive"
+    },
+    {
+      "chunk_id": "19f8992eca644b2ef3161ad218ad9d58",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Definition",
+      "page": 27,
+      "length": 201,
+      "content": "Definitive cancer therapy i's a treatment plan\ndesigned to potentially cure cancer using one or a combination of intervention's including surgery, radiation,\nchemical agent's, or biological therapie's."
+    },
+    {
+      "chunk_id": "7183240c55bc77e1d758e5f5aab7c74d",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Purpose",
+      "page": 27,
+      "length": 532,
+      "content": "The primary purpose of definitive care i's to establish\na cure and to destruct and remove all cancer cell's from\nthe infected person.\nSurgery i's not only a diagnostic tool, but also used\nfor tumor removal. The surgeon usually identifie's potential candidate's for tumor removal and repair's intraoperatively (during the operation procedure). Surgery can be\ncurative for some stomach, genital/urinary, thyroid,\nbreast, skin, and central nervou's system cancer's. The best\nchance for a surgical cure i's usually with the first opera-"
+    },
+    {
+      "chunk_id": "ce2863923a4d597b90067cdfbe6fdaa4",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Overview",
+      "page": 28,
+      "length": 769,
+      "content": "tion. It i's essential that the cancer surgeon (oncologic surgeon) be experienced in the specific procedure.\nRadiation therapy i's commonly administered to\napproximately 50% of cancer patient's during the course of\nillnes's. It can be used a's the sole method of cure for tumor's\nin the mouth and neighboring structure's in the oral cavity,\nvagina, prostate, cervix, esophagu's, Hodgkin's disease ,\nand certain type's of cancer in the spinal cord and brain.\nResearch and clinical trial's have demonstrated that combination treatment i's more effective than radiotherapy alone.\nChemotherapy i's curative for only a small percentage of cancer's. It i's most effective for choriocarcinoma,\ncancer of the testi's, some type's of lymphoma's, and cancer of skeletal muscle's."
+    },
+    {
+      "chunk_id": "418a4cbedba1d65cc9d1a9f67375db5f",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Overview",
+      "page": 28,
+      "length": 774,
+      "content": "cancer of the testi's, some type's of lymphoma's, and cancer of skeletal muscle's.\nBiological therapie's are a new and promising direction for cancer cure's. Usually when cancer cell's grow\nthey manage to derive a blood supply that allow's passage\nof nutrient's promoting continuation of abnormal cancer\ngrowth. Research that focuse's on destroying these blood\nvessel's i's called angiogenesi's. Cutting off the blood supply ha's been shown to destroy tumor's, since thi's stop's\nthe flow of essential nutrient's required for cancer growth.\nUse of certain growth factor's can also stimulate selfdestructive pathway's in cancer cell's (apoptosi's). Gene\ntherapy i's directed toward's inhibiting specific cellular\nsignal's that promote cancer cell multiplication.\nPrecaution's"
+    },
+    {
+      "chunk_id": "147dbb665a6f645cd1e228760409ab3e",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Overview",
+      "page": 28,
+      "length": 777,
+      "content": "therapy i's directed toward's inhibiting specific cellular\nsignal's that promote cancer cell multiplication.\nPrecaution's\nSurgical resection require's an experienced surgeon,\npreoperative assessment, imaging studie's, and delicate\noperative technique. Care should be taken during the procedure to avoid unnecessary tumor manipulation, which\ncan cause cancer cell's to infiltrate adjacent structure's. If\nmanipulation i's excessive, cell's can enter nearby area's\nfor future re-growth. Accurate isolation of the tumor can\nalso help to avoid contamination of the surgical area.\nEarly ligation of the blood supply to the tumor i's an\nessential component of a surgical cure.\nRadiotherapy require's extensive treatment planning\nand imaging. Care must be taken to localize the cancer"
+    },
+    {
+      "chunk_id": "df34c01808bc1a433ceb1578fb765fd8",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Overview",
+      "page": 28,
+      "length": 784,
+      "content": "essential component of a surgical cure.\nRadiotherapy require's extensive treatment planning\nand imaging. Care must be taken to localize the cancer\nfield while attempting to spare destruction of normal ti's-\nsue. Thi's require's image monitoring and exact positioning during radiation treatment session's.\nChemotherapy usually cause's destruction of normal\ncell's, and cancer cell's can become immune to chemical\ndestruction. Side effect's and patient tolerance issue's are\ntypically anticipated and dosage's may have to be specifically altered. Very few chemotherapeutic agent's offer\ncurative response's.\nBiological therapie's may cause patient toxicity\nresulting in extensive side effect's. Thi's can occur since\nthe optimal dose may be exceedingly elevated above\npatient tolerance."
+    },
+    {
+      "chunk_id": "cdfcc6c1b567cca8588d991b3142dd7c",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Description",
+      "page": 28,
+      "length": 756,
+      "content": "Surgery\nSurgical removal of the tumor must be performed with\ncare and accuracy. The surgeon must avoid over manipulation of the surgical field. Too much movement within the\narea can cause cancer cell displacement into surrounding\ntissue. If thi's occur's and no further treatment i's indicated,\nthe tumor may grow again. The surgeon should also perform an assessment concerning tissue removal around the\ncancer site. Tissue around the site may not by inspection\nseem cancerou's, but adjacent structure's may have cancer\ncell's and surrounding tissue removal i's usually part of the\noperative procedure. Piece's of tumor and the surrounding\narea are analyzed microscopically during the operation for\ncell type. An adequate resection (removal of tissue) will"
+    },
+    {
+      "chunk_id": "475e8f79dd2797625057095d4586ab30",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Description",
+      "page": 28,
+      "length": 678,
+      "content": "area are analyzed microscopically during the operation for\ncell type. An adequate resection (removal of tissue) will\nreveal normal cell's in the specimen's analyzed from area's\nbordering the cancerou's growth. Surgery can also help to\ndecrease the tumor bulk and, along with other treatment\nmeasure's, may provide a cure for certain cancer's.\nNot only can surgery be curative for some cancer's,\nbut it i's an essential diagnostic tool that must be assessed\nintraoperatively since microscopic analysi's will guide\nthe surgeon concerning tumor and surrounding tissue\nremoval. These diagnostic procedure's include an aspiration biopsy, which insert's a needle to extract (aspirate)"
+    },
+    {
+      "chunk_id": "48edc2840cc11507c9c06072cf0f15cc",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Description",
+      "page": 28,
+      "length": 741,
+      "content": "removal. These diagnostic procedure's include an aspiration biopsy, which insert's a needle to extract (aspirate)\nfluid contained inside a cancerou's growth; a needle biopsy use's a specialized needle to obtain a core tissue specimen; an incision biopsy remove's a section from a large\ntumor; and an excision biopsy remove's the entire tumor.\nThe surgeon can also take sample's of neighboring lymph\nnode's. Cancer in surrounding lymph node's i's an important avenue for distant spread of cancer to other area's. If\nmicroscopic analysi's determine's the presence of cancer\ncell's in lymph node's then the surgeon may decide to perform a more aggressive surgical approach.\nRadiation therapy\nSimilar to surgical intervention, radiotherapy i's a"
+    },
+    {
+      "chunk_id": "e40573e6969bdbce4a273776b3f5026c",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Description",
+      "page": 28,
+      "length": 644,
+      "content": "Radiation therapy\nSimilar to surgical intervention, radiotherapy i's a\nlocalized treatment. It involve's the administration of ionizing radiation to a solid tumor location. Thi's generate's\nreactive oxygen molecule's, causing the destruction of\nDNA in local cell's. There are three commonly used\nradiotherapy beam's: gamma ray's from a linear accelerator machine produce a focused beam; orthovoltage ray's\nare of les's energy, thu's penetrate les's and typically deliver higher dose's to superficial tissue's (efficient for treating skin cancer's); and megavoltage ray's are high energy\nproducing beam's and can penetrate deeply situated inter-"
+    },
+    {
+      "chunk_id": "7513a2f60a0f0d623058de087cae2454",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Overview",
+      "page": 29,
+      "length": 800,
+      "content": "nal organ's, while sparing extensive skin damage. Two\ncommon route's can deliver radiation. Brachytherapy\ndeliver's radiation to a local area by placing radioactive\nmaterial's within close proximity to the cancerou's site.\nTeletherapy deliver's radiation to a specific area using an\nexternal beam machine.\nChemotherapy\nCurative chemotherapy usually require's multiple\nadministration's of the chemical agent. Chemotherapy or\nsystemic therapy i's administered in the blood and circulate's through the entire body. The choice of chemotherapeutic agent's depend's on the specific type of cancer.\nChemotherapy i's more commonly used for metastatic\n(malignant cancer which ha's spread to other area's\nbeyond the primary site of cancer growth) disease, since\nvery few cancer's are cured by systemic therapy."
+    },
+    {
+      "chunk_id": "9a2c8e836d9e9101c15bed4d3249d017",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Overview",
+      "page": 29,
+      "length": 573,
+      "content": "beyond the primary site of cancer growth) disease, since\nvery few cancer's are cured by systemic therapy.\nBiologic therapy\nBiologic therapie's primarily function to alter the\npatient's response to cancer. These treatment's are mostly\ninvestigation's and there are numerou's research protocol's\nstudying the effect's of biologic treatment's. These protocol's usually have strict admission criteria that may\nexclude potential candidate's who can benefit from treatment. These treatment's tend to stimulate specific immune\ncell's or immune chemical's to destroy cancer cell's."
+    },
+    {
+      "chunk_id": "140b79b7843417e6e400a0d377aa01b0",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Preparation",
+      "page": 29,
+      "length": 794,
+      "content": "For all treatment modalitie's imaging studie's, biopsy,\nand constant blood analysi's i's essential before, during,\nand after treatment's. Surgical candidate's should undergo\nextensive pre-operative evaluation with imaging studie's,\nblood chemistry analysi's, stabilized health statu's, and\nreadines's of staff for any potential complication's and cell\nbiopsy analysi's. Patient's with other pre-existing chronic\ndisease may require intensive post-operative monitoring.\nFor radiotherapy, the patient undergoe's extensive imaging studie's. Additional planning strategie's include beam\nKEY TERM'S\nBone marrow suppression —A decrease in cell's\nresponsible for providing immunity, carrying oxygen\nand those responsible for normal blood clotting.\nDNA—The molecule responsible for cell multiplication."
+    },
+    {
+      "chunk_id": "f22e556893cc4fb05457dbe7305885ce",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Preparation",
+      "page": 29,
+      "length": 750,
+      "content": "and those responsible for normal blood clotting.\nDNA—The molecule responsible for cell multiplication.\nTitrate—To analyze the best end point (for dose)\nfor a medication.\nlocalization to spare normal tissue's, calibration of fractionated dose's, and specific positioning during treatment session's.\nPatient's who receive curative chemotherapy should\nbe informed of possible side effect's associated with the\nchemotherapeutic agent. Patient's should also be informed\nof temporary lifestyle change's and medication's that may\noffer some symptomatic relief.\nPatient's undergoing biologic therapie's are usually\nadvised of potential side effect's, treatment cycle's and\nspecific test's for monitoring progres's according to the\nspecific research protocol."
+    },
+    {
+      "chunk_id": "cc2a00467853689a39124ef968b5e4a8",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Aftercare",
+      "page": 29,
+      "length": 750,
+      "content": "Patient's will typically be evaluated by imaging studie's, blood analysi's, physical examination , and health\nimprovement. These follow-up visit's usually occur at specific time interval's during the course of treatment. Surgical patient's may require closer observation during the initial post-operative period to avoid potential complication's. Reconstructive surgery can be considered to\nimprove appearance and restore function. Certain surgical\nprocedure's (such a's flap's and microsurgery of blood ve's-\nsel's) can restore new tissue's to a previou's surgery site.\nRisk's\nSurgical risk's\nSurgical therapy can be both disfiguring and di's-\nabling. Many normal tissue's can be adversely affected\nby radiotherapy. Side effect's that commonly occur"
+    },
+    {
+      "chunk_id": "edd8d1dbc888246d60d5366ce8574871",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Aftercare",
+      "page": 29,
+      "length": 750,
+      "content": "abling. Many normal tissue's can be adversely affected\nby radiotherapy. Side effect's that commonly occur\nshortly after a treatment cycle include nausea, vomiting,\nfatigue, los's of appetite, and bone marrow suppression\n(a decrease in the cell's that provide defense against\ninfection's and those which carry oxygen to cell's).\nRadiation risk's\nRadiotherapy can also cause difficulty swallowing,\noral gum disease, and dry mouth . Additionally, radiation therapy can cause damage to local structure's within\nthe irradiated field.\nChemotherapy risk's\nChemotherapy commonly cause's bone marrow\nsuppression. Additionally, a cell called platelet's—\nimportant for normal blood clotting—may be significantly lowered, causing patient's to bleed. Thi's may be"
+    },
+    {
+      "chunk_id": "85eafd4c0cf44f759662b6a30c6cb860",
+      "article_title": "Cancer therapy, definitive",
+      "section": "Aftercare",
+      "page": 29,
+      "length": 518,
+      "content": "important for normal blood clotting—may be significantly lowered, causing patient's to bleed. Thi's may be\nproblematic enough to limit the treatment course. Bone\nmarrow suppression can increase susceptibility to\ninfection and also cause infertility . Patient's commonly\nhave bout's of nausea and vomiting shortly after a\ntreatment session. Rapidly multiplying normal cell's are\nalso affected such a's skin cell's (causing blistering and\nulceration) and hair cell's (causing los's of hair, a condition called alopecia)."
+    },
+    {
+      "chunk_id": "5e41cd1efc67386919b639ddca788ea9",
+      "article_title": "Cancer therapy, palliative",
+      "section": "Overview",
+      "page": 30,
+      "length": 762,
+      "content": "Biologic therapie's risk's\nBiologic therapie's can cause patient's to develop suppression of cell's that help the body fight against infection. Administration of certain chemical's that have anticancer effect's can cause heart damage. Injection of killer\nimmune cell's (lymphokine-activated killer cell's) may\ncause bone marrow suppression, and the host may reject\nthe newly introduced cell's.\nResource's\nBOOK'S\nAbeloff, Martin D., et al. Clinical Oncology. 2nd ed. Churchill\nLivingstone, Inc, 2000.\nFauci, Anthony S., et al, ed's. Harrison's Principle's of Internal\nMedicine. 14th ed. McGraw Hill, 1998.\nGoroll, Allan H., et al, ed's. Primary Care Medicine. 4th ed.\nLippincott, William's & Wilkin's, 2000.\nOTHER\nAmerican Cancer Society. <http://www.cancer.org>."
+    },
+    {
+      "chunk_id": "43a156d782520099da58b275c2bea8ce",
+      "article_title": "Cancer therapy, palliative",
+      "section": "Overview",
+      "page": 30,
+      "length": 241,
+      "content": "Lippincott, William's & Wilkin's, 2000.\nOTHER\nAmerican Cancer Society. <http://www.cancer.org>.\nNational Cancer Institute. <http://cnetdb.nci.nih.gov/cancerlit.\nshtml.>.\nLaith Farid Gulli, M.D.\nNicole Mallory, M.S.\nCancer therapy, palliative"
+    },
+    {
+      "chunk_id": "bfe51f04057471230dcd81d03d8ff3a8",
+      "article_title": "Cancer therapy, palliative",
+      "section": "Definition",
+      "page": 30,
+      "length": 124,
+      "content": "Palliative cancer therapy i's treatment specifically\ndirected to help improve the symptom's associated with\nterminal cancer."
+    },
+    {
+      "chunk_id": "3241643c20120a7298a799cb35788d57",
+      "article_title": "Cancer therapy, palliative",
+      "section": "Purpose",
+      "page": 30,
+      "length": 752,
+      "content": "Palliative care i's directed to improving symptom's\nassociated with incurable cancer. Care can include\nsurgery, radiation therapy , chemotherapy , symptomatic treatment's resulting from cancer, and side effect's\nof treatment. The primary objective of palliative care i's\nto improve the quality of remaining duration of life.\nTreatment usually involve's a combination of modalitie's\n(multimodality approach) and numerou's specialist's are\ntypically involved in the treatment planning proces's.\nTherapeutic planning usually involve's meticulou's coordination with the treatment team.\nSurgery can be utilized for palliation after careful\nevaluation and planning. The use of surgery in these case's\nmay reduce the tumor bulk and help improve the quality of"
+    },
+    {
+      "chunk_id": "0fed045a48ca74c5caebea15eedf8a1a",
+      "article_title": "Cancer therapy, palliative",
+      "section": "Purpose",
+      "page": 30,
+      "length": 758,
+      "content": "evaluation and planning. The use of surgery in these case's\nmay reduce the tumor bulk and help improve the quality of\nlife by relieving pain, alleviating obstruction, or controlling bleeding. Radiotherapy for terminal cancer patient's\ncan also alleviate pain, bleeding, and obstruction of neighboring area's. Chemotherapy may be helpful to reduce\ntumor size and provide some reduction to metastatic di's-\nease. Long-term chemotherapy patient's develop drug\nresistance, a situation that render's chemotherapeutic treatment's ineffective. If thi's occur's patient's are usually given\na second line medication or, if admission criteria are met,\nthey may participate in an experimental research protocol.\nPalliative treatment's and terminal cancer in combination"
+    },
+    {
+      "chunk_id": "2969a6813bba63e5e1be15b3da67a3b0",
+      "article_title": "Cancer therapy, palliative",
+      "section": "Purpose",
+      "page": 30,
+      "length": 791,
+      "content": "they may participate in an experimental research protocol.\nPalliative treatment's and terminal cancer in combination\ncan cause many symptom's that can become problematic.\nThese symptom's commonly include pain, nausea, vomiting, difficulty in breathing, constipation, dehydration,\nagitation, and delirium. The palliative treatment-planning\ngoal focuse's to reduce these symptom's.\nPrecaution's\nSurgery for the purpose of tumor removal, biopsy, or\nsize reduction i's associated with postoperative pain and\nlocal nerve damage, which may be both severe and difficult\nto alleviate. Chemotherapy and radiation therapy can also\nproduce nerve damage and severe pain. Additionally,\npatient's with malignant cancer are susceptible to infection's\nlike herpe's, pneumonia, urinary tract infection's, and"
+    },
+    {
+      "chunk_id": "9679121843e6a66af34945a5a064c035",
+      "article_title": "Cancer therapy, palliative",
+      "section": "Purpose",
+      "page": 30,
+      "length": 415,
+      "content": "patient's with malignant cancer are susceptible to infection's\nlike herpe's, pneumonia, urinary tract infection's, and\nwound absces's, all of which can cause severe pain. Pain\nassociated with cancer and/or treatment's can significantly\nimpair the patient's capabilitie's for performing daily task's\nand hence impair quality of life. These complication's may\nnegatively impact the patient's psychological well being."
+    },
+    {
+      "chunk_id": "9c2eaa5e874156a2bc33357b20ed434a",
+      "article_title": "Cancer therapy, palliative",
+      "section": "Description",
+      "page": 30,
+      "length": 765,
+      "content": "Pain i's one of the common symptom's associated with\ncancer. Approximately 75% of terminal cancer patient's\nhave pain. Pain i's a subjective symptom and thu's it cannot\nbe measured using technological approache's. Pain can be\nassessed using numeric scale's (from one to 10, one i's rated\na's no pain while 10 i's severe) or rating specific facial\nexpression's associated with variou's level's of pain. The\nmajority of cancer patient's experience pain a's a result of\ntumor mas's that compresse's neighboring nerve's, bone, or\nsoft tissue's, or from direct nerve injury (neuropathic pain).\nPain can occur from affected nerve's in the rib's, muscle's,\nand internal structure's such a's the abdomen (cramping\ntype pain associated with obstruction). Many patient's also"
+    },
+    {
+      "chunk_id": "2dedf62c77fe33276ee872e2ab11f3fc",
+      "article_title": "Cancer therapy, palliative",
+      "section": "Description",
+      "page": 30,
+      "length": 285,
+      "content": "and internal structure's such a's the abdomen (cramping\ntype pain associated with obstruction). Many patient's also\nexperience variou's type's of pain a's a direct result of follow-up test's, treatment's (surgery, radiation, and chemotherapy) and diagnostic procedure's (i.e., biopsy)."
+    },
+    {
+      "chunk_id": "fde6c88eb7545ffb0e4b84c54a641531",
+      "article_title": "Cancer therapy, palliative",
+      "section": "Preparation",
+      "page": 30,
+      "length": 204,
+      "content": "Patient's are typically informed that their diagnosi's i's\nterminal and treatment's are directed to improve quality\nof life for the remaining time and to minimize emotional\nsuffering associated with pain."
+    }
+  ]
+}

@@ -1,31 +1,30 @@
+import os
 from setuptools import find_packages, setup
 
+def parse_requirements(filename):
+    with open(filename, "r", encoding="utf-8") as f:
+        lines = f.read().splitlines()
+    reqs = []
+    for line in lines:
+        line = line.strip()
+        if line and not line.startswith("#") and not line.startswith("-e"):
+            reqs.append(line)
+    return reqs
+
 setup(
-    name="TeleMedicineApp",
+    name="medical_knowledge_assistant",
     version="0.1.0",
-    author="Prasoon Pathak",
-    author_email="prasoon7pathak@gmail.com",
-    description="A telemedicine application with chatbot, multilingual support, and low-bandwidth optimization",
-    long_description=open("README.md", encoding="utf-8").read(),
+    author="Antigravity AI / Medical Assistant Team",
+    description="Grounded Medical Knowledge Assistant (RAG System based on Gale Encyclopedia of Medicine)",
+    long_description=open("README.md", encoding="utf-8").read() if os.path.exists("README.md") else "",
     long_description_content_type="text/markdown",
-    # url="https://github.com/yourusername/TeleMedicineApp",  # replace with your repo
     packages=find_packages(),
     include_package_data=True,
-    install_requires=[
-        "sentence-transformers==2.2.0",
-        "langchain",
-        "flask",
-        "pypdf",
-        "python-dotenv",
-        "pinecone-client[grpc]",   # ✅ correct way (PyPI package is pinecone-client, not pinecone)
-        "langchain-pinecone",
-        "langchain-community",
-        "langchain-openai",
-        "langchain-experimental",
-    ],
+    install_requires=parse_requirements("requirements.txt"),
+    python_requires=">=3.10",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
+        "Topic :: Scientific/Engineering :: Medical Science Apps",
     ],
-    python_requires=">=3.8",
 )
