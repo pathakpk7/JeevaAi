@@ -927,11 +927,12 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 100;
+    z-index: 1050;
 }
 
-.modal.open {
-    display: flex;
+.modal.open,
+.modal.active {
+    display: flex !important;
 }
 
 .modal-content {

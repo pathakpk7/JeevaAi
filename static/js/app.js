@@ -80,8 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const interactionsEmptyNotice = document.getElementById('interactions-empty-state');
 
     // 1. VIEW TAB SWITCHING
-    if (navChatBtn && navExplorerBtn) {
+    if (navChatBtn) {
         navChatBtn.addEventListener('click', () => switchView('chat'));
+    }
+    if (navExplorerBtn) {
         navExplorerBtn.addEventListener('click', () => switchView('explorer'));
     }
     if (navInteractionsBtn) {
@@ -146,20 +148,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openEmergencyModal() {
         if (emergencyModal) {
-            emergencyModal.classList.add('active');
+            emergencyModal.classList.add('open', 'active');
             emergencyModal.setAttribute('aria-hidden', 'false');
         }
     }
 
     function closeEmergencyModal() {
         if (emergencyModal) {
-            emergencyModal.classList.remove('active');
+            emergencyModal.classList.remove('open', 'active');
             emergencyModal.setAttribute('aria-hidden', 'true');
         }
     }
 
     if (emergencyCloseBtn) emergencyCloseBtn.addEventListener('click', closeEmergencyModal);
     if (emergencyDismissBtn) emergencyDismissBtn.addEventListener('click', closeEmergencyModal);
+    if (emergencyModal) {
+        emergencyModal.addEventListener('click', (e) => {
+            if (e.target === emergencyModal) closeEmergencyModal();
+        });
+    }
 
     // 1D. FIRST AID INTERACTIVE GUIDES
     const firstAidData = {
@@ -252,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (firstAidBtn) {
         firstAidBtn.addEventListener('click', () => {
             if (firstAidModal) {
-                firstAidModal.classList.add('active');
+                firstAidModal.classList.add('open', 'active');
                 firstAidModal.setAttribute('aria-hidden', 'false');
                 renderFirstAidTab('cpr');
             }
@@ -262,7 +269,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (firstAidCloseBtn) {
         firstAidCloseBtn.addEventListener('click', () => {
             if (firstAidModal) {
-                firstAidModal.classList.remove('active');
+                firstAidModal.classList.remove('open', 'active');
+                firstAidModal.setAttribute('aria-hidden', 'true');
+            }
+        });
+    }
+
+    if (firstAidModal) {
+        firstAidModal.addEventListener('click', (e) => {
+            if (e.target === firstAidModal) {
+                firstAidModal.classList.remove('open', 'active');
                 firstAidModal.setAttribute('aria-hidden', 'true');
             }
         });
@@ -280,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (doctorPrepBtn) {
         doctorPrepBtn.addEventListener('click', async () => {
             if (doctorPrepModal) {
-                doctorPrepModal.classList.add('active');
+                doctorPrepModal.classList.add('open', 'active');
                 doctorPrepModal.setAttribute('aria-hidden', 'false');
             }
             if (doctorPrepBody) {
@@ -314,7 +330,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (doctorPrepCloseBtn) {
         doctorPrepCloseBtn.addEventListener('click', () => {
             if (doctorPrepModal) {
-                doctorPrepModal.classList.remove('active');
+                doctorPrepModal.classList.remove('open', 'active');
+                doctorPrepModal.setAttribute('aria-hidden', 'true');
+            }
+        });
+    }
+
+    if (doctorPrepModal) {
+        doctorPrepModal.addEventListener('click', (e) => {
+            if (e.target === doctorPrepModal) {
+                doctorPrepModal.classList.remove('open', 'active');
                 doctorPrepModal.setAttribute('aria-hidden', 'true');
             }
         });
@@ -557,6 +582,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             autoResizeTextarea();
         });
+
+        userInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                if (!appState.isLoading && (userInput.value.trim().length > 0 || currentAttachedFile)) {
+                    if (composerForm.requestSubmit) {
+                        composerForm.requestSubmit();
+                    } else {
+                        composerForm.dispatchEvent(new Event('submit', { cancelable: true }));
+                    }
+                }
+            }
+        });
     }
 
     // CHAT FORM SUBMIT (TEXT OR FILE REPORT)
@@ -689,7 +727,7 @@ document.addEventListener('DOMContentLoaded', () => {
         symptomWizardBtn.addEventListener('click', () => {
             resetWizard();
             if (symptomWizardModal) {
-                symptomWizardModal.classList.add('open');
+                symptomWizardModal.classList.add('open', 'active');
                 symptomWizardModal.setAttribute('aria-hidden', 'false');
             }
         });
@@ -794,7 +832,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeWizardModal() {
         if (symptomWizardModal) {
-            symptomWizardModal.classList.remove('open');
+            symptomWizardModal.classList.remove('open', 'active');
             symptomWizardModal.setAttribute('aria-hidden', 'true');
         }
     }
@@ -841,15 +879,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 5. NEW CHAT BUTTONS
-    headerNewChatBtn.addEventListener('click', () => startNewChatSession());
-    sidebarNewChatBtn.addEventListener('click', () => startNewChatSession());
+    if (headerNewChatBtn) headerNewChatBtn.addEventListener('click', () => startNewChatSession());
+    if (sidebarNewChatBtn) sidebarNewChatBtn.addEventListener('click', () => startNewChatSession());
 
     function startNewChatSession() {
         switchView('chat');
         appState.startNewChat();
+        if (userInput) {
+            userInput.value = '';
+            userInput.style.height = '44px';
+            userInput.focus();
+        }
+        if (charCounter) charCounter.textContent = '0 / 2000';
+        if (sendBtn) sendBtn.disabled = true;
         renderDynamicChatQuestions();
         closeMobileDrawer();
-        userInput.focus();
     }
 
     // 6. DRAWER TOGGLE (MOBILE & DESKTOP HISTORY)
@@ -889,38 +933,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 7. MODALS (SAFETY & ARTICLE DETAIL)
-    disclaimerModalBtn.addEventListener('click', () => {
-        safetyModal.classList.add('open');
-        safetyModal.setAttribute('aria-hidden', 'false');
-    });
+    if (disclaimerModalBtn) {
+        disclaimerModalBtn.addEventListener('click', () => {
+            if (safetyModal) {
+                safetyModal.classList.add('open', 'active');
+                safetyModal.setAttribute('aria-hidden', 'false');
+            }
+        });
+    }
 
-    modalCloseBtn.addEventListener('click', () => closeSafetyModal());
-    articleModalCloseBtn.addEventListener('click', () => closeArticleModal());
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', () => closeSafetyModal());
+    if (articleModalCloseBtn) articleModalCloseBtn.addEventListener('click', () => closeArticleModal());
 
-    safetyModal.addEventListener('click', (e) => {
-        if (e.target === safetyModal) closeSafetyModal();
-    });
+    if (safetyModal) {
+        safetyModal.addEventListener('click', (e) => {
+            if (e.target === safetyModal) closeSafetyModal();
+        });
+    }
 
-    articleDetailModal.addEventListener('click', (e) => {
-        if (e.target === articleDetailModal) closeArticleModal();
-    });
+    if (articleDetailModal) {
+        articleDetailModal.addEventListener('click', (e) => {
+            if (e.target === articleDetailModal) closeArticleModal();
+        });
+    }
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeSafetyModal();
             closeArticleModal();
+            closeWizardModal();
+            closeEmergencyModal();
+            if (firstAidModal) {
+                firstAidModal.classList.remove('open', 'active');
+                firstAidModal.setAttribute('aria-hidden', 'true');
+            }
+            if (doctorPrepModal) {
+                doctorPrepModal.classList.remove('open', 'active');
+                doctorPrepModal.setAttribute('aria-hidden', 'true');
+            }
             closeMobileDrawer();
         }
     });
 
     function closeSafetyModal() {
-        safetyModal.classList.remove('open');
-        safetyModal.setAttribute('aria-hidden', 'true');
+        if (safetyModal) {
+            safetyModal.classList.remove('open', 'active');
+            safetyModal.setAttribute('aria-hidden', 'true');
+        }
     }
 
     function closeArticleModal() {
-        articleDetailModal.classList.remove('open');
-        articleDetailModal.setAttribute('aria-hidden', 'true');
+        if (articleDetailModal) {
+            articleDetailModal.classList.remove('open', 'active');
+            articleDetailModal.setAttribute('aria-hidden', 'true');
+        }
     }
 
     function openArticleModal(sourceObj) {
@@ -940,7 +1006,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${renderMarkdown(sourceObj.snippet || sourceObj.text || 'No text snippet available.')}
             </div>
         `;
-        articleDetailModal.classList.add('open');
+        articleDetailModal.classList.add('open', 'active');
         articleDetailModal.setAttribute('aria-hidden', 'false');
     }
 
@@ -1202,7 +1268,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     chip.textContent = sug;
                     chip.addEventListener('click', () => {
                         userInput.value = sug;
-                        composerForm.dispatchEvent(new Event('submit'));
+                        userInput.dispatchEvent(new Event('input'));
+                        if (composerForm.requestSubmit) {
+                            composerForm.requestSubmit();
+                        } else {
+                            composerForm.dispatchEvent(new Event('submit', { cancelable: true }));
+                        }
                     });
                     followupsFlex.appendChild(chip);
                 });
@@ -1257,7 +1328,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const text = appState.error.failedText;
                     appState.clearError();
                     userInput.value = text;
-                    composerForm.dispatchEvent(new Event('submit'));
+                    userInput.dispatchEvent(new Event('input'));
+                    if (composerForm.requestSubmit) {
+                        composerForm.requestSubmit();
+                    } else {
+                        composerForm.dispatchEvent(new Event('submit', { cancelable: true }));
+                    }
                 }
             });
 
@@ -1364,6 +1440,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
             item.appendChild(delBtn);
             conversationsList.appendChild(item);
+        });
+    }
+
+    function renderDynamicChatQuestions() {
+        const grid = document.getElementById('example-prompts-grid');
+        if (!grid) return;
+        const questions = [
+            { icon: '🩺', title: 'Hypertension Risks', text: 'What are the main causes and symptoms of high blood pressure?' },
+            { icon: '🩸', title: 'Diabetes Management', text: 'Explain the key differences between Type 1 and Type 2 diabetes.' },
+            { icon: '💊', title: 'Antibiotic Safety', text: 'What precautions should be taken when taking prescribed antibiotics?' },
+            { icon: '🧠', title: 'Migraine vs Headache', text: 'How can you distinguish a common tension headache from a migraine?' }
+        ];
+
+        grid.innerHTML = '';
+        questions.forEach(q => {
+            const card = document.createElement('button');
+            card.type = 'button';
+            card.className = 'example-prompt-card';
+            card.innerHTML = `
+                <div class="prompt-icon">${q.icon}</div>
+                <div class="prompt-content">
+                    <div class="prompt-title">${q.title}</div>
+                    <div class="prompt-desc">${q.text}</div>
+                </div>
+            `;
+            card.addEventListener('click', () => {
+                userInput.value = q.text;
+                userInput.style.height = 'auto';
+                userInput.dispatchEvent(new Event('input'));
+                if (composerForm.requestSubmit) {
+                    composerForm.requestSubmit();
+                } else {
+                    composerForm.dispatchEvent(new Event('submit', { cancelable: true }));
+                }
+            });
+            grid.appendChild(card);
+        });
+    }
+
+    function renderExplorerSuggestions() {
+        const container = document.getElementById('scientific-pills-container');
+        if (!container) return;
+        const topics = [
+            'Hypertension', 'Diabetes mellitus', 'Asthma', 'Pneumonia',
+            'Migraine', 'Antibiotics', 'Cholesterol', 'Anemia', 'Ulcerative colitis', 'Caffeine'
+        ];
+
+        container.innerHTML = '';
+        topics.forEach(topic => {
+            const pill = document.createElement('button');
+            pill.type = 'button';
+            pill.className = 'citation-pill';
+            pill.textContent = topic;
+            pill.addEventListener('click', () => {
+                if (explorerSearchInput) {
+                    explorerSearchInput.value = topic;
+                    explorerSearchForm.dispatchEvent(new Event('submit'));
+                }
+            });
+            container.appendChild(pill);
         });
     }
 

@@ -13,7 +13,7 @@ class GeminiProvider(LLMProvider):
 
     def __init__(self, model_name: Optional[str] = None, api_key: Optional[str] = None):
         config = get_config()
-        self._model_name = model_name or (config.LLM_MODEL if "gemini" in config.LLM_MODEL.lower() else "gemini-3.6-flash")
+        self._model_name = model_name or (config.LLM_MODEL if "gemini" in config.LLM_MODEL.lower() else "gemini-1.5-flash")
         self._api_key = api_key or os.getenv("GEMINI_API_KEY") or config.GEMINI_API_KEY
         self._default_temp = config.LLM_TEMPERATURE
         self._default_max_tokens = config.LLM_MAX_OUTPUT_TOKENS
@@ -64,7 +64,7 @@ class GeminiProvider(LLMProvider):
 
         # Fallback candidate models if requested model returns 404
         candidate_models = [self._model_name]
-        for fallback in ["gemini-3.6-flash", "gemini-2.5-flash", "gemini-flash-latest"]:
+        for fallback in ["gemini-1.5-flash", "gemini-2.0-flash", "gemini-2.5-flash", "gemini-1.5-pro"]:
             if fallback not in candidate_models:
                 candidate_models.append(fallback)
 
@@ -135,7 +135,7 @@ class GeminiProvider(LLMProvider):
             payload["systemInstruction"] = {"parts": [{"text": system_instruction}]}
 
         candidate_models = [self._model_name]
-        for fallback in ["gemini-3.6-flash", "gemini-2.5-flash", "gemini-flash-latest"]:
+        for fallback in ["gemini-1.5-flash", "gemini-2.0-flash", "gemini-2.5-flash", "gemini-1.5-pro"]:
             if fallback not in candidate_models:
                 candidate_models.append(fallback)
 

@@ -1,3 +1,4 @@
+import re
 import time
 from typing import Optional, List, Any
 from src.config import get_config
@@ -45,6 +46,35 @@ class MedicalGenerationService:
             raise ValueError("Question string cannot be empty.")
 
         logger.info(f"Processing generation query: '{q_str}' (Language: {lang_str})")
+
+        # Check for Common Conversational Greetings
+        clean_q = re.sub(r"[^\w\s]", "", q_str.lower().strip())
+        if clean_q in ["hi", "hello", "hey", "greetings", "good morning", "good evening", "good afternoon", "who are you", "what can you do", "help", "start"]:
+            total_ms = round((time.perf_counter() - start_total) * 1000, 2)
+            greeting_msg = (
+                "Hello! I am **JeevaAi MedeBot**, your evidence-grounded medical AI assistant powered by *The Gale Encyclopedia of Medicine*.\n\n"
+                "Here is how I can assist you:\n"
+                "- 🩺 **Ask Clinical Questions**: Inquire about symptoms, diseases, diagnosis, and treatments.\n"
+                "- 💊 **Drug Interactions**: Cross-reference two or more medications for contraindications.\n"
+                "- 🩹 **First Aid**: Access step-by-step emergency first-aid protocols.\n"
+                "- 📄 **Report Analysis**: Attach a PDF, lab report, or prescription photo for an explanation.\n\n"
+                "*How can I assist you with your health inquiry today?*"
+            )
+            return GenerationResponse(
+                question=q_str,
+                answer=greeting_msg,
+                match_quality="Strong",
+                citations=[],
+                retrieval_results=[],
+                metrics=GenerationMetrics(
+                    retrieval_latency_ms=0.0,
+                    generation_latency_ms=0.0,
+                    total_latency_ms=total_ms,
+                    chunks_used=0,
+                    llm_provider=self.llm_provider.provider_name,
+                    llm_model=self.llm_provider.model_name,
+                )
+            )
 
         # Step 1: Retrieval Phase
         start_retrieval = time.perf_counter()
