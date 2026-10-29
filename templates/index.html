@@ -304,77 +304,168 @@
                 <button id="wizard-close-btn" class="icon-btn" aria-label="Close wizard modal">&times;</button>
             </div>
             <div class="modal-body wizard-body">
-                <!-- STEP 1: CATEGORY / LOCATION -->
+                <!-- STEP 1: PATIENT PROFILE (AGE & GENDER) -->
                 <div id="wizard-step-1" class="wizard-step active">
-                    <h4>Step 1: Where is your primary symptom located?</h4>
+                    <h4>Step 1: Patient Profile</h4>
+                    
+                    <div class="wizard-input-group" style="margin-bottom: 16px;">
+                        <label>Select Age Range:</label>
+                        <div class="wizard-options-grid">
+                            <button type="button" class="wizard-option-btn" data-age="Under 18">
+                                <span class="option-icon">👶</span>
+                                <span class="option-label">Under 18 (Pediatric)</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn" data-age="18-39">
+                                <span class="option-icon">🧑</span>
+                                <span class="option-label">18 - 39 (Young Adult)</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn" data-age="40-64">
+                                <span class="option-icon">👨‍💼</span>
+                                <span class="option-label">40 - 64 (Adult)</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn" data-age="65+">
+                                <span class="option-icon">👵</span>
+                                <span class="option-label">65+ (Senior)</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="wizard-input-group">
+                        <label>Select Biological Sex / Gender:</label>
+                        <div class="wizard-options-grid">
+                            <button type="button" class="wizard-option-btn" data-gender="Female">
+                                <span class="option-icon">♀️</span>
+                                <span class="option-label">Female</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn" data-gender="Male">
+                                <span class="option-icon">♂️</span>
+                                <span class="option-label">Male</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn" data-gender="Unspecified">
+                                <span class="option-icon">👤</span>
+                                <span class="option-label">Other / Prefer not to say</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="wizard-footer" style="margin-top: 20px;">
+                        <button id="wizard-next-1-btn" type="button" class="btn btn-primary btn-full">
+                            Continue to Symptom Location &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: CATEGORY / LOCATION -->
+                <div id="wizard-step-2" class="wizard-step hidden">
+                    <h4>Step 2: Primary Symptom Location</h4>
                     <div class="wizard-options-grid">
-                        <button class="wizard-option-btn" data-category="Head, Neck & Neurological">
+                        <button type="button" class="wizard-option-btn" data-category="Head, Neck & Neurological">
                             <span class="option-icon">🧠</span>
                             <span class="option-label">Head, Neck & Brain</span>
                         </button>
-                        <button class="wizard-option-btn" data-category="Chest, Heart & Lungs">
+                        <button type="button" class="wizard-option-btn" data-category="Chest, Heart & Lungs">
                             <span class="option-icon">🫁</span>
                             <span class="option-label">Chest & Breathing</span>
                         </button>
-                        <button class="wizard-option-btn" data-category="Abdomen, Stomach & Digestion">
+                        <button type="button" class="wizard-option-btn" data-category="Abdomen, Stomach & Digestion">
                             <span class="option-icon">🩺</span>
                             <span class="option-label">Abdomen & Digestion</span>
                         </button>
-                        <button class="wizard-option-btn" data-category="Joints, Bones & Muscles">
+                        <button type="button" class="wizard-option-btn" data-category="Joints, Bones & Muscles">
                             <span class="option-icon">🦴</span>
                             <span class="option-label">Joints & Muscles</span>
                         </button>
-                        <button class="wizard-option-btn" data-category="General, Fever & Fatigue">
+                        <button type="button" class="wizard-option-btn" data-category="Skin, Rash & Allergies">
+                            <span class="option-icon">🩹</span>
+                            <span class="option-label">Skin & Allergies</span>
+                        </button>
+                        <button type="button" class="wizard-option-btn" data-category="General, Fever & Fatigue">
                             <span class="option-icon">🌡️</span>
                             <span class="option-label">General & Fever</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- STEP 2: DURATION -->
-                <div id="wizard-step-2" class="wizard-step hidden">
-                    <h4>Step 2: How long have you experienced this symptom?</h4>
+                <!-- STEP 3: DURATION -->
+                <div id="wizard-step-3" class="wizard-step hidden">
+                    <h4>Step 3: Duration & Onset</h4>
                     <div class="wizard-options-grid">
-                        <button class="wizard-option-btn" data-duration="Just started today">
+                        <button type="button" class="wizard-option-btn" data-duration="Just started today">
                             <span class="option-icon">⏱️</span>
                             <span class="option-label">Just started today</span>
                         </button>
-                        <button class="wizard-option-btn" data-duration="2 to 3 days">
+                        <button type="button" class="wizard-option-btn" data-duration="2 to 3 days">
                             <span class="option-icon">📅</span>
                             <span class="option-label">2 to 3 days</span>
                         </button>
-                        <button class="wizard-option-btn" data-duration="1 to 2 weeks">
+                        <button type="button" class="wizard-option-btn" data-duration="1 to 2 weeks">
                             <span class="option-icon">📆</span>
                             <span class="option-label">1 to 2 weeks</span>
                         </button>
-                        <button class="wizard-option-btn" data-duration="Chronic or recurrent">
+                        <button type="button" class="wizard-option-btn" data-duration="Chronic or recurrent">
                             <span class="option-icon">🔄</span>
                             <span class="option-label">Chronic / Recurrent</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- STEP 3: SEVERITY & NOTES -->
-                <div id="wizard-step-3" class="wizard-step hidden">
-                    <h4>Step 3: Severity & Additional Symptoms</h4>
-                    <div class="wizard-options-grid">
-                        <button class="wizard-option-btn" data-severity="Mild">
-                            <span class="option-label">Mild (Noticeable but easy to manage)</span>
-                        </button>
-                        <button class="wizard-option-btn" data-severity="Moderate">
-                            <span class="option-label">Moderate (Interferes with daily activity)</span>
-                        </button>
-                        <button class="wizard-option-btn" data-severity="Severe">
-                            <span class="option-label">Severe (Disruptive / Painful)</span>
-                        </button>
+                <!-- STEP 4: SEVERITY & PRE-EXISTING CONDITIONS -->
+                <div id="wizard-step-4" class="wizard-step hidden">
+                    <h4>Step 4: Severity & Medical History</h4>
+                    
+                    <div class="wizard-input-group" style="margin-bottom: 16px;">
+                        <label>Symptom Severity Level:</label>
+                        <div class="wizard-options-grid">
+                            <button type="button" class="wizard-option-btn" data-severity="Mild">
+                                <span class="option-label">Mild (Noticeable, manageable)</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn" data-severity="Moderate">
+                                <span class="option-label">Moderate (Interferes with activity)</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn" data-severity="Severe">
+                                <span class="option-label">Severe (Disruptive / Intense)</span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="wizard-input-group">
-                        <label for="wizard-notes-input">Specific Details or Symptoms (Optional):</label>
-                        <input type="text" id="wizard-notes-input" class="search-input" placeholder="e.g. Sharp pain after eating, chills, dizziness..." />
+                        <label>Pre-existing Health Context / Conditions (Select all that apply):</label>
+                        <div class="wizard-options-grid">
+                            <button type="button" class="wizard-option-btn wizard-condition-btn" data-condition="High Blood Pressure">
+                                <span class="option-label">High Blood Pressure</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn wizard-condition-btn" data-condition="Diabetes">
+                                <span class="option-label">Diabetes</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn wizard-condition-btn" data-condition="Asthma/Respiratory">
+                                <span class="option-label">Asthma / Lungs</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn wizard-condition-btn" data-condition="Heart Disease">
+                                <span class="option-label">Heart Conditions</span>
+                            </button>
+                            <button type="button" class="wizard-option-btn wizard-condition-btn" data-condition="None">
+                                <span class="option-label">None / Healthy</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="wizard-footer">
+
+                    <div class="wizard-footer" style="margin-top: 20px;">
+                        <button id="wizard-next-4-btn" type="button" class="btn btn-primary btn-full">
+                            Continue to Specific Details &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 5: SPECIFIC DETAILS & FINAL REVIEW -->
+                <div id="wizard-step-5" class="wizard-step hidden">
+                    <h4>Step 5: Specific Symptoms & Details</h4>
+                    <div class="wizard-input-group">
+                        <label for="wizard-notes-input">Describe Specific Symptoms or Notes (Optional):</label>
+                        <input type="text" id="wizard-notes-input" class="search-input" placeholder="e.g. Sharp pain after eating, fever of 101°F, chills..." />
+                    </div>
+                    <div class="wizard-footer" style="margin-top: 20px;">
                         <button id="wizard-submit-btn" type="button" class="btn btn-primary btn-full">
-                            Generate Medical Query & Fill Prompt
+                            ✨ Generate Medical Query & Fill Prompt
                         </button>
                     </div>
                 </div>

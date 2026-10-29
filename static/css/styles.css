@@ -699,6 +699,7 @@ body {
     color: var(--text-main);
     line-height: 1.5;
 }
+.explorer-title {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-main);
@@ -965,7 +966,8 @@ body {
     padding-left: 20px;
 }
 
-/* RESPONSIVE DRAWER & OVERLAY */
+/* COMPREHENSIVE RESPONSIVE DESIGN SYSTEM (LAPTOP, TABLET, MOBILE) */
+
 .mobile-only {
     display: none;
 }
@@ -974,45 +976,209 @@ body {
     display: none;
 }
 
+/* 1. LAPTOP / SMALL DESKTOP (1025px - 1280px) */
+@media (max-width: 1280px) {
+    .app-header {
+        padding: 0 16px;
+    }
+    .header-right {
+        gap: 8px;
+    }
+    .btn {
+        padding: 7px 12px;
+        font-size: 0.82rem;
+    }
+}
+
+/* 2. TABLET VIEW (769px - 1024px) */
+@media (max-width: 1024px) {
+    .app-sidebar {
+        width: 240px;
+    }
+    .brand-title h1 {
+        font-size: 1.05rem;
+    }
+    .nav-tab {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    .header-right {
+        gap: 6px;
+    }
+    .btn span {
+        display: inline;
+    }
+    .explorer-container {
+        max-width: 100%;
+        padding: 16px;
+    }
+    .explorer-header {
+        padding: 20px 16px;
+    }
+    .mode-explanation-badge {
+        max-width: 100%;
+    }
+}
+
+/* 3. MOBILE VIEW (481px - 768px) */
 @media (max-width: 768px) {
     .mobile-only {
-        display: flex;
+        display: flex !important;
     }
 
-    .drawer-overlay {
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 100vw;
-        height: calc(100vh - 60px);
-        background-color: rgba(15, 23, 42, 0.4);
-        z-index: 25;
+    .app-header {
+        height: auto;
+        min-height: 56px;
+        padding: 10px 14px;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
-    .drawer-overlay.open {
-        display: block;
+    .header-left {
+        flex: 1;
+        justify-content: space-between;
+    }
+
+    .view-nav-switcher {
+        width: 100%;
+        order: 3;
+        justify-content: center;
+        margin-top: 2px;
+    }
+
+    .nav-tab {
+        flex: 1;
+        text-align: center;
+        padding: 6px 10px;
+        font-size: 0.82rem;
+    }
+
+    .header-right {
+        width: 100%;
+        order: 4;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        gap: 6px;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .app-body {
+        height: calc(100vh - 116px);
     }
 
     .app-sidebar {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
-        height: 100%;
+        width: 280px;
+        height: 100vh;
         transform: translateX(-100%);
-        z-index: 30;
+        z-index: 100;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
     }
 
     .app-sidebar.open {
         transform: translateX(0) !important;
     }
-}
+
+    .drawer-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(15, 23, 42, 0.5);
+        backdrop-filter: blur(2px);
+        z-index: 90;
+        display: none;
+    }
+
+    .drawer-overlay.open {
+        display: block !important;
+    }
+
+    .chat-container {
+        padding: 12px 10px;
+    }
+
+    .message-wrapper.user .message-bubble,
+    .message-wrapper.assistant .message-bubble {
+        max-width: 92%;
+    }
+
+    .composer-container {
+        padding: 8px 12px 12px;
+    }
 
     .example-prompts-grid {
         grid-template-columns: 1fr;
+        gap: 8px;
     }
 
     .search-input-wrapper {
         flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .search-input-wrapper .search-input,
+    .search-input-wrapper .mode-select,
+    .search-input-wrapper .btn {
+        width: 100%;
+    }
+
+    .modal-content, .modal-large, .modal-medium {
+        width: 94vw !important;
+        max-width: 94vw !important;
+        margin: 0 12px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* 4. SMALL PHONE VIEW (< 480px) */
+@media (max-width: 480px) {
+    .brand-title h1 {
+        font-size: 0.95rem;
+    }
+    
+    .brand-logo-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .btn {
+        padding: 5px 8px;
+        font-size: 0.76rem;
+    }
+
+    .empty-subtitle {
+        font-size: 0.82rem;
+    }
+
+    .wizard-options-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .option-icon {
+        font-size: 1.3rem;
+    }
+
+    .option-label {
+        font-size: 0.78rem;
+    }
+
+    .scientific-term-pill {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+
+    .disclaimer-bar {
+        font-size: 0.68rem;
     }
 }
 

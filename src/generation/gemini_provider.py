@@ -72,7 +72,7 @@ class GeminiProvider(LLMProvider):
         for model in candidate_models:
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={self._api_key}"
             try:
-                res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=8)
+                res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=25)
                 if res.status_code == 404:
                     logger.warning(f"Gemini model '{model}' returned 404 Not Found. Trying fallback model...")
                     continue

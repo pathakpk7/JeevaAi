@@ -21,19 +21,24 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Pre-download SentenceTransformer embedding model for instant startup without runtime download delays
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')"
+
 # Copy application source code and assets
 COPY app.py .
 COPY src/ ./src/
 COPY templates/ ./templates/
 COPY static/ ./static/
 COPY data/ ./data/
+COPY vectorstore/ ./vectorstore/
 
-# Expose port
+# Expose default port
 EXPOSE 5000
 
-# Healthcheck probe using health API endpoint
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-    CMD curl -f http://localhost:5000/api/health || exit 1
+# Healthcheck probe using dynamic PORT environment variable
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+    CMD curl -f http://localhost:${PORT:-5000}/api/health || exit 1
 
-# Launch using Gunicorn production WSGI server calling the canonical app factory
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "--threads", "4", "--timeout", "120", "app:create_app()"]
+# Launch using Gunicorn with 1 worker and 4 threads (optimized for memory efficiency on Render/Railway)
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-5000} --workers 1 --threads 4 --timeout 120 'app:create_app()'"]
+

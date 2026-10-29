@@ -117,7 +117,7 @@ class MedicalGenerationService:
 
     def _build_extracted_fallback_answer(self, results: List[Any]) -> str:
         """
-        Builds a structured medical summary directly from retrieved vectorstore chunks
+        Builds a rich structured medical summary directly from retrieved vectorstore chunks
         when external LLM APIs are unreachable or timing out.
         """
         if not results:
@@ -126,19 +126,19 @@ class MedicalGenerationService:
         top_chunk = results[0]
         title = getattr(top_chunk, "article_title", "Medical Reference")
 
-        paragraphs = [f"### Medical Knowledge Reference: {title}\n"]
+        paragraphs = [
+            f"### 📋 Grounded Medical Evidence: {title}\n",
+            "Below is the evidence-grounded reference material retrieved directly from *The Gale Encyclopedia of Medicine*:\n"
+        ]
 
-        for idx, res in enumerate(results[:3], 1):
+        for idx, res in enumerate(results[:4], 1):
             snippet = getattr(res, "text", "").strip()
             page = getattr(res, "page", "N/A")
             section = getattr(res, "section", "")
-            sec_text = f" — *{section}*" if section else ""
+            sec_text = f" — *Section: {section}*" if section else ""
 
-            if len(snippet) > 350:
-                snippet = snippet[:350].rsplit(' ', 1)[0] + "..."
+            paragraphs.append(f"#### {idx}. {res.article_title}{sec_text} (Page {page})\n{snippet}\n")
 
-            paragraphs.append(f"**{idx}. Excerpt from {res.article_title}{sec_text} (Page {page})**:\n{snippet}\n")
-
-        paragraphs.append("*Note: Grounded information extracted directly from verified Gale Encyclopedia of Medicine reference text.*")
+        paragraphs.append("\n---\n*Note: Extracted directly from verified Gale Encyclopedia of Medicine reference text.*")
         return "\n".join(paragraphs)
 

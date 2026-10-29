@@ -305,11 +305,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // SYMPTOM CHECKER WIZARD MODAL LOGIC
-    let wizardData = { category: '', duration: '', severity: '' };
+    let wizardData = { age: '', gender: '', category: '', duration: '', severity: '', conditions: [] };
 
     if (symptomWizardBtn) {
-        symptomWizardBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+        symptomWizardBtn.addEventListener('click', () => {
             resetWizard();
             if (symptomWizardModal) {
                 symptomWizardModal.classList.add('open');
@@ -322,6 +321,21 @@ document.addEventListener('DOMContentLoaded', () => {
         wizardCloseBtn.addEventListener('click', () => closeWizardModal());
     }
 
+    const wizardNext1Btn = document.getElementById('wizard-next-1-btn');
+    const wizardNext4Btn = document.getElementById('wizard-next-4-btn');
+
+    if (wizardNext1Btn) {
+        wizardNext1Btn.addEventListener('click', () => {
+            goToWizardStep(2);
+        });
+    }
+
+    if (wizardNext4Btn) {
+        wizardNext4Btn.addEventListener('click', () => {
+            goToWizardStep(5);
+        });
+    }
+
     if (symptomWizardModal) {
         symptomWizardModal.addEventListener('click', (e) => {
             if (e.target === symptomWizardModal) {
@@ -332,29 +346,72 @@ document.addEventListener('DOMContentLoaded', () => {
             const optionBtn = e.target.closest('.wizard-option-btn');
             if (!optionBtn) return;
 
-            // Step 1: Category / Location Selection
-            if (optionBtn.hasAttribute('data-category')) {
+            // Step 1: Age Selection
+            if (optionBtn.hasAttribute('data-age')) {
+                document.querySelectorAll('#wizard-step-1 .wizard-option-btn[data-age]').forEach(b => b.classList.remove('selected'));
+                optionBtn.classList.add('selected');
+                wizardData.age = optionBtn.getAttribute('data-age');
+            }
+            // Step 1: Gender Selection
+            else if (optionBtn.hasAttribute('data-gender')) {
+                document.querySelectorAll('#wizard-step-1 .wizard-option-btn[data-gender]').forEach(b => b.classList.remove('selected'));
+                optionBtn.classList.add('selected');
+                wizardData.gender = optionBtn.getAttribute('data-gender');
+            }
+            // Step 2: Category Selection
+            else if (optionBtn.hasAttribute('data-category')) {
                 wizardData.category = optionBtn.getAttribute('data-category');
-                const s1 = document.getElementById('wizard-step-1');
-                const s2 = document.getElementById('wizard-step-2');
-                if (s1) { s1.classList.remove('active'); s1.classList.add('hidden'); }
-                if (s2) { s2.classList.remove('hidden'); s2.classList.add('active'); }
+                goToWizardStep(3);
             } 
-            // Step 2: Duration Selection
+            // Step 3: Duration Selection
             else if (optionBtn.hasAttribute('data-duration')) {
                 wizardData.duration = optionBtn.getAttribute('data-duration');
-                const s2 = document.getElementById('wizard-step-2');
-                const s3 = document.getElementById('wizard-step-3');
-                if (s2) { s2.classList.remove('active'); s2.classList.add('hidden'); }
-                if (s3) { s3.classList.remove('hidden'); s3.classList.add('active'); }
+                goToWizardStep(4);
             } 
-            // Step 3: Severity Selection
+            // Step 4: Severity Selection
             else if (optionBtn.hasAttribute('data-severity')) {
-                document.querySelectorAll('#wizard-step-3 .wizard-option-btn').forEach(b => b.classList.remove('selected'));
+                document.querySelectorAll('#wizard-step-4 .wizard-option-btn[data-severity]').forEach(b => b.classList.remove('selected'));
                 optionBtn.classList.add('selected');
                 wizardData.severity = optionBtn.getAttribute('data-severity');
             }
+            // Step 4: Condition Selection (Multiple Checkboxes)
+            else if (optionBtn.hasAttribute('data-condition')) {
+                const cond = optionBtn.getAttribute('data-condition');
+                if (cond === 'None') {
+                    document.querySelectorAll('#wizard-step-4 .wizard-condition-btn').forEach(b => b.classList.remove('selected'));
+                    optionBtn.classList.add('selected');
+                    wizardData.conditions = ['None'];
+                } else {
+                    document.querySelectorAll('#wizard-step-4 .wizard-condition-btn[data-condition="None"]').forEach(b => b.classList.remove('selected'));
+                    wizardData.conditions = wizardData.conditions.filter(c => c !== 'None');
+                    
+                    if (optionBtn.classList.contains('selected')) {
+                        optionBtn.classList.remove('selected');
+                        wizardData.conditions = wizardData.conditions.filter(c => c !== cond);
+                    } else {
+                        optionBtn.classList.add('selected');
+                        if (!wizardData.conditions.includes(cond)) {
+                            wizardData.conditions.push(cond);
+                        }
+                    }
+                }
+            }
         });
+    }
+
+    function goToWizardStep(stepNum) {
+        for (let i = 1; i <= 5; i++) {
+            const stepEl = document.getElementById(`wizard-step-${i}`);
+            if (stepEl) {
+                if (i === stepNum) {
+                    stepEl.classList.remove('hidden');
+                    stepEl.classList.add('active');
+                } else {
+                    stepEl.classList.remove('active');
+                    stepEl.classList.add('hidden');
+                }
+            }
+        }
     }
 
     function closeWizardModal() {
@@ -365,13 +422,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetWizard() {
-        wizardData = { category: '', duration: '', severity: '' };
-        const s1 = document.getElementById('wizard-step-1');
-        const s2 = document.getElementById('wizard-step-2');
-        const s3 = document.getElementById('wizard-step-3');
-        if (s1) { s1.classList.remove('hidden'); s1.classList.add('active'); }
-        if (s2) { s2.classList.remove('active'); s2.classList.add('hidden'); }
-        if (s3) { s3.classList.remove('active'); s3.classList.add('hidden'); }
+        wizardData = { age: '', gender: '', category: '', duration: '', severity: '', conditions: [] };
+        goToWizardStep(1);
         document.querySelectorAll('.wizard-option-btn').forEach(btn => btn.classList.remove('selected'));
         if (wizardNotesInput) wizardNotesInput.value = '';
     }
@@ -386,9 +438,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const duration = wizardData.duration || 'recently';
             const severity = wizardData.severity || 'Moderate';
 
-            let query = `I am experiencing ${severity.toLowerCase()} ${category} symptoms for ${duration}.`;
+            let profileParts = [];
+            if (wizardData.age) profileParts.push(`age ${wizardData.age}`);
+            if (wizardData.gender && wizardData.gender !== 'Unspecified') profileParts.push(wizardData.gender);
+            const profileStr = profileParts.length > 0 ? `Patient Profile: ${profileParts.join(', ')}. ` : '';
+
+            let conditionStr = '';
+            if (wizardData.conditions.length > 0 && !wizardData.conditions.includes('None')) {
+                conditionStr = ` Pre-existing health context: ${wizardData.conditions.join(', ')}.`;
+            }
+
+            let query = `${profileStr}Experiencing ${severity.toLowerCase()} ${category} symptoms for ${duration}.${conditionStr}`;
             if (notes) query += ` Specific details: ${notes}.`;
-            query += ` What medical information and guidance is available for this?`;
+            query += ` What medical information, potential causes, and evidence-grounded guidance are available for this condition?`;
 
             closeWizardModal();
             switchView('chat');
