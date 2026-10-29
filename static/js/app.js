@@ -20,8 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // DOM ELEMENTS — VIEW NAV SWITCHER
     const navChatBtn = document.getElementById('nav-chat-btn');
     const navExplorerBtn = document.getElementById('nav-explorer-btn');
+    const navInteractionsBtn = document.getElementById('nav-interactions-btn');
     const chatView = document.getElementById('chat-view');
     const explorerView = document.getElementById('explorer-view');
+    const interactionsView = document.getElementById('interactions-view');
 
     // DOM ELEMENTS — KNOWLEDGE EXPLORER
     const explorerSearchForm = document.getElementById('explorer-search-form');
@@ -40,9 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleModalBody = document.getElementById('article-modal-body');
     const articleModalTitle = document.getElementById('article-modal-title');
 
-    // DOM ELEMENTS — NEW FEATURES
+    // DOM ELEMENTS — CLINICAL & ADVANCED TOOLS
+    let wizardData = { age: '', gender: '', category: '', duration: '', severity: '', conditions: [] };
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const themeIcon = document.getElementById('theme-icon');
     const languageSelect = document.getElementById('language-select');
     const symptomWizardBtn = document.getElementById('symptom-wizard-btn');
+    const firstAidBtn = document.getElementById('first-aid-btn');
+    const firstAidModal = document.getElementById('first-aid-modal');
+    const firstAidCloseBtn = document.getElementById('first-aid-close-btn');
+    const firstAidTabContent = document.getElementById('first-aid-tab-content');
+    const doctorPrepBtn = document.getElementById('doctor-prep-btn');
+    const doctorPrepModal = document.getElementById('doctor-prep-modal');
+    const doctorPrepCloseBtn = document.getElementById('doctor-prep-close-btn');
+    const doctorPrepBody = document.getElementById('doctor-prep-body');
+    const printDoctorSummaryBtn = document.getElementById('print-doctor-summary-btn');
+    const copyDoctorSummaryBtn = document.getElementById('copy-doctor-summary-btn');
+    const emergencyModal = document.getElementById('emergency-modal');
+    const emergencyCloseBtn = document.getElementById('emergency-close-btn');
+    const emergencyDismissBtn = document.getElementById('emergency-dismiss-btn');
     const exportChatBtn = document.getElementById('export-chat-btn');
     const reportFileInput = document.getElementById('report-file-input');
     const attachedFileBadge = document.getElementById('attached-file-badge');
@@ -53,27 +71,384 @@ document.addEventListener('DOMContentLoaded', () => {
     const wizardSubmitBtn = document.getElementById('wizard-submit-btn');
     const wizardNotesInput = document.getElementById('wizard-notes-input');
     const voiceInputBtn = document.getElementById('voice-input-btn');
+    const medInput = document.getElementById('med-input');
+    const addMedBtn = document.getElementById('add-med-btn');
+    const selectedMedsChips = document.getElementById('selected-meds-chips');
+    const checkInteractionsBtn = document.getElementById('check-interactions-btn');
+    const clearMedsBtn = document.getElementById('clear-meds-btn');
+    const interactionsResultsFeed = document.getElementById('interactions-results-feed');
+    const interactionsEmptyNotice = document.getElementById('interactions-empty-state');
 
     // 1. VIEW TAB SWITCHING
     if (navChatBtn && navExplorerBtn) {
         navChatBtn.addEventListener('click', () => switchView('chat'));
         navExplorerBtn.addEventListener('click', () => switchView('explorer'));
     }
+    if (navInteractionsBtn) {
+        navInteractionsBtn.addEventListener('click', () => switchView('interactions'));
+    }
 
     function switchView(viewName) {
+        [navChatBtn, navExplorerBtn, navInteractionsBtn].forEach(b => {
+            if (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); }
+        });
+        [chatView, explorerView, interactionsView].forEach(v => {
+            if (v) v.classList.remove('active');
+        });
+
         if (viewName === 'chat') {
             if (navChatBtn) { navChatBtn.classList.add('active'); navChatBtn.setAttribute('aria-selected', 'true'); }
-            if (navExplorerBtn) { navExplorerBtn.classList.remove('active'); navExplorerBtn.setAttribute('aria-selected', 'false'); }
             if (chatView) chatView.classList.add('active');
-            if (explorerView) explorerView.classList.remove('active');
-        } else {
+        } else if (viewName === 'explorer') {
             if (navExplorerBtn) { navExplorerBtn.classList.add('active'); navExplorerBtn.setAttribute('aria-selected', 'true'); }
-            if (navChatBtn) { navChatBtn.classList.remove('active'); navChatBtn.setAttribute('aria-selected', 'false'); }
             if (explorerView) explorerView.classList.add('active');
-            if (chatView) chatView.classList.remove('active');
             if (explorerSearchInput) explorerSearchInput.focus();
+        } else if (viewName === 'interactions') {
+            if (navInteractionsBtn) { navInteractionsBtn.classList.add('active'); navInteractionsBtn.setAttribute('aria-selected', 'true'); }
+            if (interactionsView) interactionsView.classList.add('active');
+            if (medInput) medInput.focus();
+            renderMedChips();
         }
         closeMobileDrawer();
+    }
+
+    // 1B. THEME TOGGLE (DARK / LIGHT)
+    let currentTheme = localStorage.getItem('jeeva_theme') || 'light';
+    applyTheme(currentTheme);
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('jeeva_theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+    }
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (themeIcon) {
+            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+    }
+
+    // 1C. EMERGENCY RED-FLAG REAL-TIME DETECTION
+    const EMERGENCY_KEYWORDS = [
+        'chest pain', 'heart attack', 'shortness of breath', 'cant breathe', "can't breathe",
+        'slurred speech', 'stroke', 'unconscious', 'passed out', 'anaphylaxis', 'choking',
+        'coughing blood', 'severe bleeding', 'overdose', 'poison', 'sudden numbness', 'loss of vision'
+    ];
+
+    function checkEmergencySymptoms(text) {
+        if (!text) return false;
+        const lower = text.toLowerCase();
+        return EMERGENCY_KEYWORDS.some(kw => lower.includes(kw));
+    }
+
+    function openEmergencyModal() {
+        if (emergencyModal) {
+            emergencyModal.classList.add('active');
+            emergencyModal.setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    function closeEmergencyModal() {
+        if (emergencyModal) {
+            emergencyModal.classList.remove('active');
+            emergencyModal.setAttribute('aria-hidden', 'true');
+        }
+    }
+
+    if (emergencyCloseBtn) emergencyCloseBtn.addEventListener('click', closeEmergencyModal);
+    if (emergencyDismissBtn) emergencyDismissBtn.addEventListener('click', closeEmergencyModal);
+
+    // 1D. FIRST AID INTERACTIVE GUIDES
+    const firstAidData = {
+        cpr: {
+            title: "🫀 CPR Steps (Cardiopulmonary Resuscitation)",
+            steps: [
+                { num: 1, title: "Check Safety & Responsiveness", desc: "Ensure scene safety. Tap shoulders firmly and shout: 'Are you OK?'. Check for breathing or chest rise." },
+                { num: 2, title: "Call Emergency & Retrieve AED", desc: "Shout for someone to call 911 / 112 / 108 immediately and get an Automated External Defibrillator (AED)." },
+                { num: 3, title: "Chest Compressions (100–120 bpm)", desc: "Place heel of hand on center of chest, interlock fingers. Push hard and fast (2–2.4 inches deep) to the beat of 'Stayin Alive'." },
+                { num: 4, title: "Give 2 Rescue Breaths (If Trained)", desc: "After 30 compressions, tilt head back, lift chin, pinch nose and deliver 2 gentle breaths (1 sec each). Watch chest rise." },
+                { num: 5, title: "Continue 30:2 Cycle", desc: "Continue uninterrupted cycles of 30 compressions and 2 breaths until emergency medical personnel arrive or AED is ready." }
+            ]
+        },
+        choking: {
+            title: "🗣️ Choking (Heimlich Maneuver / Back Blows)",
+            steps: [
+                { num: 1, title: "Assess Choking Severity", desc: "Ask 'Are you choking?'. If they can cough loudly or speak, encourage coughing. If silent or turning blue, act immediately." },
+                { num: 2, title: "Give 5 Back Blows", desc: "Stand behind the victim, lean them forward, and strike firmly between the shoulder blades 5 times with heel of hand." },
+                { num: 3, title: "Give 5 Abdominal Thrusts (Heimlich)", desc: "Wrap arms around waist. Place fist thumb-side just above navel. Grasp fist with other hand and thrust quickly inward and upward." },
+                { num: 4, title: "Repeat 5 and 5 Cycle", desc: "Alternate between 5 back blows and 5 abdominal thrusts until the airway blockage clears." },
+                { num: 5, title: "If Person Becomes Unresponsive", desc: "Lower them carefully to the ground, call emergency services immediately, and initiate CPR. Check mouth before breaths." }
+            ]
+        },
+        burns: {
+            title: "🔥 Burns & Scalds Immediate Care",
+            steps: [
+                { num: 1, title: "Cool with Running Water", desc: "Hold burned skin under cool running water for 15–20 minutes immediately. Never apply ice, butter, or oil." },
+                { num: 2, title: "Remove Constrictive Items", desc: "Gently remove tight rings, watches, or clothing before swelling occurs. Do not peel clothing stuck directly to burned flesh." },
+                { num: 3, title: "Cover Loosely with Clean Dressing", desc: "Cover with clean, non-stick sterile dressing or plastic wrap. Do not pop blisters as they prevent infection." },
+                { num: 4, title: "Identify Severity", desc: "1st degree: red/painful. 2nd degree: blisters/swelling. 3rd degree: charred, white, or leathery (requires immediate ER)." },
+                { num: 5, title: "Seek Emergency Care", desc: "Go to ER if burn is on face, hands, genitals, larger than patient's palm, or caused by chemicals or electricity." }
+            ]
+        },
+        bleeding: {
+            title: "🩸 Severe Bleeding & Hemorrhage Control",
+            steps: [
+                { num: 1, title: "Direct Continuous Pressure", desc: "Place a sterile gauze or clean cloth directly over the wound. Press firmly with both hands without letting up for 5–10 mins." },
+                { num: 2, title: "Add Layers, Do Not Remove", desc: "If blood soaks through, do not lift off the cloth—place another layer directly on top and press harder to protect blood clotting." },
+                { num: 3, title: "Elevate Limb Above Heart", desc: "If the injured limb has no broken bones, raise it above heart level to decrease blood flow." },
+                { num: 4, title: "Use Tourniquet if Uncontrolled", desc: "For life-threatening limb bleeding, apply a commercial tourniquet 2–3 inches above wound (never over a joint) and tighten until bleeding halts." },
+                { num: 5, title: "Prevent Shock", desc: "Keep patient lying flat, cover with a warm blanket, comfort them, and monitor breathing until paramedics arrive." }
+            ]
+        },
+        fractures: {
+            title: "🦴 Fractures & Musculoskeletal Injuries",
+            steps: [
+                { num: 1, title: "Keep Still & Immobilize", desc: "Do not attempt to straighten, push in, or move the injured bone or joint. Support in the exact position found." },
+                { num: 2, title: "Apply R.I.C.E. for Sprains", desc: "Rest the joint, apply Ice wrapped in cloth (15 mins on/off), Compress gently with elastic wrap, and Elevate above heart level." },
+                { num: 3, title: "Apply a Splint if Transporting", desc: "Pad a rigid object (board, folded newspaper) and tie securely above and below the injured area without cutting blood flow." },
+                { num: 4, title: "Check Circulation & Sensation", desc: "Ensure fingers/toes are warm and pink. If pale, blue, or numb, loosen splint bindings immediately." },
+                { num: 5, title: "Emergency Evaluation", desc: "Call for immediate help if bone penetrates skin (open fracture), severe deformity exists, or victim cannot feel digits." }
+            ]
+        },
+        bites: {
+            title: "🐍 Bites, Stings & Poisoning",
+            steps: [
+                { num: 1, title: "Snake Bites: Keep Calm & Still", desc: "Keep victim calm and still to slow venom spread. Keep bitten limb below heart level. Remove rings or constricting items." },
+                { num: 2, title: "Snake Bite Don'ts", desc: "NEVER cut the wound, NEVER suck venom, NEVER apply ice or electric shock, and DO NOT apply a tight tourniquet." },
+                { num: 3, title: "Bee/Wasp Stings", desc: "Scrape off visible stinger using a credit card edge (avoid squeezing venom sac with tweezers). Wash with soap and apply cold pack." },
+                { num: 4, title: "Anaphylaxis & EpiPen", desc: "If patient has difficulty breathing, swollen tongue, or hives, administer prescribed EpiPen into outer thigh and dial emergency services." },
+                { num: 5, title: "Animal Bites", desc: "Wash vigorously under warm soapy water for 5 minutes. Cover with clean bandage and visit emergency care for rabies/tetanus shots." }
+            ]
+        }
+    };
+
+    function renderFirstAidTab(tabKey) {
+        const data = firstAidData[tabKey] || firstAidData['cpr'];
+        if (!firstAidTabContent) return;
+
+        let html = `<h4 style="margin-bottom: 16px; color: var(--accent-teal);">${data.title}</h4>`;
+        data.steps.forEach(st => {
+            html += `
+                <div class="first-aid-step-item">
+                    <div class="first-aid-step-num">${st.num}</div>
+                    <div class="first-aid-step-content">
+                        <h5>${st.title}</h5>
+                        <p>${st.desc}</p>
+                    </div>
+                </div>
+            `;
+        });
+        html += `
+            <div style="margin-top: 18px; padding: 12px; background: rgba(239, 68, 68, 0.08); border-radius: 8px; font-size: 0.85rem; color: #ef4444;">
+                ⚠️ <strong>Emergency Note:</strong> First aid is temporary stabilizing care. Always contact emergency services (911 / 112 / 108) immediately for life-threatening conditions.
+            </div>
+        `;
+        firstAidTabContent.innerHTML = html;
+    }
+
+    if (firstAidBtn) {
+        firstAidBtn.addEventListener('click', () => {
+            if (firstAidModal) {
+                firstAidModal.classList.add('active');
+                firstAidModal.setAttribute('aria-hidden', 'false');
+                renderFirstAidTab('cpr');
+            }
+        });
+    }
+
+    if (firstAidCloseBtn) {
+        firstAidCloseBtn.addEventListener('click', () => {
+            if (firstAidModal) {
+                firstAidModal.classList.remove('active');
+                firstAidModal.setAttribute('aria-hidden', 'true');
+            }
+        });
+    }
+
+    document.querySelectorAll('.fa-tab-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.fa-tab-btn').forEach(b => b.classList.remove('active'));
+            e.currentTarget.classList.add('active');
+            renderFirstAidTab(e.currentTarget.dataset.tab);
+        });
+    });
+
+    // 1E. DOCTOR VISIT PREPARATION SUMMARY
+    if (doctorPrepBtn) {
+        doctorPrepBtn.addEventListener('click', async () => {
+            if (doctorPrepModal) {
+                doctorPrepModal.classList.add('active');
+                doctorPrepModal.setAttribute('aria-hidden', 'false');
+            }
+            if (doctorPrepBody) {
+                doctorPrepBody.innerHTML = `
+                    <div class="loading-dots" style="text-align: center; padding: 40px;">
+                        <span></span><span></span><span></span>
+                        <p style="margin-top: 14px; font-size: 0.9rem; color: var(--text-muted);">
+                            Synthesizing medical consultation into a clinical doctor's intake summary...
+                        </p>
+                    </div>
+                `;
+            }
+
+            try {
+                const data = await chatApi.generateDoctorSummary(appState.conversationId, wizardData || {}, getSelectedLanguage());
+                if (doctorPrepBody) {
+                    doctorPrepBody.innerHTML = renderMarkdown(data.summary);
+                }
+            } catch (err) {
+                if (doctorPrepBody) {
+                    doctorPrepBody.innerHTML = `
+                        <div style="color: var(--match-none-text); padding: 20px;">
+                            <strong>Failed to generate summary:</strong> ${err.message}
+                        </div>
+                    `;
+                }
+            }
+        });
+    }
+
+    if (doctorPrepCloseBtn) {
+        doctorPrepCloseBtn.addEventListener('click', () => {
+            if (doctorPrepModal) {
+                doctorPrepModal.classList.remove('active');
+                doctorPrepModal.setAttribute('aria-hidden', 'true');
+            }
+        });
+    }
+
+    if (printDoctorSummaryBtn) {
+        printDoctorSummaryBtn.addEventListener('click', () => {
+            window.print();
+        });
+    }
+
+    if (copyDoctorSummaryBtn) {
+        copyDoctorSummaryBtn.addEventListener('click', () => {
+            if (doctorPrepBody) {
+                navigator.clipboard.writeText(doctorPrepBody.innerText).then(() => {
+                    copyDoctorSummaryBtn.textContent = '✅ Copied!';
+                    setTimeout(() => { copyDoctorSummaryBtn.textContent = '📋 Copy Summary'; }, 2000);
+                });
+            }
+        });
+    }
+
+    // 1F. DRUG-TO-DRUG INTERACTION CHECKER
+    let selectedMedications = ['Aspirin', 'Ibuprofen'];
+
+    function renderMedChips() {
+        if (!selectedMedsChips) return;
+        selectedMedsChips.innerHTML = '';
+        selectedMedications.forEach((med, idx) => {
+            const chip = document.createElement('div');
+            chip.className = 'med-chip';
+            chip.innerHTML = `
+                <span>💊 ${med}</span>
+                <button type="button" class="med-chip-remove" aria-label="Remove ${med}">&times;</button>
+            `;
+            chip.querySelector('.med-chip-remove').addEventListener('click', () => {
+                selectedMedications.splice(idx, 1);
+                renderMedChips();
+            });
+            selectedMedsChips.appendChild(chip);
+        });
+    }
+
+    if (addMedBtn && medInput) {
+        const handleAddMed = () => {
+            const val = medInput.value.trim();
+            if (val && !selectedMedications.includes(val)) {
+                selectedMedications.push(val);
+                medInput.value = '';
+                renderMedChips();
+            }
+        };
+        addMedBtn.addEventListener('click', handleAddMed);
+        medInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handleAddMed();
+            }
+        });
+    }
+
+    if (clearMedsBtn) {
+        clearMedsBtn.addEventListener('click', () => {
+            selectedMedications = [];
+            renderMedChips();
+            if (interactionsResultsFeed) {
+                interactionsResultsFeed.innerHTML = '';
+                interactionsResultsFeed.classList.add('hidden');
+            }
+            if (interactionsEmptyNotice) {
+                interactionsEmptyNotice.classList.remove('hidden');
+            }
+        });
+    }
+
+    if (checkInteractionsBtn) {
+        checkInteractionsBtn.addEventListener('click', async () => {
+            if (selectedMedications.length < 2) {
+                alert('Please add at least 2 medications to evaluate interactions.');
+                return;
+            }
+
+            if (interactionsEmptyNotice) interactionsEmptyNotice.classList.add('hidden');
+            if (interactionsResultsFeed) {
+                interactionsResultsFeed.classList.remove('hidden');
+                interactionsResultsFeed.innerHTML = `
+                    <div class="loading-dots" style="text-align: center; padding: 40px;">
+                        <span></span><span></span><span></span>
+                        <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-muted);">
+                            Cross-referencing pharmacology encyclopedia for interactions...
+                        </p>
+                    </div>
+                `;
+            }
+
+            try {
+                const data = await chatApi.checkDrugInteractions(selectedMedications, getSelectedLanguage());
+                const riskClass = data.risk_level.toLowerCase().includes('high') ? 'risk-high' : 
+                                  (data.risk_level.toLowerCase().includes('low') ? 'risk-low' : 'risk-moderate');
+
+                let html = `
+                    <div class="explorer-result-card" style="padding: 24px;">
+                        <div class="interaction-risk-badge ${riskClass}">
+                            ⚠️ Interaction Level: ${data.risk_level}
+                        </div>
+                        <div class="markdown-body">
+                            ${renderMarkdown(data.analysis)}
+                        </div>
+                `;
+
+                if (data.citations && data.citations.length > 0) {
+                    html += `
+                        <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-subtle); font-size: 0.85rem; color: var(--text-muted);">
+                            <strong>Encyclopedia Citations:</strong>
+                            <ul style="margin-left: 20px; margin-top: 6px;">
+                    `;
+                    data.citations.forEach(c => {
+                        html += `<li>${c.article_title} (Page ${c.page})</li>`;
+                    });
+                    html += `</ul></div>`;
+                }
+
+                html += `</div>`;
+                if (interactionsResultsFeed) interactionsResultsFeed.innerHTML = html;
+            } catch (err) {
+                if (interactionsResultsFeed) {
+                    interactionsResultsFeed.innerHTML = `
+                        <div style="color: var(--match-none-text); padding: 20px;">
+                            <strong>Interaction check failed:</strong> ${err.message}
+                        </div>
+                    `;
+                }
+            }
+        });
     }
 
     // 2. VOICE SPEECH-TO-TEXT INPUT
@@ -193,6 +568,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!text && !currentAttachedFile) return;
         if (appState.isLoading) return;
 
+        // Check for Emergency Red-Flag Symptoms
+        if (checkEmergencySymptoms(text)) {
+            openEmergencyModal();
+        }
+
         appState.setLoading(true);
         appState.clearError();
 
@@ -305,8 +685,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // SYMPTOM CHECKER WIZARD MODAL LOGIC
-    let wizardData = { age: '', gender: '', category: '', duration: '', severity: '', conditions: [] };
-
     if (symptomWizardBtn) {
         symptomWizardBtn.addEventListener('click', () => {
             resetWizard();
@@ -735,6 +1113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 });
 
+                let isSpeaking = false;
                 const speakBtn = document.createElement('button');
                 speakBtn.className = 'action-btn';
                 speakBtn.innerHTML = `
@@ -747,20 +1126,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 speakBtn.addEventListener('click', () => {
                     if ('speechSynthesis' in window) {
+                        if (isSpeaking) {
+                            window.speechSynthesis.cancel();
+                            isSpeaking = false;
+                            speakBtn.querySelector('span').textContent = 'Read Aloud';
+                            return;
+                        }
                         window.speechSynthesis.cancel();
-                        const textToRead = msg.content.replace(/[#*`_]/g, '');
+                        const textToRead = msg.content.replace(/[#*`_\[\]()]/g, '');
                         const utterance = new SpeechSynthesisUtterance(textToRead);
                         const lang = getSelectedLanguage();
                         utterance.lang = lang === 'Hindi' ? 'hi-IN' : (lang === 'Spanish' ? 'es-ES' : 'en-US');
+                        utterance.onstart = () => {
+                            isSpeaking = true;
+                            speakBtn.querySelector('span').textContent = '⏹️ Stop';
+                        };
+                        utterance.onend = () => {
+                            isSpeaking = false;
+                            speakBtn.querySelector('span').textContent = 'Read Aloud';
+                        };
+                        utterance.onerror = () => {
+                            isSpeaking = false;
+                            speakBtn.querySelector('span').textContent = 'Read Aloud';
+                        };
                         window.speechSynthesis.speak(utterance);
                     } else {
                         alert('Text-to-speech is not supported in this browser.');
                     }
                 });
 
+                // Helpful / Unhelpful Feedback Buttons
+                const thumbsUp = document.createElement('button');
+                thumbsUp.className = 'feedback-btn';
+                thumbsUp.innerHTML = '👍 Helpful';
+                thumbsUp.title = 'Rate answer as helpful';
+                thumbsUp.addEventListener('click', () => {
+                    thumbsUp.classList.toggle('active');
+                    thumbsDown.classList.remove('active');
+                    chatApi.sendFeedback({ conversation_id: appState.conversationId, rating: 1 });
+                });
+
+                const thumbsDown = document.createElement('button');
+                thumbsDown.className = 'feedback-btn';
+                thumbsDown.innerHTML = '👎 Needs Work';
+                thumbsDown.title = 'Rate answer as unhelpful';
+                thumbsDown.addEventListener('click', () => {
+                    thumbsDown.classList.toggle('active');
+                    thumbsUp.classList.remove('active');
+                    chatApi.sendFeedback({ conversation_id: appState.conversationId, rating: -1 });
+                });
+
                 actionsBar.appendChild(copyBtn);
                 actionsBar.appendChild(speakBtn);
+                actionsBar.appendChild(thumbsUp);
+                actionsBar.appendChild(thumbsDown);
                 bubble.appendChild(actionsBar);
+
+                // Smart contextual follow-up questions
+                const followupsContainer = document.createElement('div');
+                followupsContainer.className = 'smart-followups-container';
+                followupsContainer.innerHTML = `<div class="smart-followup-title">💡 Suggested Follow-up Inquiries:</div>`;
+                const followupsFlex = document.createElement('div');
+                followupsFlex.className = 'smart-followups-flex';
+
+                const suggestions = [
+                    'What complications can occur with this?',
+                    'What dietary or lifestyle changes help?',
+                    'When should I see an in-person doctor?'
+                ];
+
+                suggestions.forEach(sug => {
+                    const chip = document.createElement('button');
+                    chip.type = 'button';
+                    chip.className = 'followup-chip';
+                    chip.textContent = sug;
+                    chip.addEventListener('click', () => {
+                        userInput.value = sug;
+                        composerForm.dispatchEvent(new Event('submit'));
+                    });
+                    followupsFlex.appendChild(chip);
+                });
+                followupsContainer.appendChild(followupsFlex);
+                bubble.appendChild(followupsContainer);
                 wrapper.appendChild(bubble);
             }
 

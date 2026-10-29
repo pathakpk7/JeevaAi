@@ -100,6 +100,63 @@ class GeminiProvider(LLMProvider):
 
         raise RuntimeError(f"All Gemini models failed ({candidate_models}). Last error: {last_exception}")
 
+    def generate_with_image(
+        self,
+        prompt: str,
+        image_bytes: bytes,
+        mime_type: str = "image/jpeg",
+        system_instruction: Optional[str] = None
+    ) -> str:
+        """
+        Analyzes an image (prescription, symptom, or lab report) with Gemini Multimodal Vision.
+        """
+        if not self._api_key:
+            raise ValueError("GEMINI_API_KEY is not configured.")
+
+        import base64
+        b64_image = base64.b64encode(image_bytes).decode("utf-8")
+
+        contents = [{
+            "role": "user",
+            "parts": [
+                {"inlineData": {"mimeType": mime_type, "data": b64_image}},
+                {"text": prompt}
+            ]
+        }]
+
+        payload: Dict[str, Any] = {
+            "contents": contents,
+            "generationConfig": {
+                "temperature": 0.2,
+                "maxOutputTokens": 1024,
+            }
+        }
+        if system_instruction:
+            payload["systemInstruction"] = {"parts": [{"text": system_instruction}]}
+
+        candidate_models = [self._model_name]
+        for fallback in ["gemini-3.6-flash", "gemini-2.5-flash", "gemini-flash-latest"]:
+            if fallback not in candidate_models:
+                candidate_models.append(fallback)
+
+        last_exception = None
+        for model in candidate_models:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={self._api_key}"
+            try:
+                res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=30)
+                if res.status_code == 404:
+                    continue
+                res.raise_for_status()
+                data = res.json()
+                parts = data.get("candidates", [])[0].get("content", {}).get("parts", [])
+                if parts:
+                    return parts[0].get("text", "").strip()
+            except Exception as e:
+                last_exception = e
+                continue
+
+        raise RuntimeError(f"Gemini vision call failed. Last error: {last_exception}")
+
     @property
     def provider_name(self) -> str:
         return "gemini"

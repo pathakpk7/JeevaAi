@@ -155,5 +155,60 @@ export const chatApi = {
         } catch (error) {
             return { status: 'unreachable' };
         }
+    },
+
+    /**
+     * Analyzes drug-to-drug interactions via POST /api/drug-interaction.
+     * @param {Array<string>} medications - List of medication names.
+     * @param {string} language - Response language.
+     * @returns {Promise<Object>} Interaction report.
+     */
+    async checkDrugInteractions(medications, language = 'English') {
+        const response = await fetch('/api/drug-interaction', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ medications, language }),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(data.error?.message || 'Drug interaction check failed.');
+        }
+        return data;
+    },
+
+    /**
+     * Generates a structured clinical Doctor's Visit Summary via POST /api/doctor-summary.
+     * @param {string} conversationId - Conversation session ID.
+     * @param {Object} patientProfile - Patient profile metadata.
+     * @param {string} language - Response language.
+     * @returns {Promise<Object>} Clinical summary.
+     */
+    async generateDoctorSummary(conversationId, patientProfile = {}, language = 'English') {
+        const response = await fetch('/api/doctor-summary', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ conversation_id: conversationId, patient_profile: patientProfile, language }),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(data.error?.message || 'Failed to generate physician summary.');
+        }
+        return data;
+    },
+
+    /**
+     * Records response rating feedback via POST /api/feedback.
+     * @param {Object} feedbackPayload - Rating info.
+     */
+    async sendFeedback(feedbackPayload) {
+        try {
+            await fetch('/api/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(feedbackPayload),
+            });
+        } catch (e) {
+            console.warn('Feedback submission error:', e);
+        }
     }
 };

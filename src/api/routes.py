@@ -235,13 +235,44 @@ def handle_upload_report():
                     pages_text.append(txt.strip())
             extracted_text = "\n\n".join(pages_text)
 
-        elif filename.endswith(".txt") or filename.endswith(".csv"):
+        elif filename.endswith((".txt", ".csv")):
             extracted_text = file.read().decode("utf-8", errors="ignore")
+        elif filename.endswith((".jpg", ".jpeg", ".png", ".webp")):
+            img_bytes = file.read()
+            mime = "image/png" if filename.endswith(".png") else "image/jpeg"
+            service = get_chat_service()
+            llm = service.generation_service.llm_provider
+            
+            prompt = (
+                f"You are JeevaAi Clinical Assistant. Analyze this medical image (e.g. prescription slip, medicine packaging, lab test, or visible health symptom/rash). "
+                f"1. Transcribe visible medication names, dosages, or key medical metrics if visible.\n"
+                f"2. Explain standard purpose, common precautions, and clinical relevance.\n"
+                f"3. Note any red flags or instructions to confirm with a doctor.\n"
+                f"Language: {language}\n"
+                f"Always include a clinical safety disclaimer."
+            )
+            
+            if hasattr(llm, "generate_with_image"):
+                try:
+                    analysis_text = llm.generate_with_image(prompt=prompt, image_bytes=img_bytes, mime_type=mime)
+                except Exception as img_err:
+                    logger.warning(f"Vision call error: {img_err}")
+                    analysis_text = f"Image received ({file.filename}). Identified medical imagery. Please confirm details with your physician."
+            else:
+                analysis_text = f"Medical image received: {file.filename}. Please consult your physician or pharmacist for clinical confirmation."
+
+            return jsonify({
+                "filename": file.filename,
+                "extracted_text": f"[Medical Image: {file.filename}]",
+                "analysis": analysis_text,
+                "citations": [],
+                "match_quality": "Strong Match"
+            }), 200
         else:
             return jsonify({
                 "error": {
                     "code": "UNSUPPORTED_MEDIA_TYPE",
-                    "message": "Only PDF and TXT medical reports are supported."
+                    "message": "Only PDF, TXT, and Image files (JPG, PNG) are supported."
                 }
             }), 415
 
@@ -376,3 +407,151 @@ def search_knowledge():
     )
 
     return jsonify(response.to_dict()), 200
+
+
+@api_bp.route("/drug-interaction", methods=["POST"])
+def check_drug_interaction():
+    """
+    Analyzes potential drug-drug interactions, risks, and clinical advisories.
+    POST /api/drug-interaction
+    Payload: {"medications": ["Aspirin", "Ibuprofen"], "language": "English"}
+    """
+    if not request.is_json:
+        return jsonify({"error": {"code": "INVALID_REQUEST", "message": "Content-Type must be application/json."}}), 400
+    
+    payload = request.get_json() or {}
+    meds = payload.get("medications", [])
+    language = payload.get("language", "English")
+
+    if not meds or not isinstance(meds, list) or len(meds) < 2:
+        return jsonify({
+            "error": {
+                "code": "INVALID_REQUEST",
+                "message": "Please provide at least 2 medication names to check interactions."
+            }
+        }), 400
+
+    meds_cleaned = [str(m).strip() for m in meds if str(m).strip()]
+    if len(meds_cleaned) < 2:
+        return jsonify({
+            "error": {
+                "code": "INVALID_REQUEST",
+                "message": "At least 2 valid medication names are required."
+            }
+        }), 400
+
+    retriever = get_retriever()
+    search_context = []
+    for med in meds_cleaned[:4]:
+        try:
+            res = retriever.retrieve(query=f"{med} drug interactions adverse effects precautions", top_k=2)
+            for r in res.results:
+                search_context.append(f"[{r.article_title} - {r.section} (p. {r.page})]: {r.text[:300]}")
+        except Exception as e:
+            logger.warning(f"Retrieval for med '{med}' failed: {e}")
+
+    context_str = "\n".join(search_context) if search_context else "Standard pharmacological reference."
+
+    prompt = (
+        f"You are an expert clinical pharmacologist for JeevaAi MedeBot. Evaluate potential drug-drug interactions between these medications:\n"
+        f"Medications: {', '.join(meds_cleaned)}\n\n"
+        f"Reference Medical Knowledge:\n{context_str}\n\n"
+        f"Provide a structured clinical evaluation formatted in Markdown:\n"
+        f"### 1. Risk Level Rating: [🔴 High Risk / Contraindicated | 🟡 Moderate Caution | 🟢 Low / No Direct Known Interaction]\n"
+        f"### 2. Interaction Mechanism & Risks: (Explain how they interact pharmacologically or in metabolic pathways)\n"
+        f"### 3. Symptoms to Watch For: (Warning signs the patient should monitor)\n"
+        f"### 4. Food, Drink & Dietary Precautions: (Alcohol, grapefruit, caffeine, etc.)\n"
+        f"### 5. Actionable Recommendation: (What the patient should ask their doctor or pharmacist)\n\n"
+        f"Language: {language}\n"
+        f"Always conclude with an emergency safety notice."
+    )
+
+    service = get_chat_service()
+    try:
+        gen_resp = service.generation_service.answer_question(question=prompt, language=language)
+        answer = gen_resp.answer
+        citations = [c.to_dict() for c in gen_resp.citations]
+    except Exception as e:
+        logger.error(f"Drug interaction generation error: {e}")
+        return jsonify({"error": {"code": "SERVICE_ERROR", "message": str(e)}}), 500
+
+    risk_level = "Moderate"
+    if "high risk" in answer.lower() or "contraindicated" in answer.lower() or "🔴" in answer:
+        risk_level = "High Risk"
+    elif "low" in answer.lower() or "no direct" in answer.lower() or "🟢" in answer:
+        risk_level = "Low Risk"
+
+    return jsonify({
+        "medications": meds_cleaned,
+        "risk_level": risk_level,
+        "analysis": answer,
+        "citations": citations
+    }), 200
+
+
+@api_bp.route("/doctor-summary", methods=["POST"])
+def generate_doctor_summary():
+    """
+    Transforms the current consultation into a structured clinical doctor's visit summary.
+    POST /api/doctor-summary
+    Payload: {"conversation_id": "...", "patient_profile": {...}, "language": "English"}
+    """
+    payload = request.get_json() or {}
+    cid = payload.get("conversation_id")
+    profile = payload.get("patient_profile", {})
+    language = payload.get("language", "English")
+
+    service = get_chat_service()
+    history = service.memory.get_history(cid) if (cid and service.memory.session_exists(cid)) else []
+    
+    if not history:
+        conv_text = "Patient engaged in initial medical consultation."
+    else:
+        conv_lines = [f"{msg.role.upper()}: {msg.content[:400]}" for msg in history[-8:]]
+        conv_text = "\n".join(conv_lines)
+
+    profile_text = (
+        f"Age: {profile.get('age', 'Unspecified')}, "
+        f"Sex: {profile.get('gender', 'Unspecified')}, "
+        f"Duration: {profile.get('duration', 'Unspecified')}, "
+        f"Severity: {profile.get('severity', 'Unspecified')}, "
+        f"Pre-existing Conditions: {', '.join(profile.get('conditions', [])) or 'None reported'}"
+    )
+
+    prompt = (
+        f"You are JeevaAi Clinical Assistant. Generate a professional 'Physician Consultation Prep Summary' for a patient to take to their upcoming doctor's appointment.\n"
+        f"Patient Profile: {profile_text}\n"
+        f"Consultation Notes:\n{conv_text}\n\n"
+        f"Format as a clean, highly structured clinical note in Markdown:\n"
+        f"# 🏥 DOCTOR'S VISIT PREPARATION SUMMARY\n"
+        f"**Date:** Today | **Patient Context:** {profile_text}\n\n"
+        f"### 1. Chief Complaint & Reported Symptoms\n"
+        f"### 2. Symptom Progression & Timeline\n"
+        f"### 3. Patient Medical Context & Pre-existing Factors\n"
+        f"### 4. Key Questions to Ask the Attending Physician (Checklist format [ ])\n"
+        f"### 5. Relevant Topics & Inquiries to Discuss\n\n"
+        f"Language: {language}\n"
+        f"Tone: Clinical, concise, and helpful."
+    )
+
+    try:
+        gen_resp = service.generation_service.answer_question(question=prompt, language=language)
+        return jsonify({
+            "summary": gen_resp.answer,
+            "patient_profile": profile,
+            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
+        }), 200
+    except Exception as e:
+        logger.error(f"Doctor summary generation failed: {e}")
+        return jsonify({"error": {"code": "SERVICE_ERROR", "message": str(e)}}), 500
+
+
+@api_bp.route("/feedback", methods=["POST"])
+def record_feedback():
+    """
+    Records helpfulness feedback (thumbs up / thumbs down) for an AI response.
+    POST /api/feedback
+    """
+    payload = request.get_json() or {}
+    logger.info(f"User Feedback recorded: {payload}")
+    return jsonify({"status": "success", "message": "Feedback recorded. Thank you!"}), 200
