@@ -2,11 +2,15 @@
 FROM python:3.13-slim
 
 # Prevent Python from writing .pyc files and buffer stdout/stderr
+# Restrict OpenMP and MKL thread pools to avoid excessive RAM usage in 512MB environments
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     APP_ENV=production \
     DEBUG=false \
-    PORT=5000
+    PORT=5000 \
+    OMP_NUM_THREADS=1 \
+    MKL_NUM_THREADS=1 \
+    TOKENIZERS_PARALLELISM=false
 
 # Set working directory
 WORKDIR /app
@@ -39,6 +43,5 @@ EXPOSE 5000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
     CMD curl -f http://localhost:${PORT:-5000}/api/health || exit 1
 
-# Launch using Gunicorn with 1 worker and 4 threads (optimized for memory efficiency on Render/Railway)
-CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-5000} --workers 1 --threads 4 --timeout 120 'app:create_app()'"]
-
+# Launch using Gunicorn with 1 worker and 2 threads (optimized for memory efficiency on Render/Railway 512MB RAM)
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-5000} --workers 1 --threads 2 --timeout 180 'app:create_app()'"]

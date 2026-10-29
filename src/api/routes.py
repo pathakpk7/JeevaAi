@@ -7,13 +7,32 @@ from src.logging_config import logger
 from src.chat.service import MedicalChatService
 from src.chat.models import ChatRequest
 from src.retrieval.retriever import MedicalRetriever
+from src.generation.service import MedicalGenerationService
 from src.retrieval.search_models import SearchResult, SearchResponse
 
 api_bp = Blueprint("api", __name__)
 
-# Initialize single chat service and retriever instances for API routes
-chat_service = MedicalChatService()
-explorer_retriever = MedicalRetriever()
+# Lazy singleton instances to avoid heavy startup memory/time and keep Render RAM under 512MB
+_chat_service = None
+_retriever = None
+
+def get_retriever() -> MedicalRetriever:
+    """Lazily initializes and returns the shared MedicalRetriever singleton."""
+    global _retriever
+    if _retriever is None:
+        logger.info("Lazily initializing shared MedicalRetriever...")
+        _retriever = MedicalRetriever()
+    return _retriever
+
+def get_chat_service() -> MedicalChatService:
+    """Lazily initializes and returns the MedicalChatService using the shared retriever."""
+    global _chat_service
+    if _chat_service is None:
+        logger.info("Lazily initializing MedicalChatService with shared retriever...")
+        retriever = get_retriever()
+        gen_service = MedicalGenerationService(retriever=retriever)
+        _chat_service = MedicalChatService(generation_service=gen_service)
+    return _chat_service
 
 @api_bp.before_app_request
 def before_request_middleware():
@@ -52,7 +71,7 @@ def health_check():
         "embedding_provider": config.EMBEDDING_PROVIDER,
         "retrieval_top_k": config.RETRIEVAL_TOP_K,
         "request_id": getattr(g, "request_id", ""),
-    }), 200 if pdf_exists else 500
+    }), 200
 
 @api_bp.route("/ready", methods=["GET"])
 def readiness_check():
@@ -61,7 +80,7 @@ def readiness_check():
     pdf_exists = config.validate_pdf_exists()
 
     try:
-        count = explorer_retriever.vector_store.count()
+        count = get_retriever().vector_store.count()
         store_ready = count > 0
     except Exception as e:
         logger.warning(f"Readiness probe vector store check failed: {e}")
@@ -114,8 +133,9 @@ def handle_chat():
     language = payload.get("language")
 
     try:
+        service = get_chat_service()
         chat_req = ChatRequest(conversation_id=conversation_id, message=str(raw_message))
-        response = chat_service.chat(
+        response = service.chat(
             message=chat_req.message,
             conversation_id=chat_req.conversation_id,
             language=language
@@ -153,10 +173,11 @@ def handle_chat():
 @api_bp.route("/chat/<conversation_id>", methods=["GET"])
 def get_chat_history(conversation_id):
     """Retrieves session message history for a given conversation_id."""
-    if not conversation_id or not chat_service.memory.session_exists(conversation_id):
+    service = get_chat_service()
+    if not conversation_id or not service.memory.session_exists(conversation_id):
         return jsonify({"conversation_id": conversation_id, "messages": []}), 200
 
-    history = chat_service.memory.get_history(conversation_id)
+    history = service.memory.get_history(conversation_id)
     messages_payload = [{"role": msg.role, "content": msg.content} for msg in history]
     return jsonify({"conversation_id": conversation_id, "messages": messages_payload}), 200
 
@@ -164,7 +185,8 @@ def get_chat_history(conversation_id):
 @api_bp.route("/chat/<conversation_id>", methods=["DELETE"])
 def delete_chat_history(conversation_id):
     """Deletes memory session for a given conversation_id."""
-    success = chat_service.clear_session(conversation_id)
+    service = get_chat_service()
+    success = service.clear_session(conversation_id)
     return jsonify({"conversation_id": conversation_id, "deleted": success}), 200
 
 
@@ -239,7 +261,8 @@ def handle_upload_report():
             f"Please analyze this report, summarize the key findings/lab values, and explain any relevant medical concepts."
         )
 
-        gen_resp = chat_service.generation_service.answer_question(question=analysis_prompt, language=language)
+        service = get_chat_service()
+        gen_resp = service.generation_service.answer_question(question=analysis_prompt, language=language)
 
         return jsonify({
             "filename": file.filename,
@@ -272,7 +295,8 @@ def clear_chat_session(conversation_id: str):
             }
         }), 400
 
-    cleared = chat_service.clear_session(conversation_id.strip())
+    service = get_chat_service()
+    cleared = service.clear_session(conversation_id.strip())
     if cleared:
         return jsonify({
             "status": "success",
@@ -316,7 +340,8 @@ def search_knowledge():
 
     start_time = time.perf_counter()
     try:
-        retrieval_response = explorer_retriever.retrieve(query=q_str, top_k=limit, mode=search_mode)
+        retriever = get_retriever()
+        retrieval_response = retriever.retrieve(query=q_str, top_k=limit, mode=search_mode)
     except Exception as e:
         logger.error(f"Search retrieval error for query '{q_str}' [{getattr(g, 'request_id', '')}]: {e}")
         return jsonify({
