@@ -15,12 +15,12 @@ class AppConfig(BaseSettings):
     VECTORSTORE_COLLECTION: str = "medical_knowledge"
 
     # LLM Provider Configuration
-    LLM_PROVIDER: str = "openai"  # Options: openai, gemini, local, mock
-    LLM_MODEL: str = "gpt-4o-mini"
+    LLM_PROVIDER: str = "gemini"  # Default to gemini (was openai)
+    LLM_MODEL: str = "gemini-3.5-flash"
     LLM_TEMPERATURE: float = 0.2
     LLM_MAX_OUTPUT_TOKENS: int = 1024
     OPENAI_API_KEY: str = ""
-    GEMINI_API_KEY: str = ""
+    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
 
     # Embedding Configuration
     EMBEDDING_PROVIDER: str = "huggingface"  # Options: huggingface, openai, gemini

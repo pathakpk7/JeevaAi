@@ -916,18 +916,23 @@ body {
     40% { transform: scale(1.0); }
 }
 
-/* MODAL */
+/* MODAL SYSTEM */
 .modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(15, 23, 42, 0.5);
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     display: none;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding: 30px 16px;
+    overflow-y: auto;
     z-index: 1050;
+    box-sizing: border-box;
 }
 
 .modal.open,
@@ -937,29 +942,81 @@ body {
 
 .modal-content {
     background-color: var(--bg-surface);
-    border-radius: var(--radius-md);
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 560px;
+    max-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border-subtle);
     overflow: hidden;
+    margin: auto;
+    animation: modalPopIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalPopIn {
+    from { opacity: 0; transform: scale(0.96) translateY(-10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .modal-large {
-    max-width: 720px;
+    max-width: 780px;
+}
+
+.modal-medium {
+    max-width: 640px;
 }
 
 .modal-header {
-    padding: 16px 20px;
+    padding: 18px 24px;
     border-bottom: 1px solid var(--border-subtle);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-shrink: 0;
+    background: var(--bg-surface);
+}
+
+.modal-header h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-main);
+    border-color: var(--border-subtle);
 }
 
 .modal-body {
-    padding: 20px;
-    font-size: 0.9rem;
+    padding: 22px 24px;
+    font-size: 0.95rem;
     color: var(--text-muted);
+    overflow-y: auto;
+    flex: 1 1 auto;
+    scrollbar-width: thin;
 }
 
 .modal-body ul {
@@ -1703,46 +1760,69 @@ body {
     display: flex;
     gap: 8px;
     overflow-x: auto;
-    padding-bottom: 12px;
+    padding: 4px 2px 14px 2px;
     border-bottom: 1px solid var(--border-subtle);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.first-aid-tabs-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .fa-tab-btn {
-    padding: 8px 14px;
-    border-radius: 20px;
+    padding: 9px 16px;
+    border-radius: 9999px;
     border: 1px solid var(--border-subtle);
     background: var(--bg-surface);
-    color: var(--text-main);
+    color: var(--text-muted);
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
-    transition: var(--transition);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fa-tab-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-main);
+    border-color: var(--border-focus);
 }
 
 .fa-tab-btn.active {
     background: var(--accent-teal);
-    color: #ffffff;
+    color: #ffffff !important;
     border-color: var(--accent-teal);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.28);
 }
 
 .first-aid-step-item {
     display: flex;
-    gap: 14px;
+    gap: 16px;
     align-items: flex-start;
-    margin-bottom: 14px;
-    padding: 14px;
+    margin-bottom: 12px;
+    padding: 14px 18px;
     border-radius: var(--radius-md);
     background: var(--bg-app);
     border: 1px solid var(--border-subtle);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.first-aid-step-item:hover {
+    border-color: var(--border-focus);
+    transform: translateY(-1px);
 }
 
 .first-aid-step-num {
-    background: var(--accent-teal);
-    color: #fff;
-    width: 28px;
-    height: 28px;
+    background: linear-gradient(135deg, var(--accent-teal), #0f766e);
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1750,19 +1830,25 @@ body {
     font-weight: 700;
     font-size: 0.85rem;
     flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(13, 148, 136, 0.3);
+}
+
+.first-aid-step-content {
+    flex: 1;
 }
 
 .first-aid-step-content h5 {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     font-weight: 600;
     margin-bottom: 4px;
     color: var(--text-main);
 }
 
 .first-aid-step-content p {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
+    margin: 0;
 }
 
 /* DRUG INTERACTIONS CHECKER */

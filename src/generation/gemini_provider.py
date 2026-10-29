@@ -13,7 +13,7 @@ class GeminiProvider(LLMProvider):
 
     def __init__(self, model_name: Optional[str] = None, api_key: Optional[str] = None):
         config = get_config()
-        self._model_name = model_name or (config.LLM_MODEL if "gemini" in config.LLM_MODEL.lower() else "gemini-1.5-flash")
+        self._model_name = model_name or (config.LLM_MODEL if "gemini" in config.LLM_MODEL.lower() else "gemini-3.5-flash")
         self._api_key = api_key or os.getenv("GEMINI_API_KEY") or config.GEMINI_API_KEY
         self._default_temp = config.LLM_TEMPERATURE
         self._default_max_tokens = config.LLM_MAX_OUTPUT_TOKENS
@@ -62,9 +62,16 @@ class GeminiProvider(LLMProvider):
         if system_instruction:
             payload["systemInstruction"] = system_instruction
 
-        # Fallback candidate models if requested model returns 404
+        # Active candidate models in prioritized order
         candidate_models = [self._model_name]
-        for fallback in ["gemini-1.5-flash", "gemini-2.0-flash", "gemini-2.5-flash", "gemini-1.5-pro"]:
+        for fallback in [
+            "gemini-3.5-flash",
+            "gemini-3.5-flash-lite",
+            "gemini-3.8-flash",
+            "gemini-3.7-flash",
+            "gemini-flash-latest",
+            "gemini-2.5-flash",
+        ]:
             if fallback not in candidate_models:
                 candidate_models.append(fallback)
 
@@ -73,8 +80,8 @@ class GeminiProvider(LLMProvider):
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={self._api_key}"
             try:
                 res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=25)
-                if res.status_code == 404:
-                    logger.warning(f"Gemini model '{model}' returned 404 Not Found. Trying fallback model...")
+                if res.status_code in [400, 404, 500, 502, 503, 504]:
+                    logger.warning(f"Gemini model '{model}' returned status {res.status_code}. Trying next candidate...")
                     continue
 
                 res.raise_for_status()
@@ -82,21 +89,21 @@ class GeminiProvider(LLMProvider):
 
                 candidates = data.get("candidates", [])
                 if not candidates:
-                    raise RuntimeError("Gemini returned empty response candidates.")
+                    logger.warning(f"Gemini model '{model}' returned empty candidates. Trying next candidate...")
+                    continue
 
                 parts = candidates[0].get("content", {}).get("parts", [])
                 if not parts:
-                    raise RuntimeError("Gemini returned candidate without text content.")
+                    logger.warning(f"Gemini model '{model}' returned part with no text. Trying next candidate...")
+                    continue
 
                 self._model_name = model
                 return parts[0].get("text", "").strip()
 
             except Exception as e:
                 last_exception = e
-                if isinstance(e, requests.HTTPError) and e.response is not None and e.response.status_code == 404:
-                    continue
-                logger.error(f"Gemini API call failed for model '{model}': {e}")
-                raise RuntimeError(f"Gemini generation failure ({model}): {e}") from e
+                logger.warning(f"Gemini API attempt with '{model}' encountered ({e}). Trying next fallback...")
+                continue
 
         raise RuntimeError(f"All Gemini models failed ({candidate_models}). Last error: {last_exception}")
 
@@ -135,7 +142,7 @@ class GeminiProvider(LLMProvider):
             payload["systemInstruction"] = {"parts": [{"text": system_instruction}]}
 
         candidate_models = [self._model_name]
-        for fallback in ["gemini-1.5-flash", "gemini-2.0-flash", "gemini-2.5-flash", "gemini-1.5-pro"]:
+        for fallback in ["gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-flash-latest", "gemini-2.5-flash"]:
             if fallback not in candidate_models:
                 candidate_models.append(fallback)
 

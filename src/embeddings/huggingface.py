@@ -17,8 +17,16 @@ class HuggingFaceEmbeddingProvider(EmbeddingProvider):
         logger.info(f"Initializing local HuggingFace embedding provider: {self._model_name}")
 
         try:
+            try:
+                import torch
+                torch.set_num_threads(1)
+                torch.set_grad_enabled(False)
+            except Exception:
+                pass
+
             self._embeddings_client = HuggingFaceEmbeddings(
                 model_name=self._model_name,
+                model_kwargs={"device": "cpu"},
                 encode_kwargs={"normalize_embeddings": True}
             )
             # Infer dimension from sample embedding query

@@ -57,9 +57,9 @@ class BM25Retriever:
             article_title = meta.get("article_title", "")
             section = meta.get("section", "")
             tokens = (
-                tokenize_text(article_title) * 3 +
-                tokenize_text(section) * 2 +
-                tokenize_text(text)
+                tokenize_text(article_title) * 2 +
+                tokenize_text(section) +
+                tokenize_text(text)[:80]
             )
             self.corpus_tokens.append(tokens)
 
@@ -82,9 +82,9 @@ class BM25Retriever:
                     article_title = meta.get("article_title", "")
                     section = meta.get("section", "")
                     tokens = (
-                        tokenize_text(article_title) * 3 +
-                        tokenize_text(section) * 2 +
-                        tokenize_text(text)
+                        tokenize_text(article_title) * 2 +
+                        tokenize_text(section) +
+                        tokenize_text(text)[:80]
                     )
                     self.corpus_tokens.append(tokens)
 
@@ -121,7 +121,7 @@ class BM25Retriever:
         Returns List of (Document, float_bm25_score) tuples sorted descending by score.
         """
         q_str = (query_text or "").strip()
-        if not q_str or not self.documents:
+        if not q_str or not self.documents or not getattr(self, "bm25", None):
             return []
 
         query_tokens = tokenize_text(q_str)
