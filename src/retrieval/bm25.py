@@ -59,7 +59,7 @@ class BM25Retriever:
             tokens = (
                 tokenize_text(article_title) * 2 +
                 tokenize_text(section) +
-                tokenize_text(text)[:80]
+                tokenize_text(text[:400])
             )
             self.corpus_tokens.append(tokens)
 
@@ -74,7 +74,7 @@ class BM25Retriever:
             metas_list = chroma_data.get("metadatas", [])
 
             if docs_list and len(docs_list) > 0:
-                logger.info(f"Building BM25 index over {len(docs_list)} indexed chunks from ChromaDB...")
+                logger.info(f"Building fast BM25 index over {len(docs_list)} indexed chunks from ChromaDB...")
                 for text, meta in zip(docs_list, metas_list):
                     doc = Document(page_content=text, metadata=meta)
                     self.documents.append(doc)
@@ -84,7 +84,7 @@ class BM25Retriever:
                     tokens = (
                         tokenize_text(article_title) * 2 +
                         tokenize_text(section) +
-                        tokenize_text(text)[:80]
+                        tokenize_text(text[:400])
                     )
                     self.corpus_tokens.append(tokens)
 
@@ -92,7 +92,7 @@ class BM25Retriever:
                 logger.info("BM25 Okapi index successfully initialized from ChromaDB collection.")
                 return
         except Exception as e:
-            logger.warning(f"Could not load documents from ChromaDB ({e}). Falling back to file/ingestion...")
+            logger.warning(f"Could not load documents from ChromaDB ({e}). Checking processed chunks file...")
 
         # Second attempt: load from processed chunks JSON file
         project_root = Path(__file__).resolve().parent.parent.parent
@@ -110,10 +110,9 @@ class BM25Retriever:
             except Exception as e:
                 logger.warning(f"Failed to read processed chunks file: {e}")
 
-        # Final fallback: run ingestion pipeline
-        logger.info("Executing ingestion pipeline to build BM25 corpus...")
-        docs, _ = run_ingestion(save_processed=False)
-        self._build_from_chunk_dicts([{"text": d.page_content, "metadata": d.metadata} for d in docs])
+        # If both fail, disable BM25 gracefully without running heavy ingestion pipeline
+        logger.warning("BM25 could not be loaded from ChromaDB or processed chunks. BM25 lexical search disabled.")
+        self.bm25 = None
 
     def retrieve(self, query_text: str, top_k: int = 20) -> List[Tuple[Document, float]]:
         """

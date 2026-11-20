@@ -17,12 +17,14 @@ export const chatApi = {
         }
 
         try {
+            const controller = typeof AbortSignal !== 'undefined' && AbortSignal.timeout ? { signal: AbortSignal.timeout(120000) } : {};
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(payload),
+                ...controller,
             });
 
             let data;
@@ -48,7 +50,7 @@ export const chatApi = {
         } catch (error) {
             if (!error.status) {
                 error.code = 'NETWORK_ERROR';
-                error.message = 'Unable to connect to the medical knowledge server. Please verify that the Flask server (app.py) is running on http://127.0.0.1:5000.';
+                error.message = 'The medical knowledge service is warming up or processing. Please wait a moment and click "Retry Question".';
             }
             throw error;
         }

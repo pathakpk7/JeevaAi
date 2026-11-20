@@ -13,7 +13,7 @@ class GeminiProvider(LLMProvider):
 
     def __init__(self, model_name: Optional[str] = None, api_key: Optional[str] = None):
         config = get_config()
-        self._model_name = model_name or (config.LLM_MODEL if "gemini" in config.LLM_MODEL.lower() else "gemini-3.5-flash")
+        self._model_name = model_name or (config.LLM_MODEL if "gemini" in config.LLM_MODEL.lower() else "gemini-3.1-flash-lite")
         self._api_key = api_key or os.getenv("GEMINI_API_KEY") or config.GEMINI_API_KEY
         self._default_temp = config.LLM_TEMPERATURE
         self._default_max_tokens = config.LLM_MAX_OUTPUT_TOKENS
@@ -65,12 +65,14 @@ class GeminiProvider(LLMProvider):
         # Active candidate models in prioritized order
         candidate_models = [self._model_name]
         for fallback in [
-            "gemini-3.5-flash",
+            "gemini-3.1-flash-lite",
+            "gemini-flash-lite-latest",
+            "gemini-3.1-flash-lite-preview",
+            "gemini-3-flash-preview",
             "gemini-3.5-flash-lite",
             "gemini-3.8-flash",
-            "gemini-3.7-flash",
+            "gemini-3.5-flash",
             "gemini-flash-latest",
-            "gemini-2.5-flash",
         ]:
             if fallback not in candidate_models:
                 candidate_models.append(fallback)
@@ -142,7 +144,16 @@ class GeminiProvider(LLMProvider):
             payload["systemInstruction"] = {"parts": [{"text": system_instruction}]}
 
         candidate_models = [self._model_name]
-        for fallback in ["gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-flash-latest", "gemini-2.5-flash"]:
+        for fallback in [
+            "gemini-3.1-flash-lite",
+            "gemini-flash-lite-latest",
+            "gemini-3.1-flash-lite-preview",
+            "gemini-3-flash-preview",
+            "gemini-3.5-flash-lite",
+            "gemini-3.8-flash",
+            "gemini-3.5-flash",
+            "gemini-flash-latest",
+        ]:
             if fallback not in candidate_models:
                 candidate_models.append(fallback)
 

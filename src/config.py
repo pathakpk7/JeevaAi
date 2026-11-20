@@ -16,7 +16,7 @@ class AppConfig(BaseSettings):
 
     # LLM Provider Configuration
     LLM_PROVIDER: str = "gemini"  # Default to gemini (was openai)
-    LLM_MODEL: str = "gemini-3.5-flash"
+    LLM_MODEL: str = "gemini-3.1-flash-lite"
     LLM_TEMPERATURE: float = 0.2
     LLM_MAX_OUTPUT_TOKENS: int = 1024
     OPENAI_API_KEY: str = ""

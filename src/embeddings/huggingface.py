@@ -24,14 +24,27 @@ class HuggingFaceEmbeddingProvider(EmbeddingProvider):
             except Exception:
                 pass
 
-            self._embeddings_client = HuggingFaceEmbeddings(
-                model_name=self._model_name,
-                model_kwargs={"device": "cpu"},
-                encode_kwargs={"normalize_embeddings": True}
-            )
-            # Infer dimension from sample embedding query
-            sample_vector = self._embeddings_client.embed_query("test dimension query")
-            self._dimension = len(sample_vector)
+            # Fast local loading without hanging on HF Hub network checks
+            try:
+                self._embeddings_client = HuggingFaceEmbeddings(
+                    model_name=self._model_name,
+                    model_kwargs={"device": "cpu", "local_files_only": True},
+                    encode_kwargs={"normalize_embeddings": True}
+                )
+            except Exception as cache_err:
+                logger.warning(f"Could not load '{self._model_name}' from local cache only ({cache_err}). Falling back to online download.")
+                self._embeddings_client = HuggingFaceEmbeddings(
+                    model_name=self._model_name,
+                    model_kwargs={"device": "cpu"},
+                    encode_kwargs={"normalize_embeddings": True}
+                )
+
+            # Avoid extra inference pass on cold start for standard MiniLM models
+            if "minilm" in self._model_name.lower() or "384" in self._model_name:
+                self._dimension = 384
+            else:
+                sample_vector = self._embeddings_client.embed_query("test dimension query")
+                self._dimension = len(sample_vector)
             logger.info(f"Successfully loaded embedding model '{self._model_name}' (Vector dimension: {self._dimension})")
         except Exception as e:
             logger.error(f"Failed to load HuggingFace embedding model '{self._model_name}': {e}")
